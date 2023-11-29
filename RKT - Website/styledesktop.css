@@ -1,0 +1,210 @@
+@media screen and (min-width: 992px) {
+
+    body{
+        background-color: #0C2431;
+    }
+
+    .navigation {
+        width: 100%;
+        height: 80px;
+        text-align: center;
+        background-color: black;
+    }
+
+    #logo-img {
+        float: left;
+        width: 80px;
+        height:80px;
+        margin-right: 10px;
+    }
+
+    #brand-text {
+    display: flex;
+    float: left;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    color: #b1c2c7;
+    font-family: "Press Start 2P";
+    font-size: 24px;
+    }
+
+    #nav-list {
+        display: flex;
+        height: 80px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #nav-element {
+        color: #b1c2c7;
+        text-decoration: none;
+        font-size: 32px;
+        font-family: "Roboto";
+        padding: 10px;
+    }
+
+    #nav-element:hover {
+        color: #0096ff;
+    }
+
+    #nav-dropdown {
+        float: left;
+        overflow: hidden;
+    }
+
+    #dropdown-button {
+        color: #b1c2c7;
+        text-decoration: none;
+        font-size: 32px;
+        font-family: "Roboto";
+        padding: 10px;
+        border: none;
+        outline: none;
+        background: inherit;
+    }
+
+    #dropdown-button:hover {
+        color: #0096ff;
+    }
+
+    #dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: black;
+        min-width: 160px;
+        z-index: 3;
+    }
+
+    .dropdown-element {
+        float: none;
+        color: #b1c2c7;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        font-family: Roboto;
+        font-size: 32px;
+    }
+
+    .dropdown-element:hover {
+        color: #0096ff;
+    }
+
+    #nav-dropdown:hover #dropdown-content {
+        display: block;
+    }
+
+    #search-box {
+        width: 400px;
+        height: 40px;
+        background-color: #b1c2c7;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+
+    #nav-search {
+        flex-basis: 100%;
+        height: 35px;
+        font-size: 18px;
+        border: none;
+        background-color: #b1c2c7;
+        border-radius: 50px;
+        outline: none;
+    }
+
+    .nav-icon {
+        float: left;
+        background-color: #b1c2c7;
+        width: 60px;
+        height: 60px;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+    }
+
+    .nav-icon:hover {
+        background-color: #0096ff;
+    }
+
+    .nav-element:active {
+        color: #0096ff;
+    }
+
+    .StartseiteGrids {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 5% 95%;
+        grid-template-columns: 5% 30% 30% 30% 5%;
+        margin-top: 20px;
+        grid-row-gap: 5px;
+    }
+
+    .game-images {
+        width:  400px;
+        height: 230px;
+        border-radius: 50px;
+        z-index: 2;
+    }
+
+    .grid-element {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        grid-row-start: 2;
+    }
+
+    .grid-element-background {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        position: absolute;
+        width:  400px;
+        height: 230px;
+        border-radius: 50px;
+        z-index: 1;
+        font-family: "Press Start 2P";
+        color: #B1C2C7;
+    }
+
+    .game-images:hover {
+        opacity: 0.40;
+        transition: 1s;
+    }
+
+    .anglediv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-row-start: 2;
+    }
+
+    .angle {
+        font-size: xxx-large;
+        color: #B1C2C7;
+        background: inherit;
+        border: none;
+    }
+
+    .angle:hover {
+        color: #0096ff;
+    }
+
+    .grid-kategorie {
+        display: flex;
+        font-family: "Press Start 2P";
+        font-size: xx-large;
+        grid-column-start: 2;
+        color: #B1C2C7;
+    }
+
+}
+
