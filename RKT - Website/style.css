@@ -1,0 +1,223 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;}
+
+body {
+    background-color: #0C2431;
+    font-family: "Roboto";
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav {
+    width: 100%;
+    background-color: black;
+    height: 80px;
+    display: flex;
+}
+
+#brand img {
+    height: 80px;
+    width: 80px;
+    margin-right: 10px;
+}
+
+#brand a {
+    color: white;
+}
+
+#brand {
+    font-family: "Press Start 2P";
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    margin-right: 20%;
+}
+
+ul {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 32px;
+}
+
+ul a {
+    color: white;
+}
+
+ul li {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+ul li:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+#searchbar {
+    background-color: white;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: left;
+    height: 40px;
+    width: 20%;
+    border-radius: 50px;
+    margin-right: 10%;
+}
+
+#searchbar input {
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    color: black;
+    font-size: 18px;
+}
+
+#searchbar i {
+    margin-left: 5px;
+}
+
+#searchbar:hover i {
+    color: #0096FF;
+}
+
+.dropdown-icon {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    background-color: #B1C2C7;
+    border-radius: 100px;
+    margin-right: 10px;
+}
+
+.dropdown-icon i {
+    color: black;
+}
+
+.dropdown-icon:hover {
+    background-color: #0096FF;
+}
+
+#hamburger-icon {
+    margin: auto 0;
+    display: none;
+    cursor: pointer;
+}
+
+#hamburger-icon div {
+    width: 35px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.open #hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#hamburger-menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    height: calc(100vh - 80px);
+    width: 100%;
+
+}
+
+    .StartseiteGrids {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 5% 95%;
+        grid-template-columns: 5% 30% 30% 30% 5%;
+        margin-top: 20px;
+        grid-row-gap: 5px;
+    }
+
+    .game-images {
+        width:  400px;
+        height: 230px;
+        border-radius: 50px;
+        z-index: 2;
+    }
+
+    .grid-element {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        grid-row-start: 2;
+    }
+
+    .grid-element-background {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        position: absolute;
+        width:  400px;
+        height: 230px;
+        border-radius: 50px;
+        z-index: 1;
+        font-family: "Press Start 2P";
+        color: #B1C2C7;
+    }
+
+    .game-images:hover {
+        opacity: 0.40;
+        transition: 1s;
+    }
+
+    .anglediv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-row-start: 2;
+    }
+
+    .angle {
+        font-size: xxx-large;
+        color: #B1C2C7;
+        background: inherit;
+        border: none;
+    }
+
+    .angle:hover {
+        color: #0096ff;
+    }
+
+    .grid-kategorie {
+        display: flex;
+        font-family: "Press Start 2P";
+        font-size: xx-large;
+        grid-column-start: 2;
+        color: #B1C2C7;
+    }
+
+    @media only screen and (max-width: 991px) {
+
+    #nav-menu {
+        display: none;
+    }
+
+    #hamburger-icon {
+        display: block;
+    }
+    }
