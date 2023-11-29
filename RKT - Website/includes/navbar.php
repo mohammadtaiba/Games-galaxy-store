@@ -29,6 +29,6 @@ echo <<< NAVBAR
     <div class="nav-icon">
         <a href><i class="fa-solid fa-cart-shopping fa-xl" style="color: #000000;"></i></a>
     </div>
-    </div>
+</div>
 </nav>
 NAVBAR;

@@ -74,7 +74,7 @@
         position: absolute;
         background-color: black;
         min-width: 160px;
-        z-index: 1;
+        z-index: 3;
     }
 
     .dropdown-element {
@@ -134,6 +134,76 @@
 
     .nav-element:active {
         color: #0096ff;
+    }
+
+    .StartseiteGrids {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 5% 95%;
+        grid-template-columns: 5% 30% 30% 30% 5%;
+        margin-top: 20px;
+        grid-row-gap: 5px;
+    }
+
+    .game-images {
+        width:  400px;
+        height: 230px;
+        border-radius: 50px;
+        z-index: 2;
+    }
+
+    .grid-element {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        grid-row-start: 2;
+    }
+
+    .grid-element-background {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        position: absolute;
+        width:  400px;
+        height: 230px;
+        border-radius: 50px;
+        z-index: 1;
+        font-family: "Press Start 2P";
+        color: #B1C2C7;
+    }
+
+    .game-images:hover {
+        opacity: 0.40;
+        transition: 1s;
+    }
+
+    .anglediv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-row-start: 2;
+    }
+
+    .angle {
+        font-size: xxx-large;
+        color: #B1C2C7;
+        background: inherit;
+        border: none;
+    }
+
+    .angle:hover {
+        color: #0096ff;
+    }
+
+    .grid-kategorie {
+        display: flex;
+        font-family: "Press Start 2P";
+        font-size: xx-large;
+        grid-column-start: 2;
+        color: #B1C2C7;
     }
 
 }
