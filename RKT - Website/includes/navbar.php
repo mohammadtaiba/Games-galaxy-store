@@ -1,35 +1,34 @@
 <?php
 echo <<< NAVBAR
 <nav>
-    <div id="brand">
-        <a href="/"><img src="Images/Logo.png" id="gglogo" alt="Das Logo von Games Galaxy"></a>
-        <a href="/"><p>Games<br>Galaxy<p></a>
+<div class="navigation">
+    <div>
+        <img src="Images/Logo.png" id="logo-img" alt="Das Logo von Games Galaxy">
     </div>
-    <div id="nav-menu">
-        <ul>
-            <li><a href="/">Über Uns</a></li>
-            <li><a href="/">Spiele</a></li>
-        </ul>
+    <div id="brand-text">
+        Games<br>
+        Galaxy
     </div>
-    <div id="searchbar">
-        <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-        <input type="text" placeholder="Suchen">
+    <div id="nav-list">
+        <a id="nav-element" href="uberuns.php">Über Uns</a>
+        <div id="nav-dropdown">
+            <button id="dropdown-button">Spiele<i class="fa-solid fa-down" style="color: #b1c2c7;"></i></button>
+            <div id="dropdown-content">
+                <a class="dropdown-element" href="#">Steam</a>
+                <a class="dropdown-element" href="#">Battle.net</a>
+                <a class="dropdown-element" href="#">Epic Games</a>
+            </div>
+        </div>
+        <div id="search-box">
+            <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #000000;"></i>
+            <input id="nav-search" type="text" placeholder="Suchen">
+        </div>
+    <div class="nav-icon">
+        <a href><i class="fa-solid fa-user fa-xl" style="color: #000000;"></i></a>
     </div>
-    <div class="dropdown-icon">
-        <a href="/"><i class="fa-solid fa-user fa-xl"></i></a>
+    <div class="nav-icon">
+        <a href><i class="fa-solid fa-cart-shopping fa-xl" style="color: #000000;"></i></a>
     </div>
-    <div class="dropdown-icon"">
-        <a href="/"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
-    </div>
-    
-    <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
-        <div id="bar1"></div>
-        <div id="bar2"></div>
-        <div id="bar3"></div>
-        <ul id="hamburger-menu">
-            <li><a href="/">Über Uns</a></li>
-            <li><a href="/">Spiele</a></li>
-        </ul>
-    </div>
+</div>
 </nav>
 NAVBAR;
