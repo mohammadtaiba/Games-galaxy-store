@@ -1,5 +1,5 @@
 <?php
-$title = "Games Galaxy";
+$title = "Steam";
 require_once('includes/head.php');
 require_once('includes/navbar.php');
 ?>
