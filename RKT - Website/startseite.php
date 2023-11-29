@@ -11,3 +11,4 @@ Hier ist der Body
 <footer>
 Hier ist der Footer
 </footer>
+<script src="index.js"></script>
