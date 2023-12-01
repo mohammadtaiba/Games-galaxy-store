@@ -8,10 +8,6 @@ body {
     font-family: "Roboto";
 }
 
-nav a {
-    text-decoration: none;
-}
-
 nav {
     width: 100%;
     background-color: black;
@@ -19,14 +15,19 @@ nav {
     display: flex;
 }
 
+ .navbar-links {
+     text-decoration: none;
+     color: white;
+ }
+
+ .navbar-links:hover {
+     color: #0096ff;
+ }
+
 #brand img {
     height: 80px;
     width: 80px;
     margin-right: 10px;
-}
-
-#brand a {
-    color: white;
 }
 
 #brand {
@@ -46,18 +47,9 @@ ul {
     font-size: 32px;
 }
 
-ul a {
-    color: white;
-}
-
 ul li {
     padding: 5px;
     margin-right: 10px;
-}
-
-ul li:hover {
-    transform: scale(1.1);
-    transition: 0.3s;
 }
 
 #searchbar {
@@ -116,7 +108,7 @@ ul li:hover {
     cursor: pointer;
 }
 
-#hamburger-icon div {
+.bar {
     width: 35px;
     height: 3px;
     background-color: white;
@@ -124,21 +116,134 @@ ul li:hover {
     transition: 0.4s;
 }
 
+#hamburger-icon:hover .bar {
+    background-color: #0096ff;
+}
+
 .open #hamburger-menu {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
+    padding: 20px;
 }
 
 #hamburger-menu {
     display: none;
     position: absolute;
     top: 80px;
-    left: 0;
-    height: calc(100vh - 80px);
+    right: 0;
+    height: calc(50vh - 80px);
     width: 100%;
+    background-color: black;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
 
+}
+
+.navbar-dropdown-button {
+    background-color: inherit;
+    color: white;
+    font-size: 32px;
+    border: none;
+}
+
+.navbar-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.navbar-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 300px;
+    padding: 40px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.navbar-dropdown-button:hover {
+    color: #0096ff;
+}
+
+.navbar-dropdown:hover .navbar-dropdown-content {
+    display: block;
+}
+
+.navbar-icon-button {
+    background-color: inherit;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+}
+
+#profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#profile-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    min-width: 500px;
+    background-color: black;
+    padding: 30px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: white;
+    font-family: "Press Start 2P";
+    text-align: center;
+}
+
+#profile-dropdown-content p {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.profile-dropdown-content-button {
+    height: 50px;
+    width: 350px;
+    background-color: #B1C2C7;
+    border: none;
+    border-radius: 50px;
+    color: black;
+    font-size: 18px;
+    font-family: "Press Start 2P";
+    margin-bottom: 20px;
+}
+
+.profile-dropdown-content-button:hover {
+    background-color: #0096ff;
+}
+
+#profile-dropdown:hover #profile-dropdown-content {
+    display: block;
+}
+
+#cart-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#cart-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    min-width: 500px;
+    background-color: black;
+    padding: 30px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: white;
+    font-family: "Press Start 2P";
+    text-align: center;
+}
+
+#cart-dropdown:hover #cart-dropdown-content {
+    display: block;
 }
 
     .StartseiteGrids {
@@ -221,4 +326,17 @@ ul li:hover {
         display: block;
     }
 
- }
+        .navbar-dropdown-content-small {
+            display: none;
+            font-size: 24px;
+            min-width: 150px;
+            padding: 10px;
+
+        }
+
+        .navbar-dropdown:hover .navbar-dropdown-content-small {
+            display: block;
+        }
+
+
+    }

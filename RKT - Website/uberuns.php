@@ -11,3 +11,4 @@ require_once('includes/navbar.php');
 <footer>
     Hier ist der Footer
 </footer>
+<script src="index.js"></script>
