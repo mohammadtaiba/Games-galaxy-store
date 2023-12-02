@@ -29,7 +29,7 @@ require_once('includes/navbar.php');
     <div class="anglediv"><button class="angle"><i class="fa-solid fa-angle-right fa-xl"></i></button></div>
 </div>
 </body>
-<footer>
-Hier ist der Footer
-</footer>
+<?php
+require_once('includes/footer.php');
+?>
 <script src="index.js"></script>

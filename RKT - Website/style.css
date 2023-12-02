@@ -13,6 +13,9 @@ nav {
     background-color: black;
     height: 80px;
     display: flex;
+    top: 0;
+    position: sticky;
+    z-index: 9;
 }
 
  .navbar-links {
@@ -256,14 +259,14 @@ ul li {
         grid-row-gap: 5px;
     }
 
-    .game-images {
+.game-images {
         width:  400px;
         height: 230px;
         border-radius: 50px;
         z-index: 2;
     }
 
-    .grid-element {
+.grid-element {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -271,7 +274,7 @@ ul li {
         grid-row-start: 2;
     }
 
-    .grid-element-background {
+.grid-element-background {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -285,36 +288,68 @@ ul li {
         color: #B1C2C7;
     }
 
-    .game-images:hover {
+.game-images:hover {
         opacity: 0.40;
         transition: 1s;
     }
 
-    .anglediv {
+.anglediv {
         display: flex;
         justify-content: center;
         align-items: center;
         grid-row-start: 2;
     }
 
-    .angle {
+.angle {
         font-size: xxx-large;
         color: #B1C2C7;
         background: inherit;
         border: none;
     }
 
-    .angle:hover {
+.angle:hover {
         color: #0096ff;
     }
 
-    .grid-kategorie {
+.grid-kategorie {
         display: flex;
         font-family: "Press Start 2P";
         font-size: xx-large;
         grid-column-start: 2;
         color: #B1C2C7;
     }
+
+footer {
+        width: 100%;
+        background-color: black;
+        height: 40px;
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: 70% 10% 10% 10%;
+        font-size: 20px;
+    }
+#footer-brand {
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.footer-links {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-element {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 10px;
+}
+
+.footer-links:hover {
+    color: #0096ff;
+}
 
     @media only screen and (max-width: 991px) {
 
