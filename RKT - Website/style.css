@@ -223,6 +223,7 @@ footer {
         grid-template-columns: 70% 10% 10% 10%;
         font-size: 20px;
     }
+
 #footer-brand {
     color: white;
     display: flex;
