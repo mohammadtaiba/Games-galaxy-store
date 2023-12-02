@@ -8,6 +8,6 @@ require_once('includes/navbar.php');
     Hier ist der Body
 </div>
 </body>
-<footer>
-    Hier ist der Footer
-</footer>
+<?php
+require_once('includes/footer.php');
+?>
