@@ -3,6 +3,7 @@ $title = "Games Galaxy";
 require_once('includes/head.php');
 require_once('includes/navbar.php');
 ?>
+<!--Dennis Rinck start-->
 <body>
 <div class="StartseiteGrids">
     <div class="grid-kategorie">Angebote</div>
@@ -29,6 +30,7 @@ require_once('includes/navbar.php');
     <div class="anglediv"><button class="angle"><i class="fa-solid fa-angle-right fa-xl"></i></button></div>
 </div>
 </body>
+<!--Dennis Rinck ende-->
 <?php
 require_once('includes/footer.php');
 ?>

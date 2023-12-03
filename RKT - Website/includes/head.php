@@ -11,4 +11,5 @@ echo <<< HEAD
     <link rel="stylesheet" href=https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&display=swap"> 
 </head>
 HEAD;
+?>
 
