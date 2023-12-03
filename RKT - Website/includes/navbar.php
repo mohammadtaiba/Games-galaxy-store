@@ -49,7 +49,7 @@ echo <<< NAVBAR
         <div class="bar"></div>
         <div class="bar"></div>
         <ul id="hamburger-menu">
-            <li><a href="/" class="navbar-links">Über Uns</a></li>
+            <li><a href="uberuns.php" class="navbar-links">Über Uns</a></li>
             <div class="navbar-dropdown">
                 <li><button class="navbar-dropdown-button">Spiele</button></li>
                 <div class="navbar-dropdown-content-small">
