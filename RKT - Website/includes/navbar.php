@@ -4,7 +4,7 @@ echo <<< NAVBAR
 <nav>
     <div id="brand">
         <a href="startseite.php"><img src="Images/Logo.png" id="gglogo" alt="Das Logo von Games Galaxy"></a>
-        <a href="startseite.php" class="navbar-links"><p>Games<br>Galaxy<p></a>
+        <a href="startseite.php" class="navbar-links"><p id="ggbrand">Games<br>Galaxy<p></a>
     </div>
         <ul id="navbar-big">
             <li><a href="uberuns.php" class="navbar-links">Über Uns</a></li>

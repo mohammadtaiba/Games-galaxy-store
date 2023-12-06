@@ -6,6 +6,7 @@
 body {
     background-color: #0C2431;
     font-family: "Roboto";
+    min-height: 100vh;
 }
 
 /* Style für Navbar, muss über ganze Seite gehen (width), soll immer sichtbar sein (top, position, z-index) */
@@ -350,6 +351,9 @@ footer {
         grid-template-rows: 100%;
         grid-template-columns: 70% 10% 10% 10%;
         font-size: 20px;
+        position: sticky;
+        bottom: 0;
+    z-index: 9;
     }
 
 #footer-brand {
@@ -377,6 +381,115 @@ footer {
 }
 
 .footer-links:hover {
+    color: #0096ff;
+}
+
+#titel-einkaufe {
+    color: white;
+    font-family: "Press Start 2P";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#einkaufe-grid {
+    display: grid;
+    grid-row-gap: 20px;
+}
+
+.flex-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.einkaufe-grid-inhalt {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 50% 50%;
+    background-color: #B1C2C7;
+    width: 90%;
+    height: 100px;
+    border-radius: 25px;
+}
+
+.spiele-daten {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-left: 10px;
+}
+
+.spiele-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spiele-status-inhalt-ausstehend {
+    height: 60px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    background-color: red;
+}
+
+.spiele-status-inhalt-abgeschlossen {
+    height: 60px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    background-color: green;
+}
+
+.wunschliste-grid-inhalt {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 95% 5%;
+    background-color: #B1C2C7;
+    width: 90%;
+    height: 100px;
+    border-radius: 25px;
+}
+
+.wunschliste-daten {
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.wunschliste-daten-inhalt {
+    display: block;
+    text-align: center;
+}
+
+.wunschliste-uberschrift {
+    font-family: "Press Start 2P";
+    font-size: 18px;
+}
+
+.spiele-entfernen {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 20px;
+}
+
+.remove-element {
+    background-color: inherit;
+    border: none;
+}
+
+.remove-element:hover {
     color: #0096ff;
 }
 
@@ -438,7 +551,7 @@ footer {
 
         }
 
-        #brand {
+        #ggbrand {
             display: none;
         }
 
@@ -448,6 +561,10 @@ footer {
 
         #searchbar {
             width: 100%;
+        }
+
+        #brand {
+            margin-right: 0;
         }
 
     }
