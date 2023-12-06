@@ -6,8 +6,7 @@ echo <<< NAVBAR
         <a href="startseite.php"><img src="Images/Logo.png" id="gglogo" alt="Das Logo von Games Galaxy"></a>
         <a href="startseite.php" class="navbar-links"><p>Games<br>Galaxy<p></a>
     </div>
-    <div id="nav-menu">
-        <ul>
+        <ul id="navbar-big">
             <li><a href="uberuns.php" class="navbar-links">Über Uns</a></li>
             <div class="navbar-dropdown">
                 <li><button class="navbar-dropdown-button">Spiele</button></li>
@@ -18,7 +17,6 @@ echo <<< NAVBAR
                 </div>
             </div>
         </ul>
-    </div>
     <div id="searchbar">
         <i class="fa-solid fa-magnifying-glass fa-xl"></i>
         <input type="text" placeholder="Suchen">
@@ -65,4 +63,4 @@ echo <<< NAVBAR
 </nav>
 NAVBAR;
 ?>
-<!--Falko Kühn ende->>
+<!--Falko Kühn ende-->

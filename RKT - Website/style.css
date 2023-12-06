@@ -8,6 +8,7 @@ body {
     font-family: "Roboto";
 }
 
+/* Style für Navbar, muss über ganze Seite gehen (width), soll immer sichtbar sein (top, position, z-index) */
 nav {
     width: 100%;
     background-color: black;
@@ -16,8 +17,10 @@ nav {
     top: 0;
     position: sticky;
     z-index: 9;
+    justify-content: left;
 }
 
+/* Links sollen nicht unterstrichen oder standardmäßig eingefärbt sein (text-decoration), wenn man auf Links zeigt soll sich Farbe änder (Hover) */
  .navbar-links {
      text-decoration: none;
      color: white;
@@ -38,23 +41,25 @@ nav {
     font-size: 24px;
     display: flex;
     align-items: center;
-    margin-right: 20%;
+    margin-right: 40px;
 }
 
+/* Listen Elemente sollen nicht vorgestylt sein */
 ul {
     list-style: none;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
     font-size: 32px;
 }
 
+/* Container um Listenelemente soll so groß sein wie der Content darin, damit bei Über Uns kein Zeilenumbruch erzwungen wird */
 ul li {
-    padding: 5px;
     margin-right: 10px;
+    min-width: fit-content;
 }
 
+/* searchbar ist nur die div um den tatsächlichen searchbar input für styling und damit das Lupensymbol sich in und nicht neben der searchbar befindet */
 #searchbar {
     background-color: white;
     display: flex;
@@ -62,9 +67,10 @@ ul li {
     align-items: center;
     justify-content: left;
     height: 40px;
-    width: 20%;
+    width: 65%;
     border-radius: 50px;
-    margin-right: 10%;
+    margin-right: 20px;
+    margin-left: 10px;
 }
 
 #searchbar input {
@@ -77,6 +83,7 @@ ul li {
     font-size: 18px;
 }
 
+/* Lupensymbol in der searchbar damit es nicht ganz am linken Rand steht */
 #searchbar i {
     margin-left: 5px;
 }
@@ -85,6 +92,7 @@ ul li {
     color: #0096FF;
 }
 
+/* Für den Style der Profil-und Einkaufswagensymbole */
 .dropdown-icon {
     display: flex;
     align-self: center;
@@ -97,6 +105,7 @@ ul li {
     margin-right: 10px;
 }
 
+/* Die tatsächlichen Profil-und Einkaufswagenicons */
 .dropdown-icon i {
     color: black;
 }
@@ -105,12 +114,16 @@ ul li {
     background-color: #0096FF;
 }
 
+/* div für das selbstgebaute Hamburger-Symbol, soll in Desktopansicht nicht angezeigt werden (display), soll bei Hover den Cursor zu einem Zeiger machen
+um zu zeigen das man damit Interagieren kann (cursor) */
 #hamburger-icon {
-    margin: auto 0;
     display: none;
     cursor: pointer;
+    align-self: center;
+    margin-right: 10px;
 }
 
+/* sind die 3 Striche die zusammen das Hamburger-Icon darstellen */
 .bar {
     width: 35px;
     height: 3px;
@@ -123,6 +136,7 @@ ul li {
     background-color: #0096ff;
 }
 
+/* Was mit dem Hamburger-Menu passieren soll wenn das Hamburger-Icon angeklickt wird */
 .open #hamburger-menu {
     display: flex;
     flex-direction: column;
@@ -131,6 +145,8 @@ ul li {
     padding: 20px;
 }
 
+/* Style für das Hamburger-Menü, soll vorerst nicht angezeigt werden, height soll über den halben Bildschirm gehen - 80px da die Navbar
+ 80 Pixel hoch ist und das Menü erst am unteren Ende der Navbar auftaucht */
 #hamburger-menu {
     display: none;
     position: absolute;
@@ -144,6 +160,7 @@ ul li {
 
 }
 
+/* Style für den Button Spiele welcher noch weitere Elemente versteckt */
 .navbar-dropdown-button {
     background-color: inherit;
     color: white;
@@ -156,6 +173,7 @@ ul li {
     display: inline-block;
 }
 
+/* Style für den Button Spiele welcher noch weitere Elemente versteckt */
 .navbar-dropdown-content {
     display: none;
     position: absolute;
@@ -174,6 +192,7 @@ ul li {
     display: block;
 }
 
+/* Style für die Profil-und Einkaufswagenbuttons */
 .navbar-icon-button {
     background-color: inherit;
     border: none;
@@ -187,6 +206,7 @@ ul li {
     display: inline-block;
 }
 
+/* Style für den Content welcher sich hinter dem Profilicon verbirgt */
 #profile-dropdown-content {
     display: none;
     position: absolute;
@@ -201,11 +221,13 @@ ul li {
     text-align: center;
 }
 
+/* Style für Schrift im Profilinhalt */
 #profile-dropdown-content p {
     margin-bottom: 20px;
     font-size: 32px;
 }
 
+/* Style für die Buttons welche Inhalt vom Profildropdown sind */
 .profile-dropdown-content-button {
     height: 50px;
     width: 350px;
@@ -231,6 +253,7 @@ ul li {
     display: inline-block;
 }
 
+/* Style für Inhalt welcher sich hinter dem Einkaufswagendropdown verbirgt */
 #cart-dropdown-content {
     display: none;
     position: absolute;
@@ -413,6 +436,18 @@ footer {
             grid-row-start: 1;
             padding: 10px;
 
+        }
+
+        #brand {
+            display: none;
+        }
+
+        #navbar-big {
+            display: none;
+        }
+
+        #searchbar {
+            width: 100%;
         }
 
     }
