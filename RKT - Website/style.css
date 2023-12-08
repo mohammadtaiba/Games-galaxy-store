@@ -74,7 +74,7 @@ ul li {
     height: 40px;
     width: 65%;
     border-radius: 50px;
-    margin-right: 50px;
+    margin-right: 10px;
 }
 
 #searchbar input {
@@ -526,6 +526,7 @@ footer {
     color: white;
     padding-top: 20px;
     padding-bottom: 20px;
+    font-weight: normal;
 }
 
 #uberunstext {
@@ -551,6 +552,7 @@ footer {
 
 #uberunsliste h2 {
     padding-bottom: 20px;
+    font-weight: normal;
 }
 
 #uberunsliste p {
@@ -570,6 +572,7 @@ footer {
     font-family: "Press Start 2P";
     font-size: 20px;
     color: white;
+    font-weight: normal;
 }
 
 #neuregistrieren button {
@@ -594,6 +597,63 @@ footer {
 
 .navbar-small-dropdown.nested-active #navbar-dropdown-content-small {
     display: inline-block;
+}
+
+.statisch h1 {
+    color: white;
+    font-family: "Press Start 2P";
+    font-size: 28px;
+    padding-top: 20px;
+    font-weight: normal;
+}
+
+.statisch h3 {
+    font-weight: normal;
+    font-family: "Press Start 2P";
+    font-size: 24px;
+    color: white;
+    padding-top: 20px;
+}
+
+.statisch p {
+    font-size: 18px;
+    color: white;
+    font-family: Roboto;
+    padding-top: 10px;
+}
+
+.statisch {
+    display: inline-block;
+    text-align: center;
+}
+
+.statischinhalt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+}
+
+.statisch h2 {
+    font-size: 18px;
+    font-family: "Press Start 2P";
+    font-weight: normal;
+    color: white;
+    padding-top: 20px;
+}
+
+#dokumentation a {
+    text-decoration: none;
+    color: white;
+}
+
+#dokumentation h3:hover {
+    color: #0096ff;
+}
+
+#dokumentation {
+    padding-top: 50px;
 }
 
     @media only screen and (max-width: 991px) {
