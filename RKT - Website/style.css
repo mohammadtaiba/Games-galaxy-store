@@ -7,6 +7,10 @@ body {
     background-color: #0C2431;
     font-family: "Roboto";
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+
 }
 
 /* Style für Navbar, muss über ganze Seite gehen (width), soll immer sichtbar sein (top, position, z-index) */
@@ -57,7 +61,7 @@ ul {
 /* Container um Listenelemente soll so groß sein wie der Content darin, damit bei Über Uns kein Zeilenumbruch erzwungen wird */
 ul li {
     margin-right: 10px;
-    min-width: fit-content;
+    min-width: 130px;
 }
 
 /* searchbar ist nur die div um den tatsächlichen searchbar input für styling und damit das Lupensymbol sich in und nicht neben der searchbar befindet */
@@ -70,8 +74,7 @@ ul li {
     height: 40px;
     width: 65%;
     border-radius: 50px;
-    margin-right: 20px;
-    margin-left: 10px;
+    margin-right: 50px;
 }
 
 #searchbar input {
@@ -138,7 +141,7 @@ um zu zeigen das man damit Interagieren kann (cursor) */
 }
 
 /* Was mit dem Hamburger-Menu passieren soll wenn das Hamburger-Icon angeklickt wird */
-.open #hamburger-menu {
+#hamburger-menu.active {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -167,6 +170,15 @@ um zu zeigen das man damit Interagieren kann (cursor) */
     color: white;
     font-size: 32px;
     border: none;
+    cursor: pointer;
+}
+
+#navbar-small-dropdown-button {
+    background-color: inherit;
+    color: white;
+    font-size: 32px;
+    border: none;
+    cursor: pointer;
 }
 
 .navbar-dropdown {
@@ -178,6 +190,7 @@ um zu zeigen das man damit Interagieren kann (cursor) */
 .navbar-dropdown-content {
     display: none;
     position: absolute;
+    top: 59px;
     background-color: black;
     min-width: 300px;
     padding: 40px;
@@ -189,7 +202,11 @@ um zu zeigen das man damit Interagieren kann (cursor) */
     color: #0096ff;
 }
 
-.navbar-dropdown:hover .navbar-dropdown-content {
+#navbar-small-dropdown-button:hover {
+    color: #0096ff;
+}
+
+.navbar-dropdown.active .navbar-dropdown-content {
     display: block;
 }
 
@@ -200,6 +217,7 @@ um zu zeigen das man damit Interagieren kann (cursor) */
     width: 60px;
     height: 60px;
     border-radius: 100px;
+    cursor: pointer;
 }
 
 #profile-dropdown {
@@ -212,7 +230,7 @@ um zu zeigen das man damit Interagieren kann (cursor) */
     display: none;
     position: absolute;
     right: 0;
-    min-width: 500px;
+    width: 500px;
     background-color: black;
     padding: 30px;
     border-bottom-left-radius: 50px;
@@ -220,6 +238,7 @@ um zu zeigen das man damit Interagieren kann (cursor) */
     color: white;
     font-family: "Press Start 2P";
     text-align: center;
+    top: 60px;
 }
 
 /* Style für Schrift im Profilinhalt */
@@ -245,8 +264,8 @@ um zu zeigen das man damit Interagieren kann (cursor) */
     background-color: #0096ff;
 }
 
-#profile-dropdown:hover #profile-dropdown-content {
-    display: block;
+#profile-dropdown.profile-active #profile-dropdown-content {
+    display: inline-block;
 }
 
 #cart-dropdown {
@@ -267,9 +286,10 @@ um zu zeigen das man damit Interagieren kann (cursor) */
     color: white;
     font-family: "Press Start 2P";
     text-align: center;
+    top: 60px;
 }
 
-#cart-dropdown:hover #cart-dropdown-content {
+#cart-dropdown.cart-active #cart-dropdown-content {
     display: block;
 }
 
@@ -353,7 +373,8 @@ footer {
         font-size: 20px;
         position: sticky;
         bottom: 0;
-    z-index: 9;
+        z-index: 9;
+        margin-top: auto;
     }
 
 #footer-brand {
@@ -453,7 +474,7 @@ footer {
 .wunschliste-grid-inhalt {
     display: grid;
     grid-template-rows: 100%;
-    grid-template-columns: 95% 5%;
+    grid-template-columns: 90% 10%;
     background-color: #B1C2C7;
     width: 90%;
     height: 100px;
@@ -493,6 +514,88 @@ footer {
     color: #0096ff;
 }
 
+#uberuns {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+#uberuns h1 {
+    font-size: 28px;
+    font-family: "Press Start 2P";
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#uberunstext {
+    padding-bottom: 20px;
+}
+
+#uberunstext p {
+    font-size: 18px;
+    font-family: Roboto;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#uberunsliste {
+    color: white;
+    font-size: 18px;
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+
+}
+
+#uberunsliste h2 {
+    padding-bottom: 20px;
+}
+
+#uberunsliste p {
+    margin: 10px
+}
+
+.bulletpoints {
+    font-weight: bold;
+}
+
+#neuregistrieren {
+    width: 100%;
+    padding-top: 20px;
+}
+
+#uberuns h2 {
+    font-family: "Press Start 2P";
+    font-size: 20px;
+    color: white;
+}
+
+#neuregistrieren button {
+    background-color: #B1C2C7;
+    border: none;
+    height: 80px;
+    width: 200px;
+    border-radius: 50px;
+    font-family: "Press Start 2P";
+    margin: 20px;
+}
+
+#neuregistrieren button:hover {
+    background-color: #0096ff;
+}
+
+#navbar-dropdown-content-small {
+    display: none;
+    position: relative;
+    font-size: 24px;
+}
+
+.navbar-small-dropdown.nested-active #navbar-dropdown-content-small {
+    display: inline-block;
+}
+
     @media only screen and (max-width: 991px) {
 
     #nav-menu {
@@ -502,18 +605,6 @@ footer {
     #hamburger-icon {
         display: block;
     }
-
-        .navbar-dropdown-content-small {
-            display: none;
-            font-size: 24px;
-            min-width: 150px;
-            padding: 10px;
-
-        }
-
-        .navbar-dropdown:hover .navbar-dropdown-content-small {
-            display: block;
-        }
 
         .footer-desktop {
             display: none;
@@ -565,6 +656,30 @@ footer {
 
         #brand {
             margin-right: 0;
+        }
+
+        #uberunsliste {
+            width: 100%;
+        }
+
+        #profile-dropdown-content {
+            position: fixed;
+            right: 0;
+            width: 100%;
+            text-align: center;
+            top: 80px;
+        }
+
+        #cart-dropdown-content {
+            position: fixed;
+            right: 0;
+            width: 100%;
+            top: 80px;
+        }
+
+        #profile-dropdown-content a {
+            display: inline-block;
+            text-align: center;
         }
 
     }
