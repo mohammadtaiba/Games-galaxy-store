@@ -65,4 +65,4 @@ echo <<< NAVBAR
 </nav>
 NAVBAR;
 ?>
-<!--Falko Kühn ende->>
+<!--Falko Kühn ende-->
