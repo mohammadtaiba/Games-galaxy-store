@@ -25,9 +25,9 @@ require_once('includes/navbar.php');
         <input type="password" id="register-password" class="register-input" placeholder="Passwort eingeben" required>
     </div>
 
-    <div class="form-profile-group">
-        <label for="profile-confirm-password" class="profile-label">Passwort bestätigen</label>
-        <input type="password" id="profile-confirm-password" class="profile-input" placeholder="Passwort bestätigen" required>
+    <div class="form-register-group">
+        <label for="register-confirm-password" class="register-label">Passwort bestätigen</label>
+        <input type="password" id="register-confirm-password" class="register-input" placeholder="Passwort bestätigen" required>
     </div>
 
     <div class="form-register-group">
