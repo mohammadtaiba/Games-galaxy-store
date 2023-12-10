@@ -83,7 +83,7 @@ nav {
     display:            block;
     flex-direction:     column;
     margin-bottom:      15px;
-    width:              40%;
+    width:              90%;
     margin-left:        auto;
     margin-right:       auto;
 }
@@ -126,7 +126,7 @@ nav {
     font-size:          20px;
     background-color:   #B1C2C7;
     padding:            15px;
-    width:              30%;
+    width:              75%;
     border:             none;
 }
 
@@ -206,7 +206,7 @@ nav {
     display:            block;
     flex-direction:     column;
     margin-bottom:      15px;
-    width:              40%;
+    width:              100%;
     margin-left:        auto;
     margin-right:       auto;
 }
@@ -231,7 +231,7 @@ nav {
     font-size:          20px;
     background-color:   #B1C2C7;
     padding:            15px;
-    width:              30%;
+    width:              60%;
     border:             none;
 }
 
@@ -270,7 +270,7 @@ nav {
     display:            block;
     flex-direction:     column;
     margin-bottom:      15px;
-    width:              40%;
+    width:              90%;
     margin-left:        auto;
     margin-right:       auto;
 }
@@ -295,7 +295,7 @@ nav {
     font-size:          20px;
     background-color:   #B1C2C7;
     padding:            15px;
-    width:              30%;
+    width:              70%;
     border:             none;
 }
 
