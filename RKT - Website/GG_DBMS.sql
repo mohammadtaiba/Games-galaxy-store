@@ -24,7 +24,6 @@ CREATE TABLE IF NOT EXISTS user_address
 	address_street_number	INTEGER		NOT NULL,
 	address_city			VARCHAR(25)	NOT NULL,
 	address_postalcode		INTEGER		NOT NULL,
-	address_telephone		INTEGER		NOT NULL,
 	CONSTRAINT address_pk PRIMARY KEY (address_id)
 );
 
@@ -47,6 +46,7 @@ CREATE TABLE IF NOT EXISTS game
 	game_price			DECIMAL			NOT NULL,
 	game_description	VARCHAR(250)	NOT NULL,
 	game_key			VARCHAR(50)		NOT NULL,
+    game_cover          IMAGE           NOT NULL,
 	CONSTRAINT 	game_pk PRIMARY KEY (game_id)
 );
 
