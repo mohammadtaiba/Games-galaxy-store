@@ -42,14 +42,328 @@ nav {
 }
 
 #brand {
-    font-family: "Press Start 2P";
+    font-family: "Press Start 2P", cursive;
     font-size: 24px;
     display: flex;
     align-items: center;
-    margin-right: 40px;
+    /*margin-right: 20%;*/
+    margin-right: 2em; /*change*/
 }
 
-/* Listen Elemente sollen nicht vorgestylt sein */
+.nav-hideLetter {
+    color:              #B1C2C7;
+    font-size:          small;
+}
+
+/* --------------------------------------------------- Mohammad, Start: (spielehinzufügen) */
+.AddGame-container {
+    padding:            20px;
+    display:            flex;
+    flex-direction:     column;
+    justify-content:    center;
+    align-items:        center;
+    margin:             auto;
+}
+
+#form-AddGame-h1 {
+    margin:             50px 0 25px 0;
+    font-family:        "Press Start 2P", cursive;
+    font-size:          1em;
+    color:              white;
+    display:            flex;
+    text-align:         center;
+    justify-content:    center;
+}
+
+.AddGame-label {
+    color:              white;
+}
+
+.form-AddGame-group {
+    display:            block;
+    flex-direction:     column;
+    margin-bottom:      15px;
+    width:              40%;
+    margin-left:        auto;
+    margin-right:       auto;
+}
+
+.AddGame-label {
+    display:            block;
+    margin-bottom:      5px;
+}
+
+.AddGame-input, .AddGame-textarea {
+    border:             1px solid #ccc;
+    padding:            15px;
+    width:              100%;
+    box-sizing:         border-box;
+    border-radius:      10px;
+    background-color:   white;
+}
+
+.AddGame-textarea, #AddGame-category, #AddGame-platform {
+    height:             90px;
+}
+
+.AddGame-textarea {
+    max-width:          100%;
+}
+
+.form-AddGame-span {
+    font-size:          14px;
+    color:              #B1C2C7
+}
+
+#AddGame-image, #AddGame-file, #AddGame-category, #AddGame-platform {
+    cursor:             pointer;
+}
+
+#AddGame-submit {
+    cursor:             pointer;
+    margin-top:         30px;
+    border-radius:      50px;
+    font-size:          20px;
+    background-color:   #B1C2C7;
+    padding:            15px;
+    width:              30%;
+    border:             none;
+}
+
+#AddGame-submit:hover {
+    background-color:   #0096ff;
+    font-weight:        bold;
+}
+
+.AddGame-input::-webkit-scrollbar {
+    width:              12px;
+}
+
+.AddGame-input::-webkit-scrollbar-track {
+    background:         transparent;
+    border-radius:      10px;
+}
+
+.AddGame-input::-webkit-scrollbar-thumb {
+    background:         #888;
+    border-radius:      10px;
+}
+
+.AddGame-input::-webkit-scrollbar-thumb:hover {
+    background:         #555;
+}
+
+.AddGame-distance
+{
+    padding:            10px;
+    border-radius:      50px;
+}
+/* --------------------------------------------------- Mohammad, Ende: (spielehinzufügen) */
+
+#nav-menu-UeberUns,  #nav-menu-Spiele{
+    background-color:   #B1C2C7;
+    color:              black;
+    padding:            7px;
+    border-radius:      100px;
+    font-size:          smaller;
+    font-weight:        bold;
+    cursor:             pointer;
+}
+
+#nav-menu-UeberUns:hover, #nav-menu-Spiele:hover {
+    background-color:   #0096ff;
+
+    .nav-hideLetter {
+        color: #0096ff;
+    }
+}
+
+/* --------------------------------------------------- Mohammad, Start: (registrieren) */
+.register-container {
+    padding:            20px;
+    display:            flex;
+    flex-direction:     column;
+    justify-content:    center;
+    align-items:        center;
+    margin:             auto;
+}
+
+#form-register-h1 {
+    margin:             50px 0 25px 0;
+    font-family:        "Press Start 2P", cursive;
+    font-size:          1em;
+    color:              white;
+    display:            flex;
+    text-align:         center;
+    justify-content:    center;
+}
+
+.register-label {
+    color:              white;
+}
+
+.form-register-group {
+    display:            block;
+    flex-direction:     column;
+    margin-bottom:      15px;
+    width:              40%;
+    margin-left:        auto;
+    margin-right:       auto;
+}
+
+.register-label {
+    display:            block;
+    margin-bottom:      5px;
+}
+
+.register-input {
+    border:             1px solid #ccc;
+    padding:            15px;
+    width:              100%;
+    box-sizing:         border-box;
+    border-radius:      10px;
+}
+
+#register-submit {
+    cursor:             pointer;
+    margin-top:         30px;
+    border-radius:      50px;
+    font-size:          20px;
+    background-color:   #B1C2C7;
+    padding:            15px;
+    width:              30%;
+    border:             none;
+}
+
+#register-submit:hover {
+    background-color:   #0096ff;
+    font-weight:        bold;
+}
+/* --------------------------------------------------- Mohammad, Ende: (registrieren) */
+
+
+/* --------------------------------------------------- Mohammad, Start: (Profilbearbeiten) */
+.profile-container {
+    padding:            20px;
+    display:            flex;
+    flex-direction:     column;
+    justify-content:    center;
+    align-items:        center;
+    margin:             auto;
+}
+
+#form-profile-h1 {
+    margin:             50px 0 25px 0;
+    font-family:        "Press Start 2P", cursive;
+    font-size:          1em;
+    color:              white;
+    display:            flex;
+    text-align:         center;
+    justify-content:    center;
+}
+
+.profile-label {
+    color: white;
+}
+
+.form-profile-group {
+    display:            block;
+    flex-direction:     column;
+    margin-bottom:      15px;
+    width:              40%;
+    margin-left:        auto;
+    margin-right:       auto;
+}
+
+.profile-label {
+    display:            block;
+    margin-bottom:      5px;
+}
+
+.profile-input {
+    border:             1px solid #ccc;
+    padding:            15px;
+    width:              100%;
+    box-sizing:         border-box;
+    border-radius:      10px;
+}
+
+#profile-submit {
+    cursor:             pointer;
+    margin-top:         30px;
+    border-radius:      50px;
+    font-size:          20px;
+    background-color:   #B1C2C7;
+    padding:            15px;
+    width:              30%;
+    border:             none;
+}
+
+#profile-submit:hover {
+    background-color:   #0096ff;
+    font-weight:        bold;
+}
+/* --------------------------------------------------- Mohammad, Ende: (Profilbearbeiten) */
+
+
+/* --------------------------------------------------- Mohammad, Start: (FAQ) */
+.faq {
+    background-color:   white;
+    margin-bottom:      15px;
+    border-radius:      100px;
+    overflow:           hidden;
+    width:              50%;
+    margin-left:        auto;
+    margin-right:       auto;
+}
+
+#faq-h1 {
+    margin:             50px 0 25px 0;
+    font-family:        "Press Start 2P", cursive;
+    font-size:          60px;
+    color:              white;
+    display:            flex;
+    align-items:        center;
+    justify-content:    center;
+}
+
+.faq-question {
+    display:            block;
+    padding:            20px;
+    background-color:   white;
+    margin-left:        16px;
+    cursor:             pointer;
+    text-align:         center;
+    font-size:          x-large;
+    border-radius:      50px;
+    font-weight:        bold;
+}
+
+.faq-answer {
+    display:            none;
+    padding:            15px;
+    background-color:   white;
+    font-size:          20px;
+    text-align:         center;
+    margin-left:        16px;
+    transition:         all 0.5s ease-in-out;
+    border-radius:      50px;
+}
+
+input[type="checkbox"] {
+    display:            none;
+}
+
+input[type="checkbox"]:checked + label {
+    background-color:   #0096ff;
+}
+
+input[type="checkbox"]:checked + label + .faq-answer {
+    display:            block;
+}
+/* --------------------------------------------------- Mohammad, Ende: (FAQ) */
+
+
 ul {
     list-style: none;
     height: 100%;
