@@ -5,9 +5,15 @@
 
 body {
     background-color: #0C2431;
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto";
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+
 }
 
+/* Style für Navbar, muss über ganze Seite gehen (width), soll immer sichtbar sein (top, position, z-index) */
 nav {
     width: 100%;
     background-color: black;
@@ -16,17 +22,18 @@ nav {
     top: 0;
     position: sticky;
     z-index: 9;
+    justify-content: left;
 }
 
-.navbar-links {
-    text-decoration: none;
-    color: white;
-    width: 200%;         /*change*/
-}
+/* Links sollen nicht unterstrichen oder standardmäßig eingefärbt sein (text-decoration), wenn man auf Links zeigt soll sich Farbe änder (Hover) */
+ .navbar-links {
+     text-decoration: none;
+     color: white;
+ }
 
-.navbar-links:hover {
-    color: #0096ff;
-}
+ .navbar-links:hover {
+     color: #0096ff;
+ }
 
 #brand img {
     height: 80px;
@@ -362,25 +369,26 @@ ul {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
     font-size: 32px;
 }
 
+/* Container um Listenelemente soll so groß sein wie der Content darin, damit bei Über Uns kein Zeilenumbruch erzwungen wird */
 ul li {
-    padding: 5px;
     margin-right: 10px;
+    min-width: 130px;
 }
 
+/* searchbar ist nur die div um den tatsächlichen searchbar input für styling und damit das Lupensymbol sich in und nicht neben der searchbar befindet */
 #searchbar {
     background-color: white;
-    padding: 10px;
     display: flex;
     align-self: center;
     align-items: center;
     justify-content: left;
-    width: 100%; /*change*/
+    height: 40px;
+    width: 65%;
     border-radius: 50px;
-    margin-right: 10%;
+    margin-right: 10px;
 }
 
 #searchbar input {
@@ -391,9 +399,9 @@ ul li {
     border: none;
     color: black;
     font-size: 18px;
-    margin-left: 10px;
 }
 
+/* Lupensymbol in der searchbar damit es nicht ganz am linken Rand steht */
 #searchbar i {
     margin-left: 5px;
 }
@@ -402,6 +410,7 @@ ul li {
     color: #0096FF;
 }
 
+/* Für den Style der Profil-und Einkaufswagensymbole */
 .dropdown-icon {
     display: flex;
     align-self: center;
@@ -414,6 +423,7 @@ ul li {
     margin-right: 10px;
 }
 
+/* Die tatsächlichen Profil-und Einkaufswagenicons */
 .dropdown-icon i {
     color: black;
 }
@@ -422,12 +432,16 @@ ul li {
     background-color: #0096FF;
 }
 
+/* div für das selbstgebaute Hamburger-Symbol, soll in Desktopansicht nicht angezeigt werden (display), soll bei Hover den Cursor zu einem Zeiger machen
+um zu zeigen das man damit Interagieren kann (cursor) */
 #hamburger-icon {
-    margin: auto 0;
     display: none;
     cursor: pointer;
+    align-self: center;
+    margin-right: 10px;
 }
 
+/* sind die 3 Striche die zusammen das Hamburger-Icon darstellen */
 .bar {
     width: 35px;
     height: 3px;
@@ -440,7 +454,8 @@ ul li {
     background-color: #0096ff;
 }
 
-.open #hamburger-menu {
+/* Was mit dem Hamburger-Menu passieren soll wenn das Hamburger-Icon angeklickt wird */
+#hamburger-menu.active {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -448,6 +463,8 @@ ul li {
     padding: 20px;
 }
 
+/* Style für das Hamburger-Menü, soll vorerst nicht angezeigt werden, height soll über den halben Bildschirm gehen - 80px da die Navbar
+ 80 Pixel hoch ist und das Menü erst am unteren Ende der Navbar auftaucht */
 #hamburger-menu {
     display: none;
     position: absolute;
@@ -461,11 +478,21 @@ ul li {
 
 }
 
+/* Style für den Button Spiele welcher noch weitere Elemente versteckt */
 .navbar-dropdown-button {
     background-color: inherit;
     color: white;
     font-size: 32px;
     border: none;
+    cursor: pointer;
+}
+
+#navbar-small-dropdown-button {
+    background-color: inherit;
+    color: white;
+    font-size: 32px;
+    border: none;
+    cursor: pointer;
 }
 
 .navbar-dropdown {
@@ -473,9 +500,11 @@ ul li {
     display: inline-block;
 }
 
+/* Style für den Button Spiele welcher noch weitere Elemente versteckt */
 .navbar-dropdown-content {
     display: none;
     position: absolute;
+    top: 59px;
     background-color: black;
     min-width: 300px;
     padding: 40px;
@@ -487,16 +516,22 @@ ul li {
     color: #0096ff;
 }
 
-.navbar-dropdown:hover .navbar-dropdown-content {
+#navbar-small-dropdown-button:hover {
+    color: #0096ff;
+}
+
+.navbar-dropdown.active .navbar-dropdown-content {
     display: block;
 }
 
+/* Style für die Profil-und Einkaufswagenbuttons */
 .navbar-icon-button {
     background-color: inherit;
     border: none;
     width: 60px;
     height: 60px;
     border-radius: 100px;
+    cursor: pointer;
 }
 
 #profile-dropdown {
@@ -504,25 +539,29 @@ ul li {
     display: inline-block;
 }
 
+/* Style für den Content welcher sich hinter dem Profilicon verbirgt */
 #profile-dropdown-content {
     display: none;
     position: absolute;
     right: 0;
-    min-width: 500px;
+    width: 500px;
     background-color: black;
     padding: 30px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     color: white;
-    font-family: "Press Start 2P", cursive;
+    font-family: "Press Start 2P";
     text-align: center;
+    top: 60px;
 }
 
+/* Style für Schrift im Profilinhalt */
 #profile-dropdown-content p {
     margin-bottom: 20px;
     font-size: 32px;
 }
 
+/* Style für die Buttons welche Inhalt vom Profildropdown sind */
 .profile-dropdown-content-button {
     height: 50px;
     width: 350px;
@@ -531,7 +570,7 @@ ul li {
     border-radius: 50px;
     color: black;
     font-size: 18px;
-    font-family: "Press Start 2P", cursive;
+    font-family: "Press Start 2P";
     margin-bottom: 20px;
 }
 
@@ -539,8 +578,8 @@ ul li {
     background-color: #0096ff;
 }
 
-#profile-dropdown:hover #profile-dropdown-content {
-    display: block;
+#profile-dropdown.profile-active #profile-dropdown-content {
+    display: inline-block;
 }
 
 #cart-dropdown {
@@ -548,6 +587,7 @@ ul li {
     display: inline-block;
 }
 
+/* Style für Inhalt welcher sich hinter dem Einkaufswagendropdown verbirgt */
 #cart-dropdown-content {
     display: none;
     position: absolute;
@@ -558,93 +598,98 @@ ul li {
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     color: white;
-    font-family: "Press Start 2P", cursive;
+    font-family: "Press Start 2P";
     text-align: center;
+    top: 60px;
 }
 
-#cart-dropdown:hover #cart-dropdown-content {
+#cart-dropdown.cart-active #cart-dropdown-content {
     display: block;
 }
 
-.StartseiteGrids {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: 5% 95%;
-    grid-template-columns: 5% 30% 30% 30% 5%;
-    margin-top: 20px;
-    grid-row-gap: 5px;
-}
+    .StartseiteGrids {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 5% 95%;
+        grid-template-columns: 5% 30% 30% 30% 5%;
+        margin-top: 20px;
+        grid-row-gap: 5px;
+    }
 
 .game-images {
-    width:  400px;
-    height: 230px;
-    border-radius: 50px;
-    z-index: 2;
-}
+        width:  400px;
+        height: 230px;
+        border-radius: 50px;
+        z-index: 2;
+    }
 
 .grid-element {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    grid-row-start: 2;
-}
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        grid-row-start: 2;
+    }
 
 .grid-element-background {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    position: absolute;
-    width:  400px;
-    height: 230px;
-    border-radius: 50px;
-    z-index: 1;
-    font-family: "Press Start 2P", cursive;
-    color: #B1C2C7;
-}
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        position: absolute;
+        width:  400px;
+        height: 230px;
+        border-radius: 50px;
+        z-index: 1;
+        font-family: "Press Start 2P";
+        color: #B1C2C7;
+    }
 
 .game-images:hover {
-    opacity: 0.40;
-    transition: 1s;
-}
+        opacity: 0.40;
+        transition: 1s;
+    }
 
 .anglediv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-row-start: 2;
-}
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-row-start: 2;
+    }
 
 .angle {
-    font-size: xxx-large;
-    color: #B1C2C7;
-    background: inherit;
-    border: none;
-}
+        font-size: xxx-large;
+        color: #B1C2C7;
+        background: inherit;
+        border: none;
+    }
 
 .angle:hover {
-    color: #0096ff;
-}
+        color: #0096ff;
+    }
 
 .grid-kategorie {
-    display: flex;
-    font-family: "Press Start 2P", cursive;
-    font-size: xx-large;
-    grid-column-start: 2;
-    color: #B1C2C7;
-}
+        display: flex;
+        font-family: "Press Start 2P";
+        font-size: xx-large;
+        grid-column-start: 2;
+        color: #B1C2C7;
+    }
 
 footer {
-    width: 100%;
-    background-color: black;
-    height: 40px;
-    display: grid;
-    grid-template-rows: 100%;
-    grid-template-columns: 70% 10% 10% 10%;
-    font-size: 20px;
-}
+        width: 100%;
+        background-color: black;
+        height: 40px;
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: 70% 10% 10% 10%;
+        font-size: 20px;
+        position: sticky;
+        bottom: 0;
+        z-index: 9;
+        margin-top: auto;
+    }
 
 #footer-brand {
     color: white;
@@ -674,7 +719,258 @@ footer {
     color: #0096ff;
 }
 
-@media only screen and (max-width: 991px) {
+#titel-einkaufe {
+    color: white;
+    font-family: "Press Start 2P";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#einkaufe-grid {
+    display: grid;
+    grid-row-gap: 20px;
+}
+
+.flex-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.einkaufe-grid-inhalt {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 50% 50%;
+    background-color: #B1C2C7;
+    width: 90%;
+    height: 100px;
+    border-radius: 25px;
+}
+
+.spiele-daten {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-left: 10px;
+}
+
+.spiele-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spiele-status-inhalt-ausstehend {
+    height: 60px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    background-color: red;
+}
+
+.spiele-status-inhalt-abgeschlossen {
+    height: 60px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    background-color: green;
+}
+
+.wunschliste-grid-inhalt {
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 90% 10%;
+    background-color: #B1C2C7;
+    width: 90%;
+    height: 100px;
+    border-radius: 25px;
+}
+
+.wunschliste-daten {
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.wunschliste-daten-inhalt {
+    display: block;
+    text-align: center;
+}
+
+.wunschliste-uberschrift {
+    font-family: "Press Start 2P";
+    font-size: 18px;
+}
+
+.spiele-entfernen {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 20px;
+}
+
+.remove-element {
+    background-color: inherit;
+    border: none;
+}
+
+.remove-element:hover {
+    color: #0096ff;
+}
+
+#uberuns {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+#uberuns h1 {
+    font-size: 28px;
+    font-family: "Press Start 2P";
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: normal;
+}
+
+#uberunstext {
+    padding-bottom: 20px;
+}
+
+#uberunstext p {
+    font-size: 18px;
+    font-family: Roboto;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#uberunsliste {
+    color: white;
+    font-size: 18px;
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+
+}
+
+#uberunsliste h2 {
+    padding-bottom: 20px;
+    font-weight: normal;
+}
+
+#uberunsliste p {
+    margin: 10px
+}
+
+.bulletpoints {
+    font-weight: bold;
+}
+
+#neuregistrieren {
+    width: 100%;
+    padding-top: 20px;
+}
+
+#uberuns h2 {
+    font-family: "Press Start 2P";
+    font-size: 20px;
+    color: white;
+    font-weight: normal;
+}
+
+#neuregistrieren button {
+    background-color: #B1C2C7;
+    border: none;
+    height: 80px;
+    width: 200px;
+    border-radius: 50px;
+    font-family: "Press Start 2P";
+    margin: 20px;
+}
+
+#neuregistrieren button:hover {
+    background-color: #0096ff;
+}
+
+#navbar-dropdown-content-small {
+    display: none;
+    position: relative;
+    font-size: 24px;
+}
+
+.navbar-small-dropdown.nested-active #navbar-dropdown-content-small {
+    display: inline-block;
+}
+
+.statisch h1 {
+    color: white;
+    font-family: "Press Start 2P";
+    font-size: 28px;
+    padding-top: 20px;
+    font-weight: normal;
+}
+
+.statisch h3 {
+    font-weight: normal;
+    font-family: "Press Start 2P";
+    font-size: 24px;
+    color: white;
+    padding-top: 20px;
+}
+
+.statisch p {
+    font-size: 18px;
+    color: white;
+    font-family: Roboto;
+    padding-top: 10px;
+}
+
+.statisch {
+    display: inline-block;
+    text-align: center;
+}
+
+.statischinhalt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+}
+
+.statisch h2 {
+    font-size: 18px;
+    font-family: "Press Start 2P";
+    font-weight: normal;
+    color: white;
+    padding-top: 20px;
+}
+
+#dokumentation a {
+    text-decoration: none;
+    color: white;
+}
+
+#dokumentation h3:hover {
+    color: #0096ff;
+}
+
+#dokumentation {
+    padding-top: 50px;
+}
+
+    @media only screen and (max-width: 991px) {
 
     #nav-menu {
         display: none;
@@ -684,52 +980,80 @@ footer {
         display: block;
     }
 
-    .navbar-dropdown-content-small {
-        display: none;
-        font-size: 24px;
-        min-width: 150px;
-        padding: 10px;
+        .footer-desktop {
+            display: none;
+        }
+
+        #footer-impressum {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin: 10px;
+        }
+
+        .StartseiteGrids {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-rows: 4% 32% 32% 32%;
+            grid-template-columns: 100%;
+            margin-top:  20px;
+            margin-bottom: 20px;
+        }
+
+        .anglediv {
+            display: none;
+        }
+
+        .grid-element {
+            grid-row-start: auto;
+        }
+
+        .grid-kategorie {
+            grid-column-start: 1;
+            grid-row-start: 1;
+            padding: 10px;
+
+        }
+
+        #ggbrand {
+            display: none;
+        }
+
+        #navbar-big {
+            display: none;
+        }
+
+        #searchbar {
+            width: 100%;
+        }
+
+        #brand {
+            margin-right: 0;
+        }
+
+        #uberunsliste {
+            width: 100%;
+        }
+
+        #profile-dropdown-content {
+            position: fixed;
+            right: 0;
+            width: 100%;
+            text-align: center;
+            top: 80px;
+        }
+
+        #cart-dropdown-content {
+            position: fixed;
+            right: 0;
+            width: 100%;
+            top: 80px;
+        }
+
+        #profile-dropdown-content a {
+            display: inline-block;
+            text-align: center;
+        }
 
     }
-
-    .navbar-dropdown:hover .navbar-dropdown-content-small {
-        display: block;
-    }
-
-    .footer-desktop {
-        display: none;
-    }
-
-    #footer-impressum {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        margin: 10px;
-    }
-
-    .StartseiteGrids {
-        width: 100%;
-        height: 100%;
-        display: grid;
-        grid-template-rows: 4% 32% 32% 32%;
-        grid-template-columns: 100%;
-        margin-top:  20px;
-        margin-bottom: 20px;
-    }
-
-    .anglediv {
-        display: none;
-    }
-
-    .grid-element {
-        grid-row-start: auto;
-    }
-
-    .grid-kategorie {
-        grid-column-start: 1;
-        grid-row-start: 1;
-        padding: 10px;
-
-    }
-
-}
