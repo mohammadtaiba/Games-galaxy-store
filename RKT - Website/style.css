@@ -160,24 +160,6 @@ nav {
 }
 /* --------------------------------------------------- Mohammad, Ende: (spielehinzufügen) */
 
-#nav-menu-UeberUns,  #nav-menu-Spiele{
-    background-color:   #B1C2C7;
-    color:              black;
-    padding:            7px;
-    border-radius:      100px;
-    font-size:          smaller;
-    font-weight:        bold;
-    cursor:             pointer;
-}
-
-#nav-menu-UeberUns:hover, #nav-menu-Spiele:hover {
-    background-color:   #0096ff;
-
-    .nav-hideLetter {
-        color: #0096ff;
-    }
-}
-
 /* --------------------------------------------------- Mohammad, Start: (registrieren) */
 .register-container {
     padding:            20px;
