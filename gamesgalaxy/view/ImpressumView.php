@@ -2,8 +2,7 @@
 
 namespace gamesgalaxy\View;
 
-require_once 'View.php';
-require_once 'lib/Styles.php';
+require_once __DIR__."/../view/View.php";
 class ImpressumView extends View
 {
     static function show()

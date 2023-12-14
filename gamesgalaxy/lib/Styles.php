@@ -1,4 +1,5 @@
 <?php
+namespace gamesgalaxy\View\ImpressumView;
 
 function get_style()
 {
@@ -7,3 +8,5 @@ function get_style()
     fclose($css_file);
     return $css;
 }
+
+
