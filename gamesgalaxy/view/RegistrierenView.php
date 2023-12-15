@@ -1,10 +1,14 @@
 <?php
-$title = "registrieren";
-require_once('includes/head.php');
-require_once('includes/navbar.php');
-?>
 
-<body>
+namespace gamesgalaxy\View;
+
+require_once __DIR__."/../view/View.php";
+class RegistrierenView extends View
+{
+    static function show()
+    {
+        echo <<<REGISTRIEREN
+        <body>
 <form class="register-container">
     <div id="form-register-h1">
         <h1>Registrieren</h1>
@@ -42,8 +46,7 @@ require_once('includes/navbar.php');
 
     <button type="submit" id="register-submit">Jetzt registrieren</button>
 </form>
+REGISTRIEREN;
+    }
+}
 
-</body>
-<?php
-require_once('includes/footer.php');
-?>

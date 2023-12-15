@@ -1,9 +1,14 @@
 <?php
-$title = "Profil bearbeiten";
-require_once('includes/head.php');
-require_once('includes/navbar.php');
-?>
-<body>
+
+namespace gamesgalaxy\View;
+
+require_once __DIR__."/../view/View.php";
+class BearbeitenView extends View
+{
+    static function show()
+    {
+        echo <<<BEARBEITEN
+        <body>
 
 <form class="profile-container" method="post" enctype="multipart/form-data">
     <div id="form-profile-h1">
@@ -49,6 +54,7 @@ require_once('includes/navbar.php');
 </form>
 
 </body>
-<?php
-require_once('includes/footer.php');
-?>
+BEARBEITEN;
+    }
+}
+

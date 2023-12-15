@@ -1,9 +1,14 @@
 <?php
-$title = "Meine Einkäufe";
-require_once('includes/head.php');
-require_once('includes/navbar.php');
-?>
-<body>
+
+namespace gamesgalaxy\View;
+
+require_once __DIR__."/../view/View.php";
+class VerlaufView extends View
+{
+    static function show()
+    {
+        echo <<<VERLAUF
+        <body>
 <div id="titel-einkaufe">
     <p>Meine Einkäufe</p>
 </div>
@@ -106,7 +111,7 @@ require_once('includes/navbar.php');
     </div>
 </div>
 </body>
-<?php
-require_once('includes/footer.php');
-?>
+VERLAUF;
+    }
+}
 

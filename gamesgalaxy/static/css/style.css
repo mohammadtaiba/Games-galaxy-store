@@ -370,7 +370,8 @@ ul li {
     height: 40px;
     width: 65%;
     border-radius: 50px;
-    margin-right: 10px;
+    margin-right: 50px;
+
 }
 
 #searchbar input {
@@ -1008,6 +1009,7 @@ footer {
 
         #searchbar {
             width: 100%;
+            margin-right: 10px;
         }
 
         #brand {

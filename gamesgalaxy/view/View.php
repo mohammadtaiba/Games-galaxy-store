@@ -15,6 +15,7 @@ class View
     final function render_html($callback, $params)
     {
         $this->render_head();
+        $this->render_nav();
         $this->$callback($params);
         $this->render_footer();
     }
@@ -23,6 +24,11 @@ class View
         $title = $this->title;
         $css = $this->get_style();
         require_once 'static/html/head.html';
+    }
+
+    final function render_nav()
+    {
+        require_once 'static/html/nav.html';
     }
     final function render_footer()
     {

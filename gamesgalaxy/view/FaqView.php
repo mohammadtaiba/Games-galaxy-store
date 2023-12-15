@@ -1,9 +1,14 @@
 <?php
-$title = "FAQ";
-require_once('includes/head.php');
-require_once('includes/navbar.php');
-?>
-<body>
+
+namespace gamesgalaxy\View;
+
+require_once __DIR__."/../view/View.php";
+class FaqView extends View
+{
+    static function show()
+    {
+        echo <<<FAQ
+        <body>
 <form class="faq-container">
 
     <h1 id="faq-h1">FAQ</h1>
@@ -77,6 +82,7 @@ require_once('includes/navbar.php');
 
 
 </body>
-<?php
-require_once('includes/footer.php');
-?>
+FAQ;
+    }
+}
+
