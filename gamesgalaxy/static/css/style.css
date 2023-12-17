@@ -612,6 +612,7 @@ um zu zeigen das man damit Interagieren kann (cursor) */
         justify-content: center;
         align-items: center;
         margin: 20px;
+        width: 100%;
         grid-row-start: 2;
     }
 
@@ -620,6 +621,7 @@ um zu zeigen das man damit Interagieren kann (cursor) */
         justify-content: center;
         align-items: center;
         margin: 20px;
+        padding-left: 20px;
         position: absolute;
         width:  400px;
         height: 230px;
