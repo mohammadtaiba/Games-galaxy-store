@@ -43,6 +43,11 @@ class HinzufuegenView extends View
                 </div>
 
                 <div class="form-AddGame-group">
+                    <label for="AddGame-key" class="AddGame-label">Spiel-Schlüssel</label>
+                        <input type="text" id="AddGame-key" class="AddGame-input" placeholder="Spiel-Schlüssel" required>
+                </div>
+                
+                <div class="form-AddGame-group">
                     <label for="AddGame-price" class="AddGame-label">Preis</label>
                         <input type="text" id="AddGame-price" class="AddGame-input" placeholder="Preis in € eingeben (z.B. 19,99)" pattern="^\d+(,\d{2})?$" required>
                 </div>
@@ -57,15 +62,9 @@ class HinzufuegenView extends View
                         <input type="file" id="AddGame-image" class="AddGame-input" required>
                 </div>
 
-                <div class="form-AddGame-group">
-                    <label for="AddGame-file" class="AddGame-label">Spiel-Datei</label>
-                        <input type="file" id="AddGame-file" class="AddGame-input" required>
-                </div>
-
                 <button type="submit" id="AddGame-submit">Spiel hinzufügen</button>
             </form>
         </body>
 HINZUFUEGEN;
     }
 }
-
