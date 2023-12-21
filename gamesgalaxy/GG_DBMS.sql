@@ -1,3 +1,4 @@
+<-- Copy from here to.. -->
 DROP DATABASE IF EXISTS GG_DBMS;
 CREATE DATABASE IF NOT EXISTS GG_DBMS
 DEFAULT CHARACTER SET utf8mb4
@@ -11,19 +12,32 @@ CREATE TABLE IF NOT EXISTS user
 	user_name		VARCHAR(25)	NOT NULL,
 	user_email		VARCHAR(50)	NOT NULL,
 	user_password	VARCHAR(50)	NOT NULL,
-	user_authority	VARCHAR(25)	NOT NULL,
 	CONSTRAINT user_pk PRIMARY KEY (user_id)
 );
+
+DROP TABLE IF EXISTS user_authority;
+CREATE TABLE IF NOT EXISTS user_authority
+(
+    user_authority_id	INTEGER		NOT NULL,
+    user_id             INTEGER     NOT NULL,
+    create_user		    BOOL,
+    change_user         BOOL,
+    delete_user         BOOL,
+    create_game         BOOL,
+    change_game         BOOL,
+    delete_game         BOOL,
+    CONSTRAINT user_authority_pk PRIMARY KEY (user_authority_id)
+    );
 
 DROP TABLE IF EXISTS user_address;
 CREATE TABLE IF NOT EXISTS user_address
 (
 	address_id				INTEGER		NOT NULL,
 	user_id					INTEGER		NOT NULL,
-	address_street			VARCHAR(50)	NOT NULL,
-	address_street_number	INTEGER		NOT NULL,
-	address_city			VARCHAR(25)	NOT NULL,
-	address_postalcode		INTEGER		NOT NULL,
+	address_street			VARCHAR(50),
+	address_street_number	INTEGER,
+	address_city			VARCHAR(25),
+	address_postalcode		INTEGER,
 	CONSTRAINT address_pk PRIMARY KEY (address_id)
 );
 
@@ -46,7 +60,6 @@ CREATE TABLE IF NOT EXISTS game
 	game_price			DECIMAL			NOT NULL,
 	game_description	VARCHAR(250)	NOT NULL,
 	game_key			VARCHAR(50)		NOT NULL,
-    game_cover          BINARY          NOT NULL,
 	CONSTRAINT 	game_pk PRIMARY KEY (game_id)
 );
 
@@ -108,6 +121,10 @@ CREATE TABLE IF NOT EXISTS order_items
 	CONSTRAINT order_items_pk PRIMARY KEY (order_items_id)
 );
 
+ALTER TABLE user_authority
+ADD CONSTRAINT user_authority_fk1 FOREIGN KEY (user_id)
+REFERENCES user (user_id);
+
 ALTER TABLE user_address
 ADD CONSTRAINT user_address_fk1 FOREIGN KEY (user_id)
 REFERENCES user (user_id);
@@ -145,9 +162,12 @@ ADD CONSTRAINT order_items_fk1 FOREIGN KEY (order_id)
 REFERENCES order_data (order_id),
 ADD CONSTRAINT order_items_fk2 FOREIGN KEY (game_id)
 REFERENCES game (game_id);
+<-- ..here and paste to "SQL" in phpMyAdmin -->
 
+<-- copy from here.. -->
 CREATE USER 'ggadmin'@'localhost' IDENTIFIED BY 'ggpassword';
 GRANT ALL PRIVILEGES ON gg_dbms.* TO 'ggadmin'@'localhost';
+<-- ..to here, go to "gg_dbms" and paste to "SQL" -->
 
 
 
