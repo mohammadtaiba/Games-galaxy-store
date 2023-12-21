@@ -30,7 +30,7 @@ class UeberunsView extends View
                     </div>
                     <div id="neuregistrieren">
                         <h2>Sie besitzen noch keinen Account?</h2>
-                        <a href="registrieren.php"><button>Jetzt Registrieren!</button></a>
+                        <a href="/dwp_ws2324_rkt/gamesgalaxy/Registrieren/Show"><button>Jetzt Registrieren!</button></a>
                     </div>
                 </div>
             </div>

@@ -3,6 +3,7 @@
 namespace gamesgalaxy\Controller;
 
 require_once __DIR__."/../view/HinzufuegenView.php";
+require_once __DIR__."/../model/HinzufuegenModel.php";
 
 use gamesgalaxy\View\HinzufuegenView;
 class HinzufuegenController extends Controller

@@ -24,8 +24,6 @@ class ImpressumView extends View
                         <p>Falko Kühn (CEO)</p>
                         <div id="dokumentation">
                             <a href="https://onedrive.live.com/?authkey=%21ANM5jF6w%5FLJs2Vg&id=8B04937D20B87665%2149190&cid=8B04937D20B87665"><h3>Dokumentation ></h3></a>
-                            <a href="database.php">Datenbankverbindung öffnen</a><br>
-                            <a href="close_connection.php">Datenbankverbindung schließen</a>
                         </div>
                     </div>
                 </div>

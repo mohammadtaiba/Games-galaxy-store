@@ -41,7 +41,7 @@ class HinzufuegenModel extends Model
 
     }
 
-    function match_and_read()
+    function match_and_read(string $search_string)
     {
 
     }
