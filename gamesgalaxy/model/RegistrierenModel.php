@@ -17,9 +17,59 @@ class RegistrierenModel extends Model
         $this->db = DatabaseConnection::get_instance();
     }
 
-    /* function bla() was just for testing, can be deleted I think */
-    function bla() {
-        echo "bla";
+    function submit_userdata()
+    {
+        if (isset($_POST['registration-submit-button'])) {
+            $UserName = \mysqli_real_escape_string($this->db, $_POST['UserName']);
+            $UserEmail = \mysqli_real_escape_string($this->db, $_POST['UserEmail']);
+            $UserPassword = \mysqli_real_escape_string($this->db, $_POST['UserPassword']);
+            $UserConfirmPassword = \mysqli_real_escape_string($this->db, $_POST['UserConfirmPassword']);
+            $UserAdress = \mysqli_real_escape_string($this->db, $_POST['UserAdress']);
+            $UserTown = \mysqli_real_escape_string($this->db, $_POST['UserTown']);
+
+            if ($UserPassword != $UserConfirmPassword)
+            {
+                echo "Die Passwörter stimmen nicht überein!";
+                return;
+            }
+
+            $streetName = null;
+            $houseNumber = null;
+            if($UserAdress)
+            {
+                $adressParts = explode(" ", $UserAdress);
+                $streetName = $adressParts[0];
+                $houseNumber = $adressParts[1];
+            }
+
+            $postalCode = null;
+            $cityName = null;
+            if ($UserTown) {
+                $townParts = explode(" ", $UserTown);
+                $postalCode = $townParts[0];
+                $cityName = $townParts[1];
+            }
+
+            $userSql = "INSERT INTO user (user_name, user_email, user_password) VALUES ('$UserName', '$UserEmail', '$UserPassword')";
+
+            $userResult = $this->db->query($userSql);
+
+            if($userResult) {
+                $userId = $this->db->insert_id;
+
+                $adressSql = "INSERT INTO user_address (user_id, address_street, address_street_number, address_postalcode, address_city) VALUES ('$userId', '$streetName', '$houseNumber', '$postalCode', '$cityName')";
+
+                $adressResult = $this->db->query($adressSql);
+
+                    if ($adressResult) {
+                        echo "Benutzer erfolgreich mit Adresse registriert.";
+                    } else {
+                        echo "Fehler bei der Registrierung der Adresse: " . $this->db->error;
+                    }
+            } else {
+                echo "Fehler bei der Registrierung des Benutzers" . $this->db->error;
+            }
+        }
     }
 
     function read()
@@ -56,4 +106,6 @@ class RegistrierenModel extends Model
     {
 
     }
+
 }
+
