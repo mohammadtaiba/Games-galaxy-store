@@ -26,6 +26,7 @@ class LoginModel extends Model
         {
             $row = $result->fetch_assoc();
             $_SESSION['user_authenticated'] = true;
+            $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['user_name'] = $row['user_name'];
             return true;
         } else {
