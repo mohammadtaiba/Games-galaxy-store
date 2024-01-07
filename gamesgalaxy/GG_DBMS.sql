@@ -8,7 +8,7 @@ USE GG_DBMS;
 DROP TABLE IF EXISTS user;
 CREATE TABLE IF NOT EXISTS user
 (
-	user_id			INTEGER		NOT NULL,
+	user_id			INTEGER		NOT NULL AUTO_INCREMENT,
 	user_name		VARCHAR(25)	NOT NULL,
 	user_email		VARCHAR(50)	NOT NULL,
 	user_password	VARCHAR(50)	NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS user
 DROP TABLE IF EXISTS user_authority;
 CREATE TABLE IF NOT EXISTS user_authority
 (
-    user_authority_id	INTEGER		NOT NULL,
+    user_authority_id	INTEGER		NOT NULL AUTO_INCREMENT,
     user_id             INTEGER     NOT NULL,
     create_user		    BOOL,
     change_user         BOOL,
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS user_authority
 DROP TABLE IF EXISTS user_address;
 CREATE TABLE IF NOT EXISTS user_address
 (
-	address_id				INTEGER		NOT NULL,
+	address_id				INTEGER		NOT NULL AUTO_INCREMENT,
 	user_id					INTEGER		NOT NULL,
 	address_street			VARCHAR(50),
 	address_street_number	INTEGER,
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS user_address
 DROP TABLE IF EXISTS category;
 CREATE TABLE IF NOT EXISTS category
 (
-	category_id				INTEGER			NOT NULL,
+	category_id				INTEGER			NOT NULL AUTO_INCREMENT,
 	category_name			VARCHAR(25)		NOT NULL,
 	category_description	VARCHAR(250)	NOT NULL,
 	CONSTRAINT category_pk PRIMARY KEY (category_id)
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS category
 DROP TABLE IF EXISTS game;
 CREATE TABLE IF NOT EXISTS game
 (
-	game_id				INTEGER			NOT NULL,
+	game_id				INTEGER			NOT NULL AUTO_INCREMENT,
 	category_id			INTEGER			NOT NULL,
 	game_platform		VARCHAR(25)		NOT NULL,
 	game_name			VARCHAR(50)		NOT NULL,
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS game
 DROP TABLE IF EXISTS wishlist;
 CREATE TABLE IF NOT EXISTS wishlist
 (
-	wishlist_id	INTEGER	NOT NULL,
+	wishlist_id	INTEGER	NOT NULL AUTO_INCREMENT,
 	game_id		INTEGER	NOT NULL,
 	user_id		INTEGER	NOT NULL,
 	CONSTRAINT wishlist_pk PRIMARY KEY (wishlist_id)
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS wishlist
 DROP TABLE IF EXISTS session;
 CREATE TABLE IF NOT EXISTS session
 (
-	session_id	INTEGER	NOT NULL,
+	session_id	INTEGER	NOT NULL AUTO_INCREMENT,
 	user_id		INTEGER	NOT NULL,
 	CONSTRAINT session_pk PRIMARY KEY (session_id)
 );
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS session
 DROP TABLE IF EXISTS cart_item;
 CREATE TABLE IF NOT EXISTS cart_item
 (
-	cart_id				INTEGER	NOT NULL,
+	cart_id				INTEGER	NOT NULL AUTO_INCREMENT,
 	game_id				INTEGER	NOT NULL,
 	user_id				INTEGER	NOT NULL,
 	session_id			INTEGER	NOT NULL,
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS cart_item
 DROP TABLE IF EXISTS payment;
 CREATE TABLE IF NOT EXISTS payment
 (
-	payment_id		INTEGER		NOT NULL,
+	payment_id		INTEGER		NOT NULL AUTO_INCREMENT,
 	payment_amount 	DECIMAL		NOT NULL,
 	payment_method	VARCHAR(50)	NOT NULL,
 	paymen_status	VARCHAR(50)	NOT NULL,
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS payment
 DROP TABLE IF EXISTS order_data;					
 CREATE TABLE IF NOT EXISTS order_data
 (
-	order_id	INTEGER	NOT NULL,
+	order_id	INTEGER	NOT NULL AUTO_INCREMENT,
 	user_id		INTEGER	NOT NULL,
 	payment_id	INTEGER	NOT NULL,
 	order_total	DECIMAL	NOT NULL,
@@ -115,7 +115,7 @@ CREATE TABLE IF NOT EXISTS order_data
 DROP TABLE IF EXISTS order_items;
 CREATE TABLE IF NOT EXISTS order_items
 (
-	order_items_id	INTEGER	NOT NULL,
+	order_items_id	INTEGER	NOT NULL AUTO_INCREMENT,
 	order_id		INTEGER	NOT NULL,
 	game_id			INTEGER NOT NULL,
 	CONSTRAINT order_items_pk PRIMARY KEY (order_items_id)

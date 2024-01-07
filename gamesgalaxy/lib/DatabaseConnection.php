@@ -17,7 +17,7 @@ class DatabaseConnection
     public static function get_instance(): \mysqli
     {
         if (!isset(self::$instance)) {
-            self::$instance = new mysqli("localhost", "ggadmin", "ggpassword", "gg_dbms");
+            self::$instance = new mysqli("localhost", "root", "", "gg_dbms");
         }
 
         return self::$instance;

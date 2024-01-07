@@ -955,6 +955,35 @@ footer {
     padding-top: 50px;
 }
 
+#profile-dropdown-login {
+    display: inline-block;
+    text-align: center;
+}
+
+.logininput {
+    width: 350px;
+    height: 40px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    font-family: Roboto;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+#login-button {
+    border: none;
+    margin-bottom: 10px;
+    width: 130px;
+    height: 30px;
+    border-radius: 25px;
+    font-family: "Press Start 2P";
+    background-color: #B1C2C7;
+}
+
+#login-button:hover {
+    background-color: #0096ff;
+}
+
     @media only screen and (max-width: 991px) {
 
     #nav-menu {

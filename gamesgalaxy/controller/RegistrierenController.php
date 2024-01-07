@@ -11,12 +11,18 @@ class RegistrierenController extends Controller
 {
     public function actionShow()
     {
-        $registrieren_model = new RegistrierenModel();
-        $registrieren_model->bla();
-
         $registrieren_view = new RegistrierenView();
         $registrieren_view->title="Registrieren";
         $registrieren_view->render_html('show', "");
+    }
+
+    public function actionSubmit()
+    {
+        if ($_SERVER["REQUEST_METHOD"] == "POST")
+        {
+            $registrieren_model = new RegistrierenModel();
+            $registrieren_model->submit_userdata();
+        }
     }
 }
 

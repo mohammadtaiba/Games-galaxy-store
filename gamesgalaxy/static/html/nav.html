@@ -22,11 +22,22 @@
         <div id="profile-dropdown">
             <button class="navbar-icon-button" onclick="toggleProfileMenu()"><i class="fa-solid fa-user fa-xl"></i></button>
             <div id="profile-dropdown-content">
-                <p>Super Mario</p>
-                <a href="/dwp_ws2324_rkt/gamesgalaxy/Verlauf/Show"><button class="profile-dropdown-content-button">Meine Einkäufe</button></a><br>
-                <a href="/dwp_ws2324_rkt/gamesgalaxy/Wunschliste/Show"><button class="profile-dropdown-content-button">Wunschliste</button></a><br>
-                <a href="/dwp_ws2324_rkt/gamesgalaxy/Bearbeiten/Show"><button class="profile-dropdown-content-button">Profil bearbeiten</button></a><br>
-                <a href="/" class="navbar-links">Abmelden</a>
+                <?php
+            if (isset($_SESSION['user_authenticated']) && $_SESSION['user_authenticated']) {
+                echo '<p>' . $_SESSION['user_name'] . '</p>';
+                echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Verlauf/Show"><button class="profile-dropdown-content-button">Meine Einkäufe</button></a><br>';
+                echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Wunschliste/Show"><button class="profile-dropdown-content-button">Wunschliste</button></a><br>';
+                echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Bearbeiten/Show"><button class="profile-dropdown-content-button">Profil bearbeiten</button></a><br>';
+                echo '<a href="#" onclick="logout()" class="navbar-links">Abmelden</a>';
+                } else {
+                echo '<form method="post" action="/dwp_ws2324_rkt/gamesgalaxy/Login/Login">';
+                echo '<input type="text" name="login-mail" class="logininput" placeholder="Email"><br>';
+                echo '<input type="text" name="login-password" class="logininput" placeholder="Passwort"><br>';
+                echo '<button type="submit" name="login-submit" id="login-button">Einloggen</button>';
+                echo '</form>';
+                echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Registrieren/Show" class="navbar-links">Registrieren</a><br>';
+                }
+                ?>
             </div>
         </div>
     </div>
