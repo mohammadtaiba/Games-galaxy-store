@@ -725,6 +725,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .einkaufe-grid-inhalt {
@@ -982,6 +983,14 @@ footer {
 
 #login-button:hover {
     background-color: #0096ff;
+}
+
+.benutzer-profil {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
     @media only screen and (max-width: 991px) {
