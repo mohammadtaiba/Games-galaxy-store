@@ -19,23 +19,33 @@ require_once 'controller/LoginController.php';
 require_once 'controller/BenutzerlisteController.php';
 
 
-preg_match('/\/dwp_ws2324_rkt\/gamesgalaxy\/(?<controller>[^\/]*)\/(?<action>[^\/]*)/',$_SERVER['REQUEST_URI'],$matches);
+preg_match('/\/dwp_ws2324_rkt\/gamesgalaxy\/(?<controller>[^\/]*)\/(?<action>[^\/]*)/', $_SERVER['REQUEST_URI'], $matches);
 
-$controllerClassName = "\\gamesgalaxy\\controller\\".ucfirst($matches['controller'])."Controller";
+if (key_exists("controller", $matches)) {
+    $controllerClassName = "\\gamesgalaxy\\controller\\" . ucfirst($matches['controller']) . "Controller";
+} else {
+    $controllerClassName = "\\gamesgalaxy\\controller\\StartseiteController";
+}
+
 
 if (class_exists($controllerClassName)) {
     $controllerInstance = new $controllerClassName();
 
-    $actionMethodName = 'action' . ucfirst($matches['action']);
+    if (key_exists("action", $matches)) {
+        $actionMethodName = 'action' . ucfirst($matches['action']);
+    }
+    else {
+        $actionMethodName = 'actionShow';
+    }
 
     if (method_exists($controllerInstance, $actionMethodName)) {
         $controllerInstance->$actionMethodName();
     } else {
-        print "Ungültige Aktion. $actionMethodName";
+        print "Error 404";
     }
 
 } else {
-    print "Ungültiger Controller. $controllerClassName";
+    print "Error 404";
 }
 
 

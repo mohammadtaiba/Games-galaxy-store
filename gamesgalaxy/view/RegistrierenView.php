@@ -8,7 +8,7 @@ class RegistrierenView extends View
     static function show()
     {
         echo <<<REGISTRIEREN
-        <body>
+       
 <form class="register-container" method="post" action="/dwp_ws2324_rkt/gamesgalaxy/Registrieren/Submit">
     <div id="form-register-h1">
         <h1>Registrieren</h1>

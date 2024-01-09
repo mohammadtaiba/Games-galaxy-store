@@ -62,7 +62,7 @@ class RegistrierenModel extends Model
                 $adressResult = $this->db->query($adressSql);
 
                     if ($adressResult) {
-                        echo "Benutzer erfolgreich mit Adresse registriert.";
+                        header("Location: /dwp_ws2324_rkt/gamesgalaxy/Startseite/Show");
                     } else {
                         echo "Fehler bei der Registrierung der Adresse: " . $this->db->error;
                     }

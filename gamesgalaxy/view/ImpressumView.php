@@ -8,7 +8,7 @@ class ImpressumView extends View
     static function show()
     {
         echo <<<IMPRESSUM
-        <body>
+     
             <div class="statisch">
             <h1>Impressum</h1>
                 <div class="statischinhalt">

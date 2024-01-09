@@ -8,7 +8,7 @@ class HinzufuegenView extends View
     static function show()
     {
         echo <<<HINZUFUEGEN
-        <body>
+        
             <form class="AddGame-container" method="post" enctype="multipart/form-data">
                 <div id="form-AddGame-h1">
                     <h1>Spiel hinzufügen</h1>

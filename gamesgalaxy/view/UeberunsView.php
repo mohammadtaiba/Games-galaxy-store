@@ -8,7 +8,7 @@ class UeberunsView extends View
     static function show()
     {
         echo <<<UEBERUNS
-        <body>
+    
             <div class="content">
                 <div id="uberuns">
                     <h1>Über Uns</h1>

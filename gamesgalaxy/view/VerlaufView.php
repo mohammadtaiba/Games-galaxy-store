@@ -8,7 +8,7 @@ class VerlaufView extends View
     static function show()
     {
         echo <<<VERLAUF
-        <body>
+       
 <div id="titel-einkaufe">
     <p>Meine Einkäufe</p>
 </div>

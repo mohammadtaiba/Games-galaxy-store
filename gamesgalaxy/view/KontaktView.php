@@ -8,7 +8,7 @@ class KontaktView extends View
     static function show()
     {
         echo <<<KONTAKT
-        <body>
+        
 <div class="statisch">
 <h1>Kontakt</h1>
     <div class="statischinhalt">

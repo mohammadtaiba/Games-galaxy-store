@@ -18,7 +18,6 @@ class BearbeitenView extends View
         $userCity = ("$postalCode $city");
 
         echo <<<BEARBEITEN
-        <body>
 
 <form class="profile-container" method="post" enctype="multipart/form-data" action="/dwp_ws2324_rkt/gamesgalaxy/Bearbeiten/Edit">
     <div id="form-profile-h1">

@@ -8,7 +8,7 @@ class BenutzerlisteView extends View
     static function show($users)
     {
         echo <<<BENUTZERLISTE
-        <body>
+        
             <div id="titel-einkaufe">
                 <p>Benutzerliste</p>
             </div>

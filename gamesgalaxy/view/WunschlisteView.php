@@ -8,7 +8,7 @@ class WunschlisteView extends View
     static function show()
     {
         echo <<<WUNSCHLISTE
-        <body>
+      
             <div id="titel-einkaufe">
                 <p>Meine Wunschliste</p>
             </div>

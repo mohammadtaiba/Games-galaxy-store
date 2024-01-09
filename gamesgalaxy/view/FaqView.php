@@ -8,7 +8,7 @@ class FaqView extends View
     static function show()
     {
         echo <<<FAQ
-        <body>
+        
 <form class="faq-container">
 
     <h1 id="faq-h1">FAQ</h1>
