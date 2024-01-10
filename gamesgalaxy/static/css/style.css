@@ -1095,6 +1095,104 @@ footer {
     background-color: #0096ff;
 }
 
+.spiel-flex {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    gap: 100px;
+}
+
+.spiele-images {
+    border-radius: 25px;
+}
+
+.kauf-infos {
+    background-color: #B1C2C7;
+    border-radius: 25px;
+    width: 400px;
+}
+
+#spiel-name-flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+#spiel-name {
+    font-size: x-large;
+    padding-top: 20px;
+}
+
+.add-game-wishlist {
+    font-size: x-large;
+    background: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.add-game-wishlist:hover {
+    color: #0096ff;
+}
+
+#spiel-plattform {
+    font-size: large;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#spiel-preis {
+    font-size: x-large;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#kauf-options-flex {
+    display: flex;
+    gap: 30px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    justify-content: center;
+}
+
+#warenkorb-hinzufuegen {
+    background-color: #0096ff;
+    width: 60px;
+    height: 50px;
+    border-radius: 25px;
+    position: relative;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+#sofort-kauf {
+    background-color: #0096ff;
+    width: 120px;
+    height: 50px;
+    border-radius: 25px;
+    position: relative;
+    display: inline-block;
+    border: none;
+    font-family: "Press Start 2P";
+    cursor: pointer;
+}
+
+.spiel-beschreibung {
+    font-family: "Press Start 2P";
+    color: #B1C2C7;
+    padding: 20px;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.spiel-beschreibung-text {
+    margin: auto;
+    color: #B1C2C7;
+    max-width: 1200px;
+    text-align: center;
+    font-size: large;
+    padding: 50px;
+}
+
     @media only screen and (max-width: 991px) {
 
     .games-grid-container {
@@ -1193,6 +1291,10 @@ footer {
         #profile-dropdown-content a {
             display: inline-block;
             text-align: center;
+        }
+
+        .spiel-flex {
+            display: grid;
         }
 
     }
