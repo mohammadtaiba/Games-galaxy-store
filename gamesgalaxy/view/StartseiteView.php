@@ -22,7 +22,7 @@ class StartseiteView extends View
                 <div class="grid-kategorie">Bestseller</div>
                 <div class="anglediv"><button class="angle"><i class="fa-solid fa-angle-left fa-xl"></i></button></div>
                 <div class="grid-element"><a class="game-images" href="/"><img src="/dwp_ws2324_rkt/gamesgalaxy/images/remnant_2_cover.jpg" class="game-images" alt="Cover für das erste Spiel"></a><div class="grid-element-background">Remnant 2</div></div>
-                <div class="grid-element"><a class="game-images" href="/"><img src="/dwp_ws2324_rkt/gamesgalaxy/images/guilty_gear_strive_cover.jpg" class="game-images" alt="Cover für das zweite Spiel"></a><div class="grid-element-background">Guilty Gear Strive</div></div>
+                <div class="grid-element"><a class="game-images" href="/dwp_ws2324_rkt/gamesgalaxy/Spiel/Show"><img src="/dwp_ws2324_rkt/gamesgalaxy/images/guilty_gear_strive_cover.jpg" class="game-images" alt="Cover für das zweite Spiel"></a><div class="grid-element-background">Guilty Gear Strive</div></div>
                 <div class="grid-element"><a class="game-images" href="/"><img src="/dwp_ws2324_rkt/gamesgalaxy/images/guild_wars_2_cover.jpg" class="game-images" alt="Cover für das dritte Spiel"></a><div class="grid-element-background">Guild Wars 2</div></div>
                 <div class="anglediv"><button class="angle"><i class="fa-solid fa-angle-right fa-xl"></i></button></div>
             </div>
