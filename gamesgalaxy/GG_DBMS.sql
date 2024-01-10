@@ -1,4 +1,3 @@
-<-- Copy from here to.. -->
 DROP DATABASE IF EXISTS GG_DBMS;
 CREATE DATABASE IF NOT EXISTS GG_DBMS
 DEFAULT CHARACTER SET utf8mb4
@@ -45,21 +44,24 @@ DROP TABLE IF EXISTS category;
 CREATE TABLE IF NOT EXISTS category
 (
 	category_id				INTEGER			NOT NULL AUTO_INCREMENT,
-	category_name			VARCHAR(25)		NOT NULL,
-	category_description	VARCHAR(250)	NOT NULL,
+	game_id                 INTEGER         NOT NULL,
+    Strategie               BOOL,
+    Action                  BOOL,
+    Shooter                 BOOL,
+    RPG                     BOOL,
+    Simulation              BOOL,
 	CONSTRAINT category_pk PRIMARY KEY (category_id)
 );
 
 DROP TABLE IF EXISTS game;
 CREATE TABLE IF NOT EXISTS game
 (
-	game_id				INTEGER			NOT NULL AUTO_INCREMENT,
-	category_id			INTEGER			NOT NULL,
-	game_platform		VARCHAR(25)		NOT NULL,
-	game_name			VARCHAR(50)		NOT NULL,
-	game_price			DECIMAL			NOT NULL,
-	game_description	VARCHAR(250)	NOT NULL,
-	game_key			VARCHAR(50)		NOT NULL,
+	game_id				INTEGER			        NOT NULL AUTO_INCREMENT,
+	game_platform		VARCHAR(25)		        NOT NULL,
+	game_name			VARCHAR(50)		        NOT NULL,
+	game_price			VARCHAR(10)			NOT NULL,
+	game_description	VARCHAR(500)	        NOT NULL,
+	game_key			VARCHAR(50)		        NOT NULL,
 	CONSTRAINT 	game_pk PRIMARY KEY (game_id)
 );
 
@@ -94,21 +96,21 @@ CREATE TABLE IF NOT EXISTS cart_item
 DROP TABLE IF EXISTS payment;
 CREATE TABLE IF NOT EXISTS payment
 (
-	payment_id		INTEGER		NOT NULL AUTO_INCREMENT,
-	payment_amount 	DECIMAL		NOT NULL,
-	payment_method	VARCHAR(50)	NOT NULL,
-	paymen_status	VARCHAR(50)	NOT NULL,
+	payment_id		INTEGER		        NOT NULL AUTO_INCREMENT,
+	payment_amount 	DECIMAL(10, 2)		NOT NULL,
+	payment_method	VARCHAR(50)	        NOT NULL,
+	paymen_status	VARCHAR(50)	        NOT NULL,
 	CONSTRAINT payment_pk PRIMARY KEY (payment_id)
 );
 
 DROP TABLE IF EXISTS order_data;					
 CREATE TABLE IF NOT EXISTS order_data
 (
-	order_id	INTEGER	NOT NULL AUTO_INCREMENT,
-	user_id		INTEGER	NOT NULL,
-	payment_id	INTEGER	NOT NULL,
-	order_total	DECIMAL	NOT NULL,
-	order_date	DATE	NOT NULL,
+	order_id	INTEGER	        NOT NULL AUTO_INCREMENT,
+	user_id		INTEGER	        NOT NULL,
+	payment_id	INTEGER	        NOT NULL,
+	order_total	DECIMAL(10, 2)	NOT NULL,
+	order_date	DATE	        NOT NULL,
 	CONSTRAINT order_pk PRIMARY KEY (order_id)
 );
 
@@ -129,9 +131,9 @@ ALTER TABLE user_address
 ADD CONSTRAINT user_address_fk1 FOREIGN KEY (user_id)
 REFERENCES user (user_id);
 
-ALTER TABLE game
-ADD CONSTRAINT game_fk1 FOREIGN KEY (category_id) 
-REFERENCES category (category_id);
+ALTER TABLE category
+ADD CONSTRAINT category_fk1 FOREIGN KEY (game_id)
+REFERENCES game (game_id);
 
 ALTER TABLE wishlist
 ADD CONSTRAINT wishlist_fk1 FOREIGN KEY (game_id)
@@ -162,12 +164,6 @@ ADD CONSTRAINT order_items_fk1 FOREIGN KEY (order_id)
 REFERENCES order_data (order_id),
 ADD CONSTRAINT order_items_fk2 FOREIGN KEY (game_id)
 REFERENCES game (game_id);
-<-- ..here and paste to "SQL" in phpMyAdmin -->
-
-<-- copy from here.. -->
-CREATE USER 'ggadmin'@'localhost' IDENTIFIED BY 'ggpassword';
-GRANT ALL PRIVILEGES ON gg_dbms.* TO 'ggadmin'@'localhost';
-<-- ..to here, go to "gg_dbms" and paste to "SQL" -->
 
 
 

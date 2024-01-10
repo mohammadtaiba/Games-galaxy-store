@@ -103,7 +103,7 @@ nav {
 }
 
 .AddGame-textarea, #AddGame-category, #AddGame-platform {
-    height:             90px;
+    height:             50px;
 }
 
 .AddGame-textarea {
@@ -117,6 +117,10 @@ nav {
 
 #AddGame-image, #AddGame-file, #AddGame-category, #AddGame-platform {
     cursor:             pointer;
+}
+
+#AddGame-category {
+    height: 210px;
 }
 
 #AddGame-submit {
@@ -489,7 +493,7 @@ um zu zeigen das man damit Interagieren kann (cursor) */
     position: absolute;
     top: 59px;
     background-color: black;
-    min-width: 300px;
+    min-width: 400px;
     padding: 40px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;

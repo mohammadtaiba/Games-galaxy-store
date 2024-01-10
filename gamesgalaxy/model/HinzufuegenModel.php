@@ -16,6 +16,35 @@ class HinzufuegenModel extends Model
         $this->db = DatabaseConnection::get_instance();
     }
 
+    public function createGame($platform, $title, $price, $description, $key, $categories)
+    {
+        if (isset($_POST['addgame-submit']))
+        {
+            $createGameQuery = "INSERT INTO game (game_platform, game_name, game_price, game_description, game_key)
+                                VALUES (?, ?, ?, ?, ?);";
+
+            $statement = $this->db->prepare($createGameQuery);
+            $statement->bind_param("sssss", $platform, $title, $price, $description, $key);
+            $statement->execute();
+
+            $gameId = $this->db->insert_id;
+
+            $strategie = in_array('Strategy', $categories) ? 1 : 0;
+            $action = in_array('Action', $categories) ? 1 : 0;
+            $shooter = in_array('Shooter', $categories) ? 1 : 0;
+            $rpg = in_array('RPG', $categories) ? 1 : 0;
+            $simulation = in_array('Simulation', $categories) ? 1 : 0;
+
+            $createCategoryQuery = "INSERT INTO category (game_id, Strategie, Action, Shooter, RPG, Simulation) 
+                                VALUES (?, ?, ?, ?, ?, ?)";
+
+            $statement = $this->db->prepare($createCategoryQuery);
+            $statement->bind_param("iiiiii", $gameId, $strategie, $action, $shooter, $rpg, $simulation);
+            $statement->execute();
+
+        }
+    }
+
     function read()
     {
 
