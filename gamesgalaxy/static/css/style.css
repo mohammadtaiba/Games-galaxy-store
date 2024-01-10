@@ -1104,12 +1104,15 @@ footer {
 
 .spiele-images {
     border-radius: 25px;
+    width: 400px;
+    height: 250px;
 }
 
 .kauf-infos {
     background-color: #B1C2C7;
     border-radius: 25px;
     width: 400px;
+    height: 250px;
 }
 
 #spiel-name-flex {
