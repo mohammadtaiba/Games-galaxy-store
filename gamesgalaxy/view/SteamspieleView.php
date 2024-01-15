@@ -50,7 +50,7 @@ STEAMSPIELE;
             foreach ($games['games'] as $game) {
 
                 if (isset($game['game_platform']) && $game['game_platform'] === 'Steam') {
-                    echo '<div class="games-grid-item">';
+                    echo '<div class="games-grid-item" data-game-id="' . $game['game_id'] . '">';
 
                     if (isset($game['game_name'])) {
                         echo '<h2>' . $game['game_name'] . '</h2>';
@@ -60,16 +60,17 @@ STEAMSPIELE;
 
                     if (isset($game['category_names'])) {
                         $categories = implode(', ', $game['category_names']);
-                        echo '<p>Kategorien: ' . $categories . '</p>';
+                        echo '<p>' . $categories . '</p>';
                     } else {
                         echo '<p>Ungültige Kategorien</p>';
                     }
 
                     if (isset($game['game_price'])) {
-                        echo '<p>Preis: ' . $game['game_price'] . '</p>';
+                        echo '<p>' . $game['game_price'] . '€</p>';
                     } else {
                         echo '<p>Ungültiger Preis</p>';
                     }
+                    echo '<input type="hidden" name="gameId" value="' . $game['game_id'] . '">';
 
                     echo '</div>';
                 }
@@ -77,7 +78,7 @@ STEAMSPIELE;
             }
         }
 
-        echo '</div></body></html>';
+        echo '</div><script src="/dwp_ws2324_rkt/gamesgalaxy/js/spiel.js"></script></body></html>';
 
     }
 }

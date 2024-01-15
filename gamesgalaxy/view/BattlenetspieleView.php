@@ -50,7 +50,7 @@ BATTLENETSPIELE;
             foreach ($games['games'] as $game) {
 
                 if (isset($game['game_platform']) && $game['game_platform'] === 'Battle.net') {
-                    echo '<div class="games-grid-item">';
+                    echo '<div class="games-grid-item" data-game-id="' . $game['game_id'] . '">';
 
                     if (isset($game['game_name'])) {
                         echo '<h2>' . $game['game_name'] . '</h2>';
@@ -60,13 +60,13 @@ BATTLENETSPIELE;
 
                     if (isset($game['category_names'])) {
                         $categories = implode(', ', $game['category_names']);
-                        echo '<p>Kategorien: ' . $categories . '</p>';
+                        echo '<p>' . $categories . '</p>';
                     } else {
                         echo '<p>Ungültige Kategorien</p>';
                     }
 
                     if (isset($game['game_price'])) {
-                        echo '<p>Preis: ' . $game['game_price'] . '</p>';
+                        echo '<p>' . $game['game_price'] . '€</p>';
                     } else {
                         echo '<p>Ungültiger Preis</p>';
                     }
@@ -77,7 +77,7 @@ BATTLENETSPIELE;
             }
         }
 
-        echo '</div></body></html>';
+        echo '</div><script src="/dwp_ws2324_rkt/gamesgalaxy/js/spiel.js"></script></body></html>';
 
     }
 }
