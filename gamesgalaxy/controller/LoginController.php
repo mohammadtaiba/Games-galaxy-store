@@ -3,10 +3,10 @@
 namespace gamesgalaxy\Controller;
 
 require_once __DIR__."/../model/LoginModel.php";
+require_once __DIR__."/../model/EinkaufswagenModel.php";
 
 use gamesgalaxy\Model\LoginModel;
-
-session_start();
+use gamesgalaxy\Model\EinkaufswagenModel;
 
 class LoginController extends Controller
 {
@@ -18,8 +18,11 @@ class LoginController extends Controller
             $usermail = $_POST['login-mail'];
             $password = $_POST['login-password'];
 
-            $loginModel = new LoginModel();
-            if ($loginModel->checkCredentials($usermail, $password)) {
+            $login_model = new LoginModel();
+            if ($login_model->checkCredentials($usermail, $password)) {
+                $einkaufswagen_model = new EinkaufswagenModel();
+                $einkaufswagen_model->transferTempCartToDatabase($_SESSION['user_id']);
+
                 header("Location: /dwp_ws2324_rkt/gamesgalaxy/Startseite/Show");
             } else {
                 echo "Falscher Benutzername oder falsches Passwort.";

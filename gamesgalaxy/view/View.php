@@ -7,9 +7,6 @@ class View
     private string $title;
     public function __set(string $name, string $value)
     {
-        if ($name == 'title') {
-            error_log("Das ist aber ein schöner Name: $value");
-        }
         $this->title = $value;
     }
     final function render_html($callback, $params)

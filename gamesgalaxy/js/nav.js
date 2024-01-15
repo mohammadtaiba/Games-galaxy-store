@@ -18,12 +18,6 @@ function toggleProfileMenu() {
     dropdownProfile.classList.toggle("profile-active");
 }
 
-
-function toggleCartMenu() {
-    let dropdownCart = document.getElementById("cart-dropdown");
-    dropdownCart.classList.toggle("cart-active");
-}
-
 function logout() {
     window.location.href = '/dwp_ws2324_rkt/gamesgalaxy/Login/Logout';
 }

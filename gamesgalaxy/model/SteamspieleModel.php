@@ -18,7 +18,7 @@ class SteamspieleModel extends Model
 
     public function getAllGamesWithCategories($sortOption = null, $filterCategory = null)
     {
-        $query = "SELECT g.game_name, g.game_price, g.game_platform,
+        $query = "SELECT g.game_id, g.game_name, g.game_price, g.game_platform,
                     GROUP_CONCAT(
                     DISTINCT 
                     CONCAT_WS(', ',
@@ -65,9 +65,9 @@ class SteamspieleModel extends Model
 
         $games = [];
         while ($row = $result->fetch_assoc()) {
-
             if (isset($row['game_name'], $row['game_price'], $row['category_names'])) {
                 $game = [
+                    'game_id' => $row['game_id'],
                     'game_name' => $row['game_name'],
                     'game_price' => $row['game_price'],
                     'game_platform' => $row['game_platform'],

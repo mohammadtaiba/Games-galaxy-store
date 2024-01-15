@@ -783,6 +783,7 @@ footer {
     width: 90%;
     height: 100px;
     border-radius: 25px;
+    margin-bottom: 20px;
 }
 
 .wunschliste-daten {
@@ -795,6 +796,24 @@ footer {
 .wunschliste-daten-inhalt {
     display: block;
     text-align: center;
+}
+
+.einkaufswagen-daten-inhalt {
+    display: block;
+    text-align: left;
+    color: black;
+    font-family: Roboto;
+    font-size: 24px;
+}
+
+#remove-item-from-cart {
+    border: none;
+    background-color: inherit;
+    color: black;
+}
+
+#remove-item-from-cart:hover {
+    color: #0096ff;
 }
 
 .wunschliste-uberschrift {

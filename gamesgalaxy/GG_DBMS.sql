@@ -74,22 +74,12 @@ CREATE TABLE IF NOT EXISTS wishlist
 	CONSTRAINT wishlist_pk PRIMARY KEY (wishlist_id)
 );
 
-DROP TABLE IF EXISTS session;
-CREATE TABLE IF NOT EXISTS session
-(
-	session_id	INTEGER	NOT NULL AUTO_INCREMENT,
-	user_id		INTEGER	NOT NULL,
-	CONSTRAINT session_pk PRIMARY KEY (session_id)
-);
-
 DROP TABLE IF EXISTS cart_item;
 CREATE TABLE IF NOT EXISTS cart_item
 (
 	cart_id				INTEGER	NOT NULL AUTO_INCREMENT,
 	game_id				INTEGER	NOT NULL,
 	user_id				INTEGER	NOT NULL,
-	session_id			INTEGER	NOT NULL,
-	cart_itemquantity	INTEGER	NOT NULL,
 	CONSTRAINT cart_pk PRIMARY KEY (cart_id)
 );
 
@@ -141,17 +131,12 @@ REFERENCES game (game_id),
 ADD CONSTRAINT wishlist_fk2 FOREIGN KEY (user_id)
 REFERENCES user (user_id);
 
-ALTER TABLE session
-ADD CONSTRAINT session_fk1 FOREIGN KEY (user_id) 
-REFERENCES user (user_id);
-
 ALTER TABLE cart_item
 ADD CONSTRAINT cart_fk1	FOREIGN KEY	(game_id)		
 REFERENCES game (game_id),
 ADD CONSTRAINT cart_fk2	FOREIGN	KEY	(user_id)
-REFERENCES user	(user_id),
-ADD	CONSTRAINT cart_fk3	FOREIGN	KEY	(session_id)	
-REFERENCES session (session_id);
+REFERENCES user	(user_id);
+
 
 ALTER TABLE order_data
 ADD CONSTRAINT order_fk1 FOREIGN KEY (user_id)
