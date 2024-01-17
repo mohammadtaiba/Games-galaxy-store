@@ -83,24 +83,14 @@ CREATE TABLE IF NOT EXISTS cart_item
 	CONSTRAINT cart_pk PRIMARY KEY (cart_id)
 );
 
-DROP TABLE IF EXISTS payment;
-CREATE TABLE IF NOT EXISTS payment
-(
-	payment_id		INTEGER		        NOT NULL AUTO_INCREMENT,
-	payment_amount 	DECIMAL(10, 2)		NOT NULL,
-	payment_method	VARCHAR(50)	        NOT NULL,
-	paymen_status	VARCHAR(50)	        NOT NULL,
-	CONSTRAINT payment_pk PRIMARY KEY (payment_id)
-);
-
 DROP TABLE IF EXISTS order_data;					
 CREATE TABLE IF NOT EXISTS order_data
 (
-	order_id	INTEGER	        NOT NULL AUTO_INCREMENT,
-	user_id		INTEGER	        NOT NULL,
-	payment_id	INTEGER	        NOT NULL,
-	order_total	DECIMAL(10, 2)	NOT NULL,
-	order_date	DATE	        NOT NULL,
+	order_id	    INTEGER	        NOT NULL AUTO_INCREMENT,
+	user_id		    INTEGER	        NOT NULL,
+	order_total	    DECIMAL(10, 2)	NOT NULL,
+	order_date	    DATE	        NOT NULL,
+    payment_method  VARCHAR(25)      NOT NULL,
 	CONSTRAINT order_pk PRIMARY KEY (order_id)
 );
 
@@ -140,9 +130,7 @@ REFERENCES user	(user_id);
 
 ALTER TABLE order_data
 ADD CONSTRAINT order_fk1 FOREIGN KEY (user_id)
-REFERENCES user (user_id),
-ADD CONSTRAINT order_fk2 FOREIGN KEY (payment_id)
-REFERENCES payment (payment_id);
+REFERENCES user (user_id);
 
 ALTER TABLE order_items
 ADD CONSTRAINT order_items_fk1 FOREIGN KEY (order_id)
@@ -150,5 +138,101 @@ REFERENCES order_data (order_id),
 ADD CONSTRAINT order_items_fk2 FOREIGN KEY (game_id)
 REFERENCES game (game_id);
 
+-- Testdaten Steam
+INSERT INTO game (game_platform, game_name, game_price, game_description, game_key)
+VALUES ('Steam', 'Grim Dawn', '24,99', 'Enter an apocalyptic fantasy world where humanity is on the brink of extinction, iron is valued above gold and trust is hard earned. This ARPG features complex character development, hundreds of unique items, crafting and quests with choice & consequence.', 'GD-XXX-XX');
 
+SET @last_game_id = LAST_INSERT_ID();
 
+INSERT INTO category (game_id, Strategie, Action, Shooter, RPG, Simulation)
+VALUES (@last_game_id, 0, 1, 0, 1, 0);
+
+INSERT INTO game (game_platform, game_name, game_price, game_description, game_key)
+VALUES ('Steam', 'Disgaea 5 Complete', '39,99', 'The nefarious Overlord Void Dark seeks to enslave countless Netherworlds...and only the young demon Killia can stop him! Assemble your tenacious army of rebels and unleash vengeance in this hell-raising adventure! The stakes are high, the damage cap is higher, and the destruction is limitless!', 'D5C-XXX-XX');
+
+SET @last_game_id = LAST_INSERT_ID();
+
+INSERT INTO category (game_id, Strategie, Action, Shooter, RPG, Simulation)
+VALUES (@last_game_id, 1, 0, 0, 1, 0);
+
+INSERT INTO game (game_platform, game_name, game_price, game_description, game_key)
+VALUES ('Steam', 'Borderlands 2', '29,99', 'A new era of shoot and loot is about to begin. Play as one of four new vault hunters facing off against a massive new world of creatures, psychos and the evil mastermind, Handsome Jack. Make new friends, arm them with a bazillion weapons and fight alongside them in 4 player co-op on a relentless quest for revenge and redemption across the undiscovered and unpredictable living planet.', 'BL2-XXX-XX');
+
+SET @last_game_id = LAST_INSERT_ID();
+
+INSERT INTO category (game_id, Strategie, Action, Shooter, RPG, Simulation)
+VALUES (@last_game_id, 0, 1, 1, 1, 0);
+
+INSERT INTO game (game_platform, game_name, game_price, game_description, game_key)
+VALUES ('Steam', 'Euro Truck Simulator 2', '19,99', 'Travel across Europe as king of the road, a trucker who delivers important cargo across impressive distances! With dozens of cities to explore, your endurance, skill and speed will all be pushed to their limits.', 'ETS2-XXX-XX');
+
+SET @last_game_id = LAST_INSERT_ID();
+
+INSERT INTO category (game_id, Strategie, Action, Shooter, RPG, Simulation)
+VALUES (@last_game_id, 0, 0, 0, 0, 1);
+
+-- Testdaten Epic Games
+INSERT INTO game (game_platform, game_name, game_price, game_description, game_key)
+VALUES ('Epic Games', 'Avatar: Frontiers of Pandora', '69,99', 'In Avatar: Frontiers of Pandora™, you’ll embark on a journey across the open world of the never-before-seen Western Frontier. Reconnect with your lost heritage and discover what it means to become Na’vi as you join other clans to protect Pandora from the formidable forces of the RDA.', 'AFOP-XXX-XX');
+
+SET @last_game_id = LAST_INSERT_ID();
+
+INSERT INTO category (game_id, Strategie, Action, Shooter, RPG, Simulation)
+VALUES (@last_game_id, 0, 1, 0, 0, 0);
+
+INSERT INTO game (game_platform, game_name, game_price, game_description, game_key)
+VALUES ('Epic Games', 'Dungeons 4', '49,99', 'Build a cozy and comfortable Dungeon to suit your creatures’ needs and rule over them, then send them out into the Overworld to kindly remind the good people living there that the Absolute Evil rules over their lands.', 'D4-XXX-XX');
+
+SET @last_game_id = LAST_INSERT_ID();
+
+INSERT INTO category (game_id, Strategie, Action, Shooter, RPG, Simulation)
+VALUES (@last_game_id, 1, 0, 0, 0, 1);
+
+INSERT INTO game (game_platform, game_name, game_price, game_description, game_key)
+VALUES ('Epic Games', 'Witchfire', '35,99', 'Armed with strange weapons and forbidden pagan magic, hunt a powerful witch holding the key to your salvation. Witchfire is a dark fantasy first person shooter from the creators of Painkiller, Bulletstorm, and The Vanishing of Ethan Carter.', 'WF-XXX-XX');
+
+SET @last_game_id = LAST_INSERT_ID();
+
+INSERT INTO category (game_id, Strategie, Action, Shooter, RPG, Simulation)
+VALUES (@last_game_id, 0, 0, 1, 0, 0);
+
+INSERT INTO game (game_platform, game_name, game_price, game_description, game_key)
+VALUES ('Epic Games', 'Mass Effect Legendary Edition', '59,99', 'One person is all that stands between humanity and the greatest threat it’s ever faced. Relive the legend of Commander Shepard in the highly acclaimed Mass Effect trilogy with the Mass Effect™ Legendary Edition. Includes single-player base content and over 40 DLC from Mass Effect, Mass Effect 2, and Mass Effect 3 games, including promo weapons, armors, and packs – remastered and optimized for 4K Ultra HD.', 'MELE-XXX-XX');
+
+SET @last_game_id = LAST_INSERT_ID();
+
+INSERT INTO category (game_id, Strategie, Action, Shooter, RPG, Simulation)
+VALUES (@last_game_id, 0, 0, 1, 1, 0);
+
+-- Testdaten Battle.net
+INSERT INTO game (game_platform, game_name, game_price, game_description, game_key)
+VALUES ('Battle.net', 'Call of Duty: Modern Warfare III', '69,99', 'In the direct sequel to the record-breaking Call of Duty®: Modern Warfare® II, Captain Price and Task Force 141 face off against the ultimate threat. The ultranationalist war criminal Vladimir Makarov is extending his grasp across the world causing Task Force 141 to fight like never before.', 'MW3-XXX-XX');
+
+SET @last_game_id = LAST_INSERT_ID();
+
+INSERT INTO category (game_id, Strategie, Action, Shooter, RPG, Simulation)
+VALUES (@last_game_id, 0, 0, 1, 0, 0);
+
+INSERT INTO game (game_platform, game_name, game_price, game_description, game_key)
+VALUES ('Battle.net', 'Warcraft III: Reforged', '29,99', 'Warcraft III: Reforged is a stunning reimagining of the revolutionary real-time strategy game that laid the foundation for Azeroth’s most epic stories. It is a remake in the truest sense, featuring a thorough visual overhaul, a suite of contemporary social and matchmaking features, and more. Command the Night Elves, Undead, Orcs, and Humans as alliances shift and armies clash in this timeless real-time strategy game.', 'WC3R-XXX-XX');
+
+SET @last_game_id = LAST_INSERT_ID();
+
+INSERT INTO category (game_id, Strategie, Action, Shooter, RPG, Simulation)
+VALUES (@last_game_id, 1, 0, 0, 0, 0);
+
+INSERT INTO game (game_platform, game_name, game_price, game_description, game_key)
+VALUES ('Battle.net', 'Diablo III', '19,99', 'Twenty years have passed since the Prime Evils were defeated and banished from the world of Sanctuary. Now, you must return to where it all began—the town of Tristram—and investigate rumors of a fallen star, for this is the first sign of evil’s rebirth, and an omen that the End Times have begun.', 'D3-XXX-XX');
+
+SET @last_game_id = LAST_INSERT_ID();
+
+INSERT INTO category (game_id, Strategie, Action, Shooter, RPG, Simulation)
+VALUES (@last_game_id, 0, 1, 0, 1, 0);
+
+INSERT INTO game (game_platform, game_name, game_price, game_description, game_key)
+VALUES ('Battle.net', 'World of Warcraft', '10,99', 'Join millions of players and enter a world of myth, magic, and endless adventure. With a single subscription, you can access World of Warcraft and WoW Classic, including Wrath of the Lich King Classic, Season of Discovery, and Hardcore Realms.', 'WOW-XXX-XX');
+
+SET @last_game_id = LAST_INSERT_ID();
+
+INSERT INTO category (game_id, Strategie, Action, Shooter, RPG, Simulation)
+VALUES (@last_game_id, 0, 0, 0, 1, 1);
