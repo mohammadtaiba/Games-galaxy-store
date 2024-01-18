@@ -1215,7 +1215,206 @@ footer {
     padding: 50px;
 }
 
+#checkout-container {
+    display: block;
+    text-align: center;
+}
+
+#checkout-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: normal;
+    font-family: "Press Start 2P";
+    font-size: 32px;
+}
+
+#checkout-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#checkout-payment {
+    width: 100%;
+    height: fit-content;
+}
+
+.checkout-billing-adress-title {
+    margin: 20px 0 5px 20px;
+    display: block;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 18px;
+    color: white;
+}
+
+.checkout-billing-adress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #888888;
+    margin: 0 20px 20px 20px;
+    text-align: left;
+    min-height: 100px;
+    border-radius: 25px;
+    font-family: Roboto;
+    font-size: 18px;
+}
+
+.checkout-billing-adress-content {
+    display: inline-block;
+    text-align: left;
+    width: fit-content;
+    height: 100%;
+}
+
+.checkout-payment-method {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    background-color: #888888;
+    margin: 0 20px 20px 20px;
+    text-align: left;
+    min-height: 100px;
+    border-radius: 25px;
+    font-family: Roboto;
+    font-size: 18px;
+}
+
+.checkout-payment-method-checkbox {
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 10px;
+}
+
+.checkout-payment-method-checkbox input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    width: 18px;
+    height: 18px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 1px white;
+}
+
+.checkout-payment-method-checkbox input[type="radio"]:checked {
+    background-color: #0096ff;
+}
+
+.checkout-payment-method-content {
+    display: inline-block;
+    text-align: left;
+    padding: 20px 0 20px 0;
+}
+
+#checkout-data {
+    width: 100%;
+    height: fit-content;
+}
+
+.checkout-data-title {
+    margin: 20px 0 5px 20px;
+    display: block;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 18px;
+    color: white;
+}
+
+.checkout-data-summary-container {
+    background-color: #888888;
+    margin: 0 20px 20px 20px;
+    border-radius: 25px;
+}
+
+.checkout-data-summary {
+    background-color: #888888;
+    height: 380px;
+    border-radius: 25px;
+    margin: 0 20px 20px 20px;
+    overflow-y: auto;
+}
+
+.checkout-data-summary-content {
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    font-family: Roboto;
+    font-size: 18px;
+    display: inline-block;
+    text-align: left;
+    width: 95%;
+    border: solid 2px black;
+    border-radius: 25px;
+}
+
+.checkout-data-summary::-webkit-scrollbar {
+    width: 12px;
+    position: absolute;
+}
+
+.checkout-data-summary::-webkit-scrollbar-thumb {
+    background-color: #555555;
+    border-radius: 6px;
+}
+
+.checkout-data-summary::-webkit-scrollbar-track {
+    background-color: #888888;
+    border-radius: 25px;
+}
+
+.checkout-data-summary-table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    font-family: Roboto;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.checkout-data-summary-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.checkout-data-summary-table td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.checkout-data-summary-table p {
+    margin: 0;
+}
+
+#checkout-button {
+    background-color: #888888;
+    border: none;
+    height: 50px;
+    width: 300px;
+    font-family: "Press Start 2P";
+    font-size: 18px;
+    color: black;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+
+#checkout-button:hover {
+    background-color: #0096ff;
+}
+
+
     @media only screen and (max-width: 991px) {
+
+    #checkout-grid {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-row-gap: 20px;
+    }
 
     .games-grid-container {
         grid-template-columns: 1fr;

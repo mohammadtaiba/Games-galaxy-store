@@ -27,7 +27,7 @@ class EpicspieleView extends View
         <label for="filterby">Filtern nach:</label>
         <select id="filterby" name="filterby">
             <option value="all">Alle Kategorien</option>
-            <option value="strategy">Strategie</option>
+            <option value="strategie">Strategie</option>
             <option value="action">Action</option>
             <option value="shooter">Shooter</option>
             <option value="rpg">RPG</option>
