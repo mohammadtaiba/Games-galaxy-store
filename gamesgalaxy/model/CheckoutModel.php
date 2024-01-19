@@ -51,6 +51,45 @@ class CheckoutModel extends Model
         return $userData;
     }
 
+    public function saveOrder($userId, $cartItems, $userData, $paymentMethod)
+    {
+        $prices = array_map(function ($item) {
+            return floatval(str_replace(',', '.', $item['game_price']));
+        }, $cartItems);
+
+        $subtotal = array_sum($prices);
+        $taxRate = 0.19;
+        $taxAmount = $subtotal * $taxRate;
+        $total = $subtotal + $taxAmount;
+
+        $totalFormatted = number_format($total, 2, ',', '');
+
+        $query = "INSERT INTO order_data (user_id, order_total, order_date, payment_method)
+              VALUES (?, ?, NOW(), ?)";
+        $statement = $this->db->prepare($query);
+
+        $statement->bind_param("iss", $userId, $totalFormatted, $paymentMethod);
+
+        $statement->execute();
+        $orderId = $statement->insert_id;
+
+        foreach ($cartItems as $item) {
+            $query = "INSERT INTO order_items (order_id, game_id)
+                  VALUES (?, ?)";
+            $statement = $this->db->prepare($query);
+            $statement->bind_param("ii", $orderId, $item['game_id']);
+            $statement->execute();
+        }
+    }
+
+    public function clearCartItems($userId)
+    {
+        $query = "DELETE FROM cart_item WHERE user_id = ?";
+        $statement = $this->db->prepare($query);
+        $statement->bind_param("i", $userId);
+        $statement->execute();
+    }
+
     function read()
     {
 

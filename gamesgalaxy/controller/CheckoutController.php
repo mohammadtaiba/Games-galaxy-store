@@ -21,4 +21,27 @@ class CheckoutController extends Controller
         $checkout_view->title="Checkout";
         $checkout_view->render_html('show', ['cartItems' => $cartItems, 'userData' => $userData]);
     }
+
+    public function actionProcessCheckout()
+    {
+        echo "POST-Daten: ";
+
+        $paymentMethod = isset($_POST['payment-method']) ? $_POST['payment-method'] : null;
+
+        if ($paymentMethod === null) {
+            exit();
+        }
+
+        $checkout_model = new CheckoutModel();
+        $userId = $_SESSION['user_id'];
+        $userData = $checkout_model->getUserData($userId);
+        $cartItems = $checkout_model->getCartItems($userId);
+
+        $checkout_model->saveOrder($userId, $cartItems, $userData, $paymentMethod);
+
+        $checkout_model->clearCartItems($userId);
+
+        header("Location: /dwp_ws2324_rkt/gamesgalaxy/Verlauf/Show");
+        exit();
+    }
 }
