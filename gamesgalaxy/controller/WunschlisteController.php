@@ -14,6 +14,10 @@ class WunschlisteController extends Controller
 {
     public function actionAdd()
     {
+	    if (!$this->isUserAuthenticated()) {
+		    header("Location: /dwp_ws2324_rkt/gamesgalaxy/Login");
+		    exit();
+	    }
         $gameId = $_POST['gameId'] ?? null;
 
         if ($gameId) {
@@ -31,6 +35,10 @@ class WunschlisteController extends Controller
     }
     public function actionShow()
     {
+	    if (!$this->isUserAuthenticated()) {
+		    header("Location: /dwp_ws2324_rkt/gamesgalaxy/Login");
+		    exit();
+	    }
         if (isset($_SESSION['user_authenticated'])) {
             $authenticatedUserId = $_SESSION['user_id'];
 
@@ -48,6 +56,10 @@ class WunschlisteController extends Controller
 
     public function actionRemove()
     {
+	    if (!$this->isUserAuthenticated()) {
+		    header("Location: /dwp_ws2324_rkt/gamesgalaxy/Login");
+		    exit();
+	    }
         $gameId = $_POST['gameId'];
 
         $wunschliste_model = new WunschlisteModel();

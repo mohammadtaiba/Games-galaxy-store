@@ -12,7 +12,10 @@ class BenutzerlisteController extends Controller
 {
     public function actionShow()
     {
-
+	    if (!$this->isUserAuthenticated()) {
+		    header("Location: /dwp_ws2324_rkt/gamesgalaxy/Login");
+		    exit();
+	    }
         if (isset($_SESSION['user_authenticated']) && $_SESSION['user_authenticated']) {
             $currentUserId = $_SESSION['user_id'];
 
@@ -29,6 +32,10 @@ class BenutzerlisteController extends Controller
 
     public function actionDeleteUser()
     {
+	    if (!$this->isUserAuthenticated()) {
+		    header("Location: /dwp_ws2324_rkt/gamesgalaxy/Login");
+		    exit();
+	    }
         $userId = $_POST['user_id'];
 
         $benutzerliste_model = new BenutzerlisteModel();

@@ -4,17 +4,25 @@ namespace gamesgalaxy\Model;
 
 require_once __DIR__."/../model/Model.php";
 require_once __DIR__."/../lib/DatabaseConnection.php";
+require_once __DIR__."/../model/PermissionsTrait.php";
+
 
 use gamesgalaxy\lib\DatabaseConnection\DatabaseConnection;
 
 class HinzufuegenModel extends Model
 {
+	use PermissionsTrait;
+
     private \mysqli $db;
 
     public function __construct()
     {
         $this->db = DatabaseConnection::get_instance();
     }
+
+	public function userHasPermission($userId, $permission) {
+		return $this->hasPermission($userId, $permission);
+	}
 
     public function createGame($platform, $title, $price, $description, $key, $categories)
     {
