@@ -48,7 +48,8 @@ class VerlaufModel extends Model
             $historyData[$orderId]['order_items'][] = [
                 'game_name' => $row['game_name'],
                 'game_platform' => $row['game_platform'],
-                'game_price' => $row['game_price']
+                'game_price' => $row['game_price'],
+                'game_key' => $row['game_key']
             ];
         }
 

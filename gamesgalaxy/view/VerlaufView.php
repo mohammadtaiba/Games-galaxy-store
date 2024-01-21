@@ -33,12 +33,14 @@ VERLAUF;
                 $gameName = $item['game_name'];
                 $gamePlatform = $item['game_platform'];
                 $gamePrice = $item['game_price'];
+                $gameKey = $item['game_key'];
 
                 echo <<<VERLAUF
     <div class="checkout-history-summary-content">
         <p>$gameName</p>
         <p>$gamePlatform</p>
         <p>$gamePrice €</p>
+        <p class="gamekey">$gameKey (Der Spielschlüssel wird bei der von ihnen ausgewählten Plattform eingelöst)</p>
     </div>
 VERLAUF;
             }
