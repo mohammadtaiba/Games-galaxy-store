@@ -677,7 +677,8 @@ um zu zeigen das man damit Interagieren kann (cursor) */
         display: flex;
         font-family: "Press Start 2P";
         font-size: xx-large;
-        grid-column-start: 2;
+        align-self: center;
+        padding: 20px;
         color: #B1C2C7;
     }
 
@@ -1480,6 +1481,88 @@ footer {
     cursor: pointer;
 }
 
+.container {
+    padding: 32px;
+}
+
+.slider-description {
+    display: flex;
+    position: relative;
+    max-width: 850px;
+    background-color: #B1C2C7;
+    margin: 0 auto;
+    border-radius: 50px;
+}
+
+#slider-informations {
+    padding: 10px;
+    max-width: 250px;
+}
+
+.slider-game-name {
+    font-size: x-large;
+    padding-bottom: 15px;
+}
+
+.slider-game-description {
+    padding-bottom: 40px;
+}
+
+.slider-price {
+    display: flex;
+    align-self: end;
+    font-size: xx-large;
+}
+
+
+.slider-wrapper {
+    max-width: 550px;
+}
+
+.slider {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 24px 48px -12px hsla(0, 0%, 0%, 0.25);
+    border-radius: 50px;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 16px;
+    position: absolute;
+    bottom: 20px;
+    left: 30%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
     @media only screen and (max-width: 991px) {
 
     #checkout-grid {
@@ -1536,13 +1619,6 @@ footer {
 
         .grid-element {
             grid-row-start: auto;
-        }
-
-        .grid-kategorie {
-            grid-column-start: 1;
-            grid-row-start: 1;
-            padding: 10px;
-
         }
 
         #ggbrand {
