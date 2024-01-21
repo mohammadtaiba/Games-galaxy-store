@@ -15,10 +15,14 @@
             </div>
         </div>
     </ul>
+
     <div id="searchbar">
         <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-        <input type="text" placeholder="Suchen">
+        <form action="/dwp_ws2324_rkt/gamesgalaxy/Search/Show" method="get" >
+            <input type="text" name="q" id="searchInput" placeholder="Suchen">
+        </form>
     </div>
+
     <div class="dropdown-icon">
         <div id="profile-dropdown">
             <button class="navbar-icon-button" onclick="toggleProfileMenu()"><i class="fa-solid fa-user fa-xl"></i></button>

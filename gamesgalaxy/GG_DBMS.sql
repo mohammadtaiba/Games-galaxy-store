@@ -256,6 +256,6 @@ INSERT INTO user (user_name, user_email, user_password)
 INSERT INTO user_authority (user_id, role, create_user, change_user, delete_user, create_game, change_game, delete_game)
     VALUES (1, 'admin', TRUE, TRUE, TRUE, TRUE, TRUE, TRUE);
 INSERT INTO user_authority (user_id, role, create_user, change_user, delete_user, create_game, change_game, delete_game)
-    VALUES (2, 'user', FALSE, TRUE, FALSE, FALSE, FALSE, FALSE);
+    VALUES (2, 'user', FALSE, FALSE, FALSE, FALSE, FALSE, FALSE);
 INSERT INTO user_authority (user_id, role, create_user, change_user, delete_user, create_game, change_game, delete_game)
     VALUES (3, 'visitor', FALSE, FALSE, FALSE, FALSE, FALSE, FALSE);
