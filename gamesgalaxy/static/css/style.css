@@ -1422,6 +1422,63 @@ footer {
     background-color: #0096ff;
 }
 
+#verlauf-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#verlauf-title {
+    margin-top: 20px;
+    color: white;
+    font-family: "Press Start 2P";
+    font-weight: normal;
+    font-size: 32px;
+
+}
+
+.history-data-summary-container {
+    background-color: #888888;
+    margin: 20px 20px 10px 20px;
+    border-radius: 25px;
+    height: fit-content;
+    width: 95%;
+}
+
+.history-data-title {
+    margin: 10px 0 5px 20px;
+    display: block;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 18px;
+    color: Black;
+}
+
+.history-data-summary {
+    background-color: #888888;
+    height: fit-content;
+    border-radius: 25px;
+    margin: 0 20px 20px 20px;
+}
+
+.checkout-history-summary-content {
+    padding: 10px;
+    margin: 0 20px 10px 20px;
+    font-family: Roboto;
+    font-size: 18px;
+    display: inline-block;
+    text-align: left;
+    width: 98%;
+    border: solid 2px black;
+    border-radius: 25px;
+}
+
+#searchbar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
 
     @media only screen and (max-width: 991px) {
 

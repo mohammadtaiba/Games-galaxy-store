@@ -86,7 +86,7 @@ CHECKOUT;
                     </div>
                     <div class="checkout-payment-method">
                         <div class="checkout-payment-method-checkbox">
-                            <input type="radio" class="payment-method-checkbox" name="payment-checkbox">
+                            <input type="radio" class="payment-method-checkbox" name="payment-method" value="paypal">
                         </div>
                         <div class="checkout-payment-method-content">
                             <p>Paypal</p><br>
@@ -95,20 +95,21 @@ CHECKOUT;
                     </div>
                     <div class="checkout-payment-method">
                         <div class="checkout-payment-method-checkbox">
-                            <input type="radio" class="payment-method-checkbox" name="payment-checkbox" checked>
+                            <input type="radio" class="payment-method-checkbox" name="payment-method" value="rechnung" checked>
                         </div>
                         <div class="checkout-payment-method-content">
                             <p>Rechnung</p><br>
                             <p>{$userData['user_name']}</p>
                         </div>   
                     </div>
-                <form>
+                <form action="/dwp_ws2324_rkt/gamesgalaxy/Checkout/ProcessCheckout" method="post">
+                   <input type="hidden" name="payment-method" id="payment-method" value="">
                    <button type="submit" id="checkout-button" name="checkout-button">Jetzt Bezahlen</button>
                 </form>
                 </div>
             </div>
         </div>
-    </div></body>
+    </div><script src="/dwp_ws2324_rkt/gamesgalaxy/js/checkout.js"></script></body>
 CHECKOUT;
     }
 }

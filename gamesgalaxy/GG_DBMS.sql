@@ -92,9 +92,9 @@ CREATE TABLE IF NOT EXISTS order_data
 (
 	order_id	    INTEGER	        NOT NULL AUTO_INCREMENT,
 	user_id		    INTEGER	        NOT NULL,
-	order_total	    DECIMAL(10, 2)	NOT NULL,
+	order_total	    VARCHAR(10)	    NOT NULL,
 	order_date	    DATE	        NOT NULL,
-    payment_method  VARCHAR(25)      NOT NULL,
+    payment_method  VARCHAR(25)     NOT NULL,
 	CONSTRAINT order_pk PRIMARY KEY (order_id)
 );
 
