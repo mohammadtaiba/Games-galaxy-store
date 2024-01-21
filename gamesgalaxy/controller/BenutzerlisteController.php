@@ -4,38 +4,64 @@ namespace gamesgalaxy\Controller;
 
 require_once __DIR__."/../view/BenutzerlisteView.php";
 require_once __DIR__."/../model/BenutzerlisteModel.php";
+require_once __DIR__."/../model/PermissionsTrait.php";
 
 use gamesgalaxy\Model\BenutzerlisteModel;
 use gamesgalaxy\View\BenutzerlisteView;
+use gamesgalaxy\Model\PermissionsTrait;
 
 class BenutzerlisteController extends Controller
 {
-    public function actionShow()
-    {
+	use PermissionsTrait;
 
-        if (isset($_SESSION['user_authenticated']) && $_SESSION['user_authenticated']) {
-            $currentUserId = $_SESSION['user_id'];
+	private $benutzerlisteModel;
 
-            $benutzerliste_model = new BenutzerlisteModel();
-            $users = $benutzerliste_model->get_all_users_except_current($currentUserId);
+	public function __construct() {
+		$this->benutzerlisteModel = new BenutzerlisteModel();
+		$this->initDBConnection();
+	}
 
-            $benutzerliste_view = new BenutzerlisteView();
-            $benutzerliste_view->title = "Benutzerliste";
-            $benutzerliste_view->render_html('show', $users);
-        } else {
-            echo "Benutzer hat kein zugriff auf die Benutzerliste";
-        }
-    }
+	public function actionShow()
+	{
+		if (!$this->isUserAuthenticated()) {
+			header("Location: /dwp_ws2324_rkt/gamesgalaxy/Login");
+			exit();
+		}
 
-    public function actionDeleteUser()
-    {
-        $userId = $_POST['user_id'];
+		$currentUserId = $_SESSION['user_id'] ?? null;
 
-        $benutzerliste_model = new BenutzerlisteModel();
-        $benutzerliste_model->delete_user($userId);
+		if ($this->hasPermission($currentUserId, 'change_user')) {
+			$users = $this->benutzerlisteModel->get_all_users_except_current($currentUserId);
 
-        header("Location: /dwp_ws2324_rkt/gamesgalaxy/Benutzerliste/Show");
-        exit();
-    }
+			$benutzerliste_view = new BenutzerlisteView();
+			$benutzerliste_view->title = "Benutzerliste";
+			$benutzerliste_view->render_html('show', $users);
+		} else {
+			echo "<script>alert('Sie haben keine Berechtigung, die Benutzerliste anzusehen oder zu bearbeiten.'); window.location.href='/dwp_ws2324_rkt/gamesgalaxy/Startseite/show';</script>";
+			exit;
+		}
+
+	}
+
+	public function actionDeleteUser()
+	{
+		if (!$this->isUserAuthenticated()) {
+			header("Location: /dwp_ws2324_rkt/gamesgalaxy/Login");
+			exit();
+		}
+
+		$currentUserId = $_SESSION['user_id'] ?? null;
+		if ($this->hasPermission($currentUserId, 'delete_user')) {
+			$userId = $_POST['user_id'];
+
+			$this->benutzerlisteModel->delete_user($userId);
+			header("Location: /dwp_ws2324_rkt/gamesgalaxy/Benutzerliste/Show");
+			exit();
+		} else {
+			echo "Sie sind nicht berechtigt, Benutzer zu löschen.";
+			exit();
+		}
+
+	}
 
 }

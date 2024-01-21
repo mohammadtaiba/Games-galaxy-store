@@ -11,6 +11,10 @@ class CheckoutController extends Controller
 {
     public function actionShow()
     {
+	    if (!$this->isUserAuthenticated()) {
+		    header("Location: /dwp_ws2324_rkt/gamesgalaxy/Login");
+		    exit();
+	    }
         $userId = $_SESSION['user_id'];
 
         $checkout_model = new CheckoutModel();

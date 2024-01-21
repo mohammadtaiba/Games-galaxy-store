@@ -9,15 +9,48 @@ use gamesgalaxy\Model\HinzufuegenModel;
 use gamesgalaxy\View\HinzufuegenView;
 class HinzufuegenController extends Controller
 {
-    public function actionShow()
-    {
-        $hinzufuegen_view = new HinzufuegenView();
-        $hinzufuegen_view->title="Spiele hinzufügen";
-        $hinzufuegen_view->render_html('show', "");
-    }
+	private $hinzufuegenModel;
+
+	public function __construct() {
+		$this->hinzufuegenModel = new HinzufuegenModel();
+	}
+
+
+	public function actionShow() {
+
+		if (!$this->isUserAuthenticated()) {
+			header("Location: /dwp_ws2324_rkt/gamesgalaxy/Login");
+			exit();
+		}
+
+		$userId = $_SESSION['user_id'] ?? null;
+		$hasCreateGamePermission = $userId ? $this->hinzufuegenModel->userHasPermission($userId, 'create_game') : false;
+
+		if ($hasCreateGamePermission) {
+			$hinzufuegen_view = new HinzufuegenView();
+			$hinzufuegen_view->title = "Spiele hinzufügen";
+			$hinzufuegen_view->render_html('show', "");
+		} else {
+			echo "<script>alert('Sie haben keine Berechtigung, ein Spiel hinzuzufügen.'); window.location.href='/dwp_ws2324_rkt/gamesgalaxy/Startseite/show';</script>";
+			exit;
+		}
+	}
+
 
     public function actionSubmit()
     {
+	    if (!$this->isUserAuthenticated()) {
+		    header("Location: /dwp_ws2324_rkt/gamesgalaxy/Login");
+		    exit();
+	    }
+
+	    $userId = $_SESSION['user_id'];
+
+	    if (!$this->hinzufuegenModel->userHasPermission($userId, 'create_game')) {
+		    echo "Sie sind nicht berichtigt ein Spiel hinzuzufügen!";
+		    exit();
+	    }
+
         if ($_SERVER["REQUEST_METHOD"] == "POST")
         {
             $hinzufuegen_model = new HinzufuegenModel();

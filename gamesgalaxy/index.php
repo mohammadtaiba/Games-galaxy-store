@@ -1,5 +1,4 @@
 <?php
-
 require_once 'controller/Controller.php';
 require_once 'controller/ImpressumController.php';
 require_once 'controller/StartseiteController.php';
@@ -20,35 +19,36 @@ require_once 'controller/BenutzerlisteController.php';
 require_once 'controller/SpielController.php';
 require_once 'controller/EinkaufswagenController.php';
 require_once 'controller/DokumentationController.php';
+require_once 'controller/SearchController.php';
 
-preg_match('/\/dwp_ws2324_rkt\/gamesgalaxy\/(?<controller>[^\/]*)\/(?<action>[^\/]*)/', $_SERVER['REQUEST_URI'], $matches);
+preg_match('/^\/dwp_ws2324_rkt\/gamesgalaxy\/(?<controller>[^\/]+)\/?(?<action>[^\/?]+)?/', $_SERVER['REQUEST_URI'], $matches);
 
-if (key_exists("controller", $matches)) {
-    $controllerClassName = "\\gamesgalaxy\\controller\\" . ucfirst($matches['controller']) . "Controller";
-} else {
-    $controllerClassName = "\\gamesgalaxy\\controller\\StartseiteController";
-}
+
+$controllerName = ucfirst(strtolower($matches['controller'] ?? 'startseite')) . 'Controller';
+$actionName = 'action' . ucfirst(strtolower($matches['action'] ?? 'show'));
+
+$controllerClassName = "\\gamesgalaxy\\Controller\\$controllerName";
+$actionMethodName = $actionName;
 
 
 if (class_exists($controllerClassName)) {
-    $controllerInstance = new $controllerClassName();
+	$controllerInstance = new $controllerClassName();
 
-    if (key_exists("action", $matches)) {
-        $actionMethodName = 'action' . ucfirst($matches['action']);
-    }
-    else {
-        $actionMethodName = 'actionShow';
-    }
+	// Debugging: Überprüfen Sie, ob der Controller und die Methode korrekt identifiziert wurden
+	error_log("Gefundener Controller: $controllerClassName");
+	error_log("Zu aufrufende Aktion: $actionMethodName");
 
-    if (method_exists($controllerInstance, $actionMethodName)) {
-        $controllerInstance->$actionMethodName();
-    } else {
-        print "Error 404";
-    }
-
+	if (method_exists($controllerInstance, $actionMethodName)) {
+		$controllerInstance->$actionMethodName();
+	} else {
+		error_log("Die Methode $actionMethodName existiert nicht in $controllerClassName");
+		header("HTTP/1.0 404 Not Found");
+		echo "Error 404: Action not found";
+	}
 } else {
-    print "Error 404";
+	error_log("Controller $controllerClassName nicht gefunden");
+	header("HTTP/1.0 404 Not Found");
+	echo "Error 404: Controller not found";
 }
-
 
 

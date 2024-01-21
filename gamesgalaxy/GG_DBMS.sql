@@ -14,19 +14,23 @@ CREATE TABLE IF NOT EXISTS user
 	CONSTRAINT user_pk PRIMARY KEY (user_id)
 );
 
+
+
+
 DROP TABLE IF EXISTS user_authority;
 CREATE TABLE IF NOT EXISTS user_authority
 (
-    user_authority_id	INTEGER		NOT NULL AUTO_INCREMENT,
-    user_id             INTEGER     NOT NULL,
-    create_user		    BOOL,
-    change_user         BOOL,
-    delete_user         BOOL,
-    create_game         BOOL,
-    change_game         BOOL,
-    delete_game         BOOL,
+    user_authority_id  INTEGER         NOT NULL AUTO_INCREMENT,
+    user_id            INTEGER         NOT NULL,
+    role               VARCHAR(25)     NOT NULL,
+    create_user        BOOLEAN         DEFAULT FALSE,
+    change_user        BOOLEAN         DEFAULT FALSE,
+    delete_user        BOOLEAN         DEFAULT FALSE,
+    create_game        BOOLEAN         DEFAULT FALSE,
+    change_game        BOOLEAN         DEFAULT FALSE,
+    delete_game        BOOLEAN         DEFAULT FALSE,
     CONSTRAINT user_authority_pk PRIMARY KEY (user_authority_id)
-    );
+);
 
 DROP TABLE IF EXISTS user_address;
 CREATE TABLE IF NOT EXISTS user_address
@@ -83,7 +87,7 @@ CREATE TABLE IF NOT EXISTS cart_item
 	CONSTRAINT cart_pk PRIMARY KEY (cart_id)
 );
 
-DROP TABLE IF EXISTS order_data;					
+DROP TABLE IF EXISTS order_data;
 CREATE TABLE IF NOT EXISTS order_data
 (
 	order_id	    INTEGER	        NOT NULL AUTO_INCREMENT,
@@ -103,9 +107,10 @@ CREATE TABLE IF NOT EXISTS order_items
 	CONSTRAINT order_items_pk PRIMARY KEY (order_items_id)
 );
 
+
 ALTER TABLE user_authority
-ADD CONSTRAINT user_authority_fk1 FOREIGN KEY (user_id)
-REFERENCES user (user_id);
+    ADD CONSTRAINT user_authority_fk1 FOREIGN KEY (user_id)
+        REFERENCES user (user_id);
 
 ALTER TABLE user_address
 ADD CONSTRAINT user_address_fk1 FOREIGN KEY (user_id)
@@ -122,7 +127,7 @@ ADD CONSTRAINT wishlist_fk2 FOREIGN KEY (user_id)
 REFERENCES user (user_id);
 
 ALTER TABLE cart_item
-ADD CONSTRAINT cart_fk1	FOREIGN KEY	(game_id)		
+ADD CONSTRAINT cart_fk1	FOREIGN KEY	(game_id)
 REFERENCES game (game_id),
 ADD CONSTRAINT cart_fk2	FOREIGN	KEY	(user_id)
 REFERENCES user	(user_id);
@@ -236,3 +241,21 @@ SET @last_game_id = LAST_INSERT_ID();
 
 INSERT INTO category (game_id, Strategie, Action, Shooter, RPG, Simulation)
 VALUES (@last_game_id, 0, 0, 0, 1, 1);
+
+
+-- Testdaten `user` Tabelle
+INSERT INTO user (user_name, user_email, user_password)
+    VALUES ('AdminUser', 'admin@example.com', 'adminpass');
+INSERT INTO user (user_name, user_email, user_password)
+    VALUES ('RegularUser', 'user@example.com', 'userpass');
+INSERT INTO user (user_name, user_email, user_password)
+    VALUES ('VisitorUser', 'visitor@example.com', 'visitorpass');
+
+-- Beispiel-Berechtigungen in der `user_authority` Tabelle
+-- Angenommen, die IDs der Nutzer sind 1, 2 und 3 !!
+INSERT INTO user_authority (user_id, role, create_user, change_user, delete_user, create_game, change_game, delete_game)
+    VALUES (1, 'admin', TRUE, TRUE, TRUE, TRUE, TRUE, TRUE);
+INSERT INTO user_authority (user_id, role, create_user, change_user, delete_user, create_game, change_game, delete_game)
+    VALUES (2, 'user', FALSE, FALSE, FALSE, FALSE, FALSE, FALSE);
+INSERT INTO user_authority (user_id, role, create_user, change_user, delete_user, create_game, change_game, delete_game)
+    VALUES (3, 'visitor', FALSE, FALSE, FALSE, FALSE, FALSE, FALSE);
