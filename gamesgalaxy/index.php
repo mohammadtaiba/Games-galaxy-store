@@ -34,7 +34,6 @@ $actionMethodName = $actionName;
 if (class_exists($controllerClassName)) {
 	$controllerInstance = new $controllerClassName();
 
-	// Debugging: Überprüfen Sie, ob der Controller und die Methode korrekt identifiziert wurden
 	error_log("Gefundener Controller: $controllerClassName");
 	error_log("Zu aufrufende Aktion: $actionMethodName");
 
