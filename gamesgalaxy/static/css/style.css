@@ -1521,6 +1521,79 @@ footer {
     font-weight: normal;
 }
 
+.container {
+    padding: 32px;
+}
+
+.slider-description {
+    display: flex;
+    position: relative;
+    max-width: 850px;
+    background-color: #B1C2C7;
+    margin: 0 auto;
+    border-radius: 50px;
+}
+
+#slider-informations {
+    padding: 20px;
+    margin-left: 20px;
+    max-width: 250px;
+}
+
+.slider-text {
+    padding-bottom: 40px;
+    font-size: larger;
+}
+
+.slider-wrapper {
+    display: flex;
+    max-width: 550px;
+}
+
+.slider {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 24px 48px -12px hsla(0, 0%, 0%, 0.25);
+    border-radius: 50px;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 16px;
+    position: absolute;
+    bottom: 20px;
+    left: 30%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+}
+
     @media only screen and (max-width: 991px) {
 
     #checkout-grid {
