@@ -1508,6 +1508,12 @@ footer {
     font-family: Roboto;
 }
 
+#searchresults-nocontent {
+    margin-top: 200px;
+    color: white;
+    font-size: 32px;
+}
+
 .searchresults-gametitle {
     color: black;
     font-family: "Press Start 2P";
