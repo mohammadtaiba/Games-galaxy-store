@@ -1480,6 +1480,41 @@ footer {
     cursor: pointer;
 }
 
+#searchresults-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.searchresults-item {
+    display: block;
+    text-align: center;
+    background-color: #888888;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    height: fit-content;
+    border-radius: 15px;
+    width: 70%;
+}
+
+.searchresults-item:hover {
+    background-color: #0096ff;
+}
+
+.searchresults-item-content {
+    font-size: 18px;
+    font-family: Roboto;
+}
+
+.searchresults-gametitle {
+    color: black;
+    font-family: "Press Start 2P";
+    font-size: 24px;
+    font-weight: normal;
+}
+
     @media only screen and (max-width: 991px) {
 
     #checkout-grid {
