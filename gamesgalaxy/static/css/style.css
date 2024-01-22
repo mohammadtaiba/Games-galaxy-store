@@ -1495,27 +1495,18 @@ footer {
 }
 
 #slider-informations {
-    padding: 10px;
+    padding: 20px;
+    margin-left: 20px;
     max-width: 250px;
 }
 
-.slider-game-name {
-    font-size: x-large;
-    padding-bottom: 15px;
-}
-
-.slider-game-description {
+.slider-text {
     padding-bottom: 40px;
+    font-size: larger;
 }
-
-.slider-price {
-    display: flex;
-    align-self: end;
-    font-size: xx-large;
-}
-
 
 .slider-wrapper {
+    display: flex;
     max-width: 550px;
 }
 

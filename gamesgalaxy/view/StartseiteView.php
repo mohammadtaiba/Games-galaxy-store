@@ -25,9 +25,7 @@ class StartseiteView extends View
                         </div>
                     </div>
                     <div id="slider-informations">
-                        <div class="slider-game-name">Digimon World Next Order</div>
-                        <div class="slider-game-description">The Digital World has run rampant with Machinedramon and is now in a state of utter chaos. As a Digidestined, it’s up to you to restore order to the world in Digimon World: Next Order, a monster collecting RPG</div>
-                        <div class="slider-price">24.99€</div>
+                        <div class="slider-text">Wir durchsuchen hunderte Bibliotheken um die besten Angebote für sie zur verfügung zu stellen. Dabei sind wir auf diese ganz besonderen Angebote gestoßen die sie eventuell interessieren könnten.</div>
                     </div>
                 </div>
             </section>
