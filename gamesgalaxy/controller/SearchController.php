@@ -24,10 +24,14 @@ class SearchController extends Controller
 		if (isset($_GET['q'])) {
 			$searchString = $_GET['q'];
 			$results = $this->searchModel->match_and_read($searchString);
-			SearchView::show($results);
+
+            $search_view = new SearchView();
+            $search_view->title = "Suchergebnisse";
+            $search_view->render_html('show', $results);
 		} else {
 			SearchView::show([]);
 		}
+
 	}
 
 }

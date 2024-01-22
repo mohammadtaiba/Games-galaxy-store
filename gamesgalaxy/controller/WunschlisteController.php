@@ -15,7 +15,7 @@ class WunschlisteController extends Controller
     public function actionAdd()
     {
 	    if (!$this->isUserAuthenticated()) {
-		    header("Location: /dwp_ws2324_rkt/gamesgalaxy/Login");
+		    echo "<script>alert('Sie sind nicht einloggt.'); window.location.href='/dwp_ws2324_rkt/gamesgalaxy/Startseite/show';</script>";
 		    exit();
 	    }
         $gameId = $_POST['gameId'] ?? null;
@@ -36,7 +36,7 @@ class WunschlisteController extends Controller
     public function actionShow()
     {
 	    if (!$this->isUserAuthenticated()) {
-		    header("Location: /dwp_ws2324_rkt/gamesgalaxy/Login");
+		    echo "<script>alert('Sie sind nicht einloggt.'); window.location.href='/dwp_ws2324_rkt/gamesgalaxy/Startseite/show';</script>";
 		    exit();
 	    }
         if (isset($_SESSION['user_authenticated'])) {
@@ -57,7 +57,7 @@ class WunschlisteController extends Controller
     public function actionRemove()
     {
 	    if (!$this->isUserAuthenticated()) {
-		    header("Location: /dwp_ws2324_rkt/gamesgalaxy/Login");
+		    echo "<script>alert('Sie sind nicht einloggt.'); window.location.href='/dwp_ws2324_rkt/gamesgalaxy/Startseite/show';</script>";
 		    exit();
 	    }
         $gameId = $_POST['gameId'];

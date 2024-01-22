@@ -11,6 +11,10 @@ class VerlaufController extends Controller
 {
     public function actionShow()
     {
+	    if (!$this->isUserAuthenticated()) {
+		    echo "<script>alert('Sie sind nicht einloggt.'); window.location.href='/dwp_ws2324_rkt/gamesgalaxy/Startseite/show';</script>";
+		    exit();
+	    }
         $verlauf_model = new VerlaufModel();
         $userId = $_SESSION['user_id'];
         $orderHistory = $verlauf_model->getOrderHistory($userId);

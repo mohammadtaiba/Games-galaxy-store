@@ -46,10 +46,15 @@ class EinkaufswagenView extends View
                         </div>
                     </div>
 
-                    <?php
+                <?php
+                }
+                if (!empty($cartItems)) {
+                echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Checkout/Show"><button class="profile-dropdown-content-button">Zur Bezahlung</button></a>';
+                }
+                else {
+                 echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Startseite/Show"><button class="profile-dropdown-content-button">Leer! Zur Startseite...</button></a>';
                 }
                 ?>
-                <a href="/dwp_ws2324_rkt/gamesgalaxy/Checkout/Show"><button class="profile-dropdown-content-button">Zur Bezahlung</button></a>
             </div>
 
         </div>
