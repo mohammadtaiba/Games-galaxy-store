@@ -14,7 +14,7 @@ class SearchView extends View
 SEARCH;
 
         if (empty($games)) {
-            echo '<p>Keine Spiele gefunden.</p>';
+            echo '<p id="searchresults-nocontent">Keine Spiele gefunden.</p>';
         } else {
             foreach ($games as $game) {
                 echo <<<SEARCH
