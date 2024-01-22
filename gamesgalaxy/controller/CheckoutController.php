@@ -12,14 +12,20 @@ class CheckoutController extends Controller
     public function actionShow()
     {
 	    if (!$this->isUserAuthenticated()) {
-		    header("Location: /dwp_ws2324_rkt/gamesgalaxy/Login");
-		    exit();
-	    }
+            echo "<script>alert('Sie sind nicht einloggt.'); window.location.href='/dwp_ws2324_rkt/gamesgalaxy/Startseite/show';</script>";
+            exit();
+        }
         $userId = $_SESSION['user_id'];
 
         $checkout_model = new CheckoutModel();
         $userData = $checkout_model->getUserData($userId);
         $cartItems = $checkout_model->getCartItems($userId);
+
+        if (empty($cartItems)) {
+            echo "<script>alert('Ihr Warenkorb ist leer.'); window.location.href='/dwp_ws2324_rkt/gamesgalaxy/Startseite/show';</script>";
+            exit();
+        }
+
 
         $checkout_view = new CheckoutView();
         $checkout_view->title="Checkout";
@@ -28,6 +34,10 @@ class CheckoutController extends Controller
 
     public function actionProcessCheckout()
     {
+        if (!$this->isUserAuthenticated()) {
+            echo "<script>alert('Sie sind nicht einloggt.'); window.location.href='/dwp_ws2324_rkt/gamesgalaxy/Startseite/show';</script>";
+            exit();
+        }
         echo "POST-Daten: ";
 
         $paymentMethod = isset($_POST['payment-method']) ? $_POST['payment-method'] : null;
