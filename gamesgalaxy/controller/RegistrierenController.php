@@ -12,7 +12,7 @@ class RegistrierenController extends Controller
     public function actionShow()
     {
 	    if ($this->isUserAuthenticated()) {
-		    echo "<script>alert('Sie sind schon regestriert.'); window.location.href='/dwp_ws2324_rkt/gamesgalaxy/Startseite/show';</script>";
+		    echo "<script>alert('Sie sind schon registriert.'); window.location.href='/dwp_ws2324_rkt/gamesgalaxy/Startseite/show';</script>";
 		    exit();
 	    }
         $registrieren_view = new RegistrierenView();
@@ -22,10 +22,6 @@ class RegistrierenController extends Controller
 
     public function actionSubmit()
     {
-	    if (!$this->isUserAuthenticated()) {
-		    echo "<script>alert('Sie sind schon regestriert.'); window.location.href='/dwp_ws2324_rkt/gamesgalaxy/Startseite/show';</script>";
-		    exit();
-	    }
         if ($_SERVER["REQUEST_METHOD"] == "POST")
         {
             $registrieren_model = new RegistrierenModel();

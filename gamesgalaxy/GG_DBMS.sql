@@ -22,7 +22,6 @@ CREATE TABLE IF NOT EXISTS user_authority
 (
     user_authority_id  INTEGER         NOT NULL AUTO_INCREMENT,
     user_id            INTEGER         NOT NULL,
-    role               VARCHAR(25)     NOT NULL,
     create_user        BOOLEAN         DEFAULT FALSE,
     change_user        BOOLEAN         DEFAULT FALSE,
     delete_user        BOOLEAN         DEFAULT FALSE,
@@ -143,6 +142,18 @@ REFERENCES order_data (order_id),
 ADD CONSTRAINT order_items_fk2 FOREIGN KEY (game_id)
 REFERENCES game (game_id);
 
+-- Admin-Nutzer erstellen --
+INSERT INTO user (user_name, user_email, user_password)
+VALUES ('Admin', 'admin@email.com', 'adminpw');
+
+SET @last_user_id = LAST_INSERT_ID();
+
+INSERT INTO user_address (user_id, address_street, address_street_number, address_city, address_postalcode)
+VALUES (@last_user_id, '0', '0', '0', '0');
+
+INSERT INTO  user_authority (user_id, create_user, change_user, delete_user, create_game, change_game, delete_game)
+VALUES (@last_user_id, '1', '1', '1', '1', '1', '1');
+
 -- Testdaten Steam
 INSERT INTO game (game_platform, game_name, game_price, game_description, game_key)
 VALUES ('Steam', 'Grim Dawn', '24,99', 'Enter an apocalyptic fantasy world where humanity is on the brink of extinction, iron is valued above gold and trust is hard earned. This ARPG features complex character development, hundreds of unique items, crafting and quests with choice & consequence.', 'GD-XXX-XX');
@@ -242,20 +253,3 @@ SET @last_game_id = LAST_INSERT_ID();
 INSERT INTO category (game_id, Strategie, Action, Shooter, RPG, Simulation)
 VALUES (@last_game_id, 0, 0, 0, 1, 1);
 
-
--- Testdaten `user` Tabelle
-INSERT INTO user (user_name, user_email, user_password)
-    VALUES ('AdminUser', 'admin@example.com', 'adminpass');
-INSERT INTO user (user_name, user_email, user_password)
-    VALUES ('RegularUser', 'user@example.com', 'userpass');
-INSERT INTO user (user_name, user_email, user_password)
-    VALUES ('VisitorUser', 'visitor@example.com', 'visitorpass');
-
--- Beispiel-Berechtigungen in der `user_authority` Tabelle
--- Angenommen, die IDs der Nutzer sind 1, 2 und 3 !!
-INSERT INTO user_authority (user_id, role, create_user, change_user, delete_user, create_game, change_game, delete_game)
-    VALUES (1, 'admin', TRUE, TRUE, TRUE, TRUE, TRUE, TRUE);
-INSERT INTO user_authority (user_id, role, create_user, change_user, delete_user, create_game, change_game, delete_game)
-    VALUES (2, 'user', FALSE, FALSE, FALSE, FALSE, FALSE, FALSE);
-INSERT INTO user_authority (user_id, role, create_user, change_user, delete_user, create_game, change_game, delete_game)
-    VALUES (3, 'visitor', FALSE, FALSE, FALSE, FALSE, FALSE, FALSE);

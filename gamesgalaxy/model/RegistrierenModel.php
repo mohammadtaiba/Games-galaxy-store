@@ -61,10 +61,15 @@ class RegistrierenModel extends Model
 
                 $adressResult = $this->db->query($adressSql);
 
-                    if ($adressResult) {
+                $authoritySql = "INSERT INTO user_authority (user_id, create_user, change_user, delete_user, create_game, change_game, delete_game) 
+                                VALUES ('$userId', 1, 1, 0, 0, 0, 0)";
+
+                $authorityResult = $this->db->query($authoritySql);
+
+                if ($authorityResult) {
                         header("Location: /dwp_ws2324_rkt/gamesgalaxy/Startseite/Show");
                     } else {
-                        echo "Fehler bei der Registrierung der Adresse: " . $this->db->error;
+                        echo "Fehler bei der Registrierung der Adresse oder Benutzerrechte: " . $this->db->error;
                     }
             } else {
                 echo "Fehler bei der Registrierung des Benutzers" . $this->db->error;
