@@ -24,7 +24,7 @@ class StartseiteView extends View
                             <a href="#slide-3"></a>
                         </div>
                     </div>
-                    <div id="slider-informations">
+                    <div class="slider-informations">
                         <div class="slider-text">Wir durchsuchen hunderte Bibliotheken um die besten Angebote für sie zur verfügung zu stellen. Dabei sind wir auf diese ganz besonderen Angebote gestoßen die sie eventuell interessieren könnten.</div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ class StartseiteView extends View
                             <a href="#slide-6"></a>
                         </div>
                     </div>
-                    <div id="slider-informations">
+                    <div class="slider-informations">
                         <div class="slider-text">Wir durchsuchen hunderte Bibliotheken um die größten bestseller für sie zur verfügung zu stellen. Dabei sind wir auf diese top Bestseller gestoßen die sie eventuell interessieren könnten.</div>
                     </div>
                 </div>
@@ -64,12 +64,11 @@ class StartseiteView extends View
                             <a href="#slide-9"></a>
                         </div>
                     </div>
-                    <div id="slider-informations">
+                    <div class="slider-informations">
                         <div class="slider-text">Wir durchsuchen hunderte Bibliotheken um die beliebtesten Trends für sie zur verfügung zu stellen. Dabei fanden wir diese besonderst beliebten Spiele die sie eventuell interessieren könnten.</div>
                     </div>
                 </div>
             </section>
-        </body>
 STARTSEITE;
     }
 }

@@ -109,7 +109,7 @@ CHECKOUT;
                 </div>
             </div>
         </div>
-    </div><script src="/dwp_ws2324_rkt/gamesgalaxy/js/checkout.js"></script></body>
+    </div><script src="/dwp_ws2324_rkt/gamesgalaxy/js/checkout.js"></script>
 CHECKOUT;
     }
 }

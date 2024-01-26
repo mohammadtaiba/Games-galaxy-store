@@ -27,7 +27,6 @@ class KontaktView extends View
         </div>
     </div>
 </div>
-</body>
 KONTAKT;
     }
 }

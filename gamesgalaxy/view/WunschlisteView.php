@@ -44,7 +44,7 @@ SPIEL;
         echo <<<WUNSCHLISTE
                 </div>
             </div>          
-        <script src="/dwp_ws2324_rkt/gamesgalaxy/js/spiel.js"></script></body>
+        <script src="/dwp_ws2324_rkt/gamesgalaxy/js/spiel.js"></script>
 WUNSCHLISTE;
     }
 }

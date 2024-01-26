@@ -42,8 +42,7 @@ BENUTZERLISTE;
 
                     echo <<< BENUTZERLISTE
                 </div>
-            </div>          
-        </body>
+            </div>
 BENUTZERLISTE;
     }
 }

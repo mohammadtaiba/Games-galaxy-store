@@ -77,7 +77,7 @@ class BattlenetspieleView extends View
             }
         }
 
-        echo '</div><script src="/dwp_ws2324_rkt/gamesgalaxy/js/spiel.js"></script></body></html>';
+        echo '</div><script src="/dwp_ws2324_rkt/gamesgalaxy/js/spiel.js"></script>';
 
     }
 }

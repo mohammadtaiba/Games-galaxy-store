@@ -61,7 +61,6 @@ class HinzufuegenView extends View
 
                 <button type="submit" id="AddGame-submit" name="addgame-submit">Spiel hinzufügen</button>
             </form>
-        </body>
 HINZUFUEGEN;
     }
 }

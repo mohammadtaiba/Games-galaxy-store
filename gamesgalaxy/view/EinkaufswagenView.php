@@ -49,7 +49,7 @@ class EinkaufswagenView extends View
                     <?php
                 }
                 if (isset($_SESSION['user_authenticated']) && $_SESSION['user_authenticated']) {
-                    echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Checkout/Show"><button class="profile-dropdown-content-button">Zur Bezahlung</button></a>';
+                    echo '<a class="borderless-link" href="/dwp_ws2324_rkt/gamesgalaxy/Checkout/Show"><div class="profile-dropdown-content-button">Zur Bezahlung</div></a>';
                 } else {
                     echo '<p><a href="/dwp_ws2324_rkt/gamesgalaxy/Registrieren/Show" class="navbar-links">Jetzt registrieren und bequem bezahlen</a></p>';
                 }
@@ -58,7 +58,7 @@ class EinkaufswagenView extends View
             </div>
 
         </div>
-        </body>
+
 
         <?php
     }

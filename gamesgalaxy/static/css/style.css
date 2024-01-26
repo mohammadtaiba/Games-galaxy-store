@@ -43,12 +43,30 @@ nav {
 /* Links sollen nicht unterstrichen oder standardmäßig eingefärbt sein (text-decoration), wenn man auf Links zeigt soll sich Farbe änder (Hover) */
  .navbar-links {
      text-decoration: none;
+     background-color: inherit;
      color: white;
+     font-size: 32px;
+     border: none;
+     cursor: pointer;
+     white-space: nowrap;
  }
+
+.navbar-links-small {
+    text-decoration: none;
+    background-color: inherit;
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+}
 
  .navbar-links:hover {
      color: #0096ff;
  }
+
+.navbar-links-small:hover {
+    color: #0096ff;
+}
 
 #brand img {
     height: 80px;
@@ -497,9 +515,36 @@ um zu zeigen das man damit Interagieren kann (cursor) */
     cursor: pointer;
 }
 
+#navbar-big {
+    display: flex;
+
+}
+
+.navbar-big-links {
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+    background-color: inherit;
+    color: white;
+    font-size: 32px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    align-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.navbar-big-links:hover {
+    color: #0096ff;
+}
+
 .navbar-dropdown {
-    position: relative;
-    display: inline-block;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 /* Style für den Button Spiele welcher noch weitere Elemente versteckt */
@@ -574,14 +619,41 @@ um zu zeigen das man damit Interagieren kann (cursor) */
     font-size: 18px;
     font-family: "Press Start 2P";
     margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
 }
 
 .profile-dropdown-content-button:hover {
     background-color: #0096ff;
 }
 
+.profile-dropdown-content-links {
+    border: none;
+    text-decoration: none;
+    height: 50px;
+    width: 350px;
+    display: flex;
+    margin-left: 40px;
+}
+
 #profile-dropdown.profile-active #profile-dropdown-content {
     display: inline-block;
+}
+
+.borderless-link {
+    border: none;
+    text-decoration: none;
+}
+
+#navbar-cart {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
 #cart-dropdown {
@@ -905,6 +977,12 @@ footer {
 #neuregistrieren {
     width: 100%;
     padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 #uberuns h2 {
@@ -912,16 +990,6 @@ footer {
     font-size: 20px;
     color: white;
     font-weight: normal;
-}
-
-#neuregistrieren button {
-    background-color: #B1C2C7;
-    border: none;
-    height: 80px;
-    width: 200px;
-    border-radius: 50px;
-    font-family: "Press Start 2P";
-    margin: 20px;
 }
 
 #neuregistrieren button:hover {
@@ -1535,7 +1603,7 @@ footer {
     border-radius: 50px;
 }
 
-#slider-informations {
+.slider-informations {
     padding: 20px;
     margin-left: 20px;
     max-width: 250px;
@@ -1560,11 +1628,12 @@ footer {
     box-shadow: 0 24px 48px -12px hsla(0, 0%, 0%, 0.25);
     border-radius: 50px;
     scrollbar-width: none;
+}
 
-    &::-webkit-scrollbar {
+.slider::-webkit-scrollbar {
         display: none;
     }
-}
+
 
 .slider img {
     flex: 1 0 100%;
@@ -1593,6 +1662,33 @@ footer {
 
 .slider-nav a:hover {
     opacity: 1;
+}
+
+.ueber_uns_button{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    font-family: "Press Start 2P";
+    color: black;
+    background-color: #B1C2C7;
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.ueber_uns_button:hover{
+    background-color: #0096ff;
+}
+
+#ueber_uns_link {
+    display: flex;
+    height: 50px;
+    width: 350px;
+    border-radius: 50px;
+    border: none;
+    text-decoration: none;
+    margin: 20px;
 }
 
     @media only screen and (max-width: 991px) {
@@ -1659,6 +1755,7 @@ footer {
 
         #navbar-big {
             display: none;
+
         }
 
         #searchbar {
