@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('.searchresults-item').forEach(function (element) {
+    document.querySelectorAll('.searchresults-item, .games-grid-item').forEach(function (element) {
         element.addEventListener('click', function () {
             let gameId = this.getAttribute('data-game-id');
 
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('.searchresults-item').forEach(function (element) {
+    document.querySelectorAll('.searchresults-item, .games-grid-item').forEach(function (element) {
         element.addEventListener('click', function () {
             let gameId = this.getAttribute('data-game-id');
 

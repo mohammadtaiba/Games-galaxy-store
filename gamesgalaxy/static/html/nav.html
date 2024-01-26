@@ -11,7 +11,16 @@
                 <p><a href="/dwp_ws2324_rkt/gamesgalaxy/Steamspiele/Show" class="navbar-links">Steam</a></p>
                 <p><a href="/dwp_ws2324_rkt/gamesgalaxy/Battlenetspiele/Show" class="navbar-links">Battle.net</a></p>
                 <p><a href="/dwp_ws2324_rkt/gamesgalaxy/Epicspiele/Show" class="navbar-links">Epic Games</a></p>
-                <p><a href="/dwp_ws2324_rkt/gamesgalaxy/Hinzufuegen/Show" class="navbar-links">Spiel hinzufügen</a></p>
+                <?php
+                if (isset($_SESSION['user_authenticated']) && $_SESSION['user_authenticated'])
+                {
+                $userAuthority = $_SESSION['user_authority'];
+                if ($userAuthority['create_game'] || $userAuthority['delete_game'] || $userAuthority['change_game'])
+                    {
+                    echo '<p><a href="/dwp_ws2324_rkt/gamesgalaxy/Hinzufuegen/Show" class="navbar-links">Spiel hinzufügen</a></p>';
+                    }
+                }
+                ?>
             </div>
         </div>
     </ul>
@@ -33,12 +42,15 @@
                 echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Verlauf/Show"><button class="profile-dropdown-content-button">Meine Einkäufe</button></a><br>';
                 echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Wunschliste/Show"><button class="profile-dropdown-content-button">Wunschliste</button></a><br>';
                 echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Bearbeiten/Show"><button class="profile-dropdown-content-button">Profil bearbeiten</button></a><br>';
-                echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Benutzerliste/Show"><button class="profile-dropdown-content-button">Benutzerliste</button></a><br>';
+                if ($_SESSION['user_authority']['delete_user'])
+                {
+                    echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Benutzerliste/Show"><button class="profile-dropdown-content-button">Benutzerliste</button></a><br>';
+                }
                 echo '<a href="#" onclick="logout()" class="navbar-links">Abmelden</a>';
                 } else {
                 echo '<form method="post" action="/dwp_ws2324_rkt/gamesgalaxy/Login/Login">';
                 echo '<input type="text" name="login-mail" class="logininput" placeholder="Email"><br>';
-                echo '<input type="text" name="login-password" class="logininput" placeholder="Passwort"><br>';
+                echo '<input type="password" name="login-password" class="logininput" placeholder="Passwort"><br>';
                 echo '<button type="submit" name="login-submit" id="login-button">Einloggen</button>';
                 echo '</form>';
                 echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Registrieren/Show" class="navbar-links">Registrieren</a><br>';
@@ -70,7 +82,16 @@
                 <p><a href="/dwp_ws2324_rkt/gamesgalaxy/Steamspiele/Show" class="navbar-links">Steam</a></p>
                 <p><a href="/dwp_ws2324_rkt/gamesgalaxy/Battlenetspiele/Show" class="navbar-links">Battle.net</a></p>
                 <p><a href="/dwp_ws2324_rkt/gamesgalaxy/Epicspiele/Show" class="navbar-links">Epic Games</a></p>
-                <p><a href="/dwp_ws2324_rkt/gamesgalaxy/Hinzufuegen/Show" class="navbar-links">Spiel hinzufügen</a></p>
+                <?php
+                if (isset($_SESSION['user_authenticated']) && $_SESSION['user_authenticated'])
+                {
+                $userAuthority = $_SESSION['user_authority'];
+                if ($userAuthority['create_game'] || $userAuthority['delete_game'] || $userAuthority['change_game'])
+                    {
+                    echo '<p><a href="/dwp_ws2324_rkt/gamesgalaxy/Hinzufuegen/Show" class="navbar-links">Spiel hinzufügen</a></p>';
+                    }
+                }
+                ?>
             </div>
         </div>
         <li><a href="/dwp_ws2324_rkt/gamesgalaxy/Kontakt/Show" class="navbar-links">Kontaktiere uns</a></li>

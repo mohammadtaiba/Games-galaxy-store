@@ -42,6 +42,31 @@ class BenutzerlisteModel extends Model
 
         try
         {
+            $wishlistQuery = "DELETE FROM wishlist WHERE user_id = ?";
+            $wishlistStatement = $this->db->prepare($wishlistQuery);
+            $wishlistStatement->bind_param("i", $userId);
+            $wishlistStatement->execute();
+
+            $cartQuery = "DELETE FROM cart_item WHERE user_id = ?";
+            $cartStatement = $this->db->prepare($cartQuery);
+            $cartStatement->bind_param("i", $userId);
+            $cartStatement->execute();
+
+            $orderItemsQuery = "DELETE FROM order_items WHERE order_id IN (SELECT order_id FROM order_data WHERE user_id = ?)";
+            $orderItemsStatement = $this->db->prepare($orderItemsQuery);
+            $orderItemsStatement->bind_param("i", $userId);
+            $orderItemsStatement->execute();
+
+            $orderDataQuery = "DELETE FROM order_data WHERE user_id = ?";
+            $orderDataStatement = $this->db->prepare($orderDataQuery);
+            $orderDataStatement->bind_param("i", $userId);
+            $orderDataStatement->execute();
+
+            $authorityQuery = "DELETE FROM user_authority WHERE user_id = ?";
+            $authorityStatement = $this->db->prepare($authorityQuery);
+            $authorityStatement->bind_param("i", $userId);
+            $authorityStatement->execute();
+
             $addressQuery = "DELETE FROM user_address WHERE user_id = ?";
             $addressStatement = $this->db->prepare($addressQuery);
             $addressStatement->bind_param("i", $userId);
