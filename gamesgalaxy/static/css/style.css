@@ -675,9 +675,10 @@ um zu zeigen das man damit Interagieren kann (cursor) */
 
 .grid-kategorie {
         display: flex;
+        padding-top: 20px;
+        justify-content: center;
         font-family: "Press Start 2P";
-        font-size: xx-large;
-        grid-column-start: 2;
+        font-size: xxx-large;
         color: #B1C2C7;
     }
 
@@ -1650,13 +1651,6 @@ footer {
 
         .grid-element {
             grid-row-start: auto;
-        }
-
-        .grid-kategorie {
-            grid-column-start: 1;
-            grid-row-start: 1;
-            padding: 10px;
-
         }
 
         #ggbrand {
