@@ -61,8 +61,6 @@ class BearbeitenView extends View
 
     <button type="submit" id="profile-submit" name="profile-submit">Änderung Speichern</button>
 </form>
-
-</body>
 BEARBEITEN;
     }
 }

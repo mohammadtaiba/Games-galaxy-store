@@ -3,10 +3,10 @@
         <a href="/dwp_ws2324_rkt/gamesgalaxy/Startseite/Show"><img src="/dwp_ws2324_rkt/gamesgalaxy/Images/Logo.png" id="gglogo" alt="Das Logo von Games Galaxy"></a>
         <a href="/dwp_ws2324_rkt/gamesgalaxy/Startseite/Show" class="navbar-links"><p id="ggbrand">Games<br>Galaxy</p></a>
     </div>
-    <ul id="navbar-big">
-        <li><a href="/dwp_ws2324_rkt/gamesgalaxy/Ueberuns/Show" class="navbar-links">Über Uns</a></li>
+    <div id="navbar-big">
+        <div><a href="/dwp_ws2324_rkt/gamesgalaxy/Ueberuns/Show" class="navbar-big-links">Über Uns</a></div>
         <div class="navbar-dropdown" id="navbar-spiele-dropdown">
-            <li><button class="navbar-dropdown-button" onclick="toggleSpieleDropdown()">Spiele</button></li>
+            <div><button class="navbar-dropdown-button" onclick="toggleSpieleDropdown()">Spiele</button></div>
             <div class="navbar-dropdown-content">
                 <p><a href="/dwp_ws2324_rkt/gamesgalaxy/Steamspiele/Show" class="navbar-links">Steam</a></p>
                 <p><a href="/dwp_ws2324_rkt/gamesgalaxy/Battlenetspiele/Show" class="navbar-links">Battle.net</a></p>
@@ -23,7 +23,7 @@
                 ?>
             </div>
         </div>
-    </ul>
+    </div>
 
     <div id="searchbar">
         <i class="fa-solid fa-magnifying-glass fa-xl"></i>
@@ -39,12 +39,12 @@
                 <?php
             if (isset($_SESSION['user_authenticated']) && $_SESSION['user_authenticated']) {
                 echo '<p>' . $_SESSION['user_name'] . '</p>';
-                echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Verlauf/Show"><button class="profile-dropdown-content-button">Meine Einkäufe</button></a><br>';
-                echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Wunschliste/Show"><button class="profile-dropdown-content-button">Wunschliste</button></a><br>';
-                echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Bearbeiten/Show"><button class="profile-dropdown-content-button">Profil bearbeiten</button></a><br>';
+                echo '<a class="profile-dropdown-content-links" href="/dwp_ws2324_rkt/gamesgalaxy/Verlauf/Show"><div class="profile-dropdown-content-button">Meine Einkäufe</div></a><br>';
+                echo '<a class="profile-dropdown-content-links" href="/dwp_ws2324_rkt/gamesgalaxy/Wunschliste/Show"><div class="profile-dropdown-content-button">Wunschliste</div></a><br>';
+                echo '<a class="profile-dropdown-content-links" href="/dwp_ws2324_rkt/gamesgalaxy/Bearbeiten/Show"><div class="profile-dropdown-content-button">Profil bearbeiten</div></a><br>';
                 if ($_SESSION['user_authority']['delete_user'])
                 {
-                    echo '<a href="/dwp_ws2324_rkt/gamesgalaxy/Benutzerliste/Show"><button class="profile-dropdown-content-button">Benutzerliste</button></a><br>';
+                    echo '<a class="profile-dropdown-content-links" href="/dwp_ws2324_rkt/gamesgalaxy/Benutzerliste/Show"><div class="profile-dropdown-content-button">Benutzerliste</div></a><br>';
                 }
                 echo '<a href="#" onclick="logout()" class="navbar-links">Abmelden</a>';
                 } else {
@@ -61,9 +61,9 @@
     </div>
     <div class="dropdown-icon">
         <div id="cart-dropdown">
-            <a href="/dwp_ws2324_rkt/gamesgalaxy/Einkaufswagen/Show"><button class="navbar-icon-button">
-                <i class="fa-solid fa-cart-shopping fa-xl"></i>
-            </button>
+            <a class="borderless-link" href="/dwp_ws2324_rkt/gamesgalaxy/Einkaufswagen/Show"><div class="navbar-icon-button">
+                <i id="navbar-cart" class="fa-solid fa-cart-shopping fa-xl"></i>
+            </div>
             </a>
         </div>
     </div>
@@ -74,14 +74,14 @@
         <div class="bar"></div>
         <div class="bar"></div>
     </div>
-    <ul id="hamburger-menu">
-        <li><a href="/dwp_ws2324_rkt/gamesgalaxy/Ueberuns/Show" class="navbar-links">Über Uns</a></li>
+    <div id="hamburger-menu">
+        <div><a href="/dwp_ws2324_rkt/gamesgalaxy/Ueberuns/Show" class="navbar-links">Über Uns</a></div>
         <div class="navbar-small-dropdown" id="navbar-small-spiele-dropdown">
-            <li><button id="navbar-small-dropdown-button" onclick="toggleSmallSpieleDropdown()">Spiele</button></li>
+            <div><button id="navbar-small-dropdown-button" onclick="toggleSmallSpieleDropdown()">Spiele</button></div>
             <div id="navbar-dropdown-content-small">
-                <p><a href="/dwp_ws2324_rkt/gamesgalaxy/Steamspiele/Show" class="navbar-links">Steam</a></p>
-                <p><a href="/dwp_ws2324_rkt/gamesgalaxy/Battlenetspiele/Show" class="navbar-links">Battle.net</a></p>
-                <p><a href="/dwp_ws2324_rkt/gamesgalaxy/Epicspiele/Show" class="navbar-links">Epic Games</a></p>
+                <p><a href="/dwp_ws2324_rkt/gamesgalaxy/Steamspiele/Show" class="navbar-links-small">Steam</a></p>
+                <p><a href="/dwp_ws2324_rkt/gamesgalaxy/Battlenetspiele/Show" class="navbar-links-small">Battle.net</a></p>
+                <p><a href="/dwp_ws2324_rkt/gamesgalaxy/Epicspiele/Show" class="navbar-links-small">Epic Games</a></p>
                 <?php
                 if (isset($_SESSION['user_authenticated']) && $_SESSION['user_authenticated'])
                 {
@@ -94,7 +94,7 @@
                 ?>
             </div>
         </div>
-        <li><a href="/dwp_ws2324_rkt/gamesgalaxy/Kontakt/Show" class="navbar-links">Kontaktiere uns</a></li>
-        <li><a href="/dwp_ws2324_rkt/gamesgalaxy/Faq/Show" class="navbar-links">FAQ</a></li>
-    </ul>
+        <div><a href="/dwp_ws2324_rkt/gamesgalaxy/Kontakt/Show" class="navbar-links">Kontaktiere uns</a></div>
+        <div><a href="/dwp_ws2324_rkt/gamesgalaxy/Faq/Show" class="navbar-links">FAQ</a></div>
+    </div>
 </nav>

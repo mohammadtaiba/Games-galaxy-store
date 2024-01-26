@@ -28,7 +28,6 @@ class ImpressumView extends View
                     </div>
                 </div>
             </div>
-        </body>
 IMPRESSUM;
     }
 }

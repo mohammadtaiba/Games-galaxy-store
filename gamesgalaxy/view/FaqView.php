@@ -81,7 +81,7 @@ class FaqView extends View
 </form>
 
 
-</body>
+
 FAQ;
     }
 }

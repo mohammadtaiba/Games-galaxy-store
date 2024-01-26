@@ -30,11 +30,10 @@ class UeberunsView extends View
                     </div>
                     <div id="neuregistrieren">
                         <h2>Sie besitzen noch keinen Account?</h2>
-                        <a href="/dwp_ws2324_rkt/gamesgalaxy/Registrieren/Show"><button>Jetzt Registrieren!</button></a>
+                        <a id="ueber_uns_link" href="/dwp_ws2324_rkt/gamesgalaxy/Registrieren/Show"><div class="ueber_uns_button">Jetzt Registrieren!</div></a>
                     </div>
                 </div>
             </div>
-        </body>
 UEBERUNS;
     }
 }

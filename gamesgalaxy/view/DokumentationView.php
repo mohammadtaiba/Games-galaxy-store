@@ -163,7 +163,6 @@ class DokumentationView extends View
 			<li>Passwort: visitorpass      </li>
 
 	</form>
-</body>
 DOKUMENTATION;
     }
 }

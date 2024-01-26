@@ -52,7 +52,6 @@ VERLAUF;
 
         echo <<<VERLAUF
 </div>
-</body>
 VERLAUF;
     }
 }
