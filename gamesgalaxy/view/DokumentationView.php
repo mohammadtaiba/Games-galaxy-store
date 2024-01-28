@@ -158,7 +158,7 @@ class DokumentationView extends View
 			<li>Email: user@example.com   </li>
 			<li>Passwort: userpass        </li>
 
-	</form></body>
+	</form>
 DOKUMENTATION;
     }
 }
