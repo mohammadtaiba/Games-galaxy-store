@@ -13,6 +13,8 @@ body {
 
 }
 
+
+
 #Dokumentation {
     color: white;
     padding-left: 20px;
@@ -1794,5 +1796,8 @@ footer {
         .spiel-flex {
             display: grid;
         }
-
     }
+
+a,  a:focus {
+    text-decoration: none;
+}

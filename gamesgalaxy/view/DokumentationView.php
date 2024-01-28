@@ -130,8 +130,10 @@ class DokumentationView extends View
 				<img src="../images/Dokumentation/Projektmanagement-Aktivitäten_2.jpg" alt="Projektmanagement-Aktivitäten_2.jpg">
 				<img src="../images/Dokumentation/Projektmanagement-Aktivitäten_3.jpg" alt="Projektmanagement-Aktivitäten_3.jpg">
 				<img src="../images/Dokumentation/Projektmanagement-Aktivitäten_4.jpg" alt="Projektmanagement-Aktivitäten_4.jpg">
+				<img src="../images/Dokumentation/Projektmanagement-Aktivitäten_5.jpg" alt="Projektmanagement-Aktivitäten_5.jpg">
 				
-			<h3>[Zuständigkeiten und Ressourcenaufwand]</h3>
+			<h3>Zuständigkeiten und Ressourcenaufwand</h3>
+			<p>In unserem Projekt achten wir sorgfältig darauf, dass die Arbeitslast gerecht und effizient auf alle Teammitglieder verteilt wird, um sicherzustellen, dass jeder seine Fähigkeiten und Stärken optimal einbringen kann. Durch diese faire Aufteilung der Zuständigkeiten erhält jedes Teammitglied eine klar definierte Rolle und die Möglichkeit, einen wertvollen Beitrag zum Gesamterfolg zu leisten. Regelmäßige Abstimmungen und transparente Kommunikation gewährleisten, dass die Arbeitsbelastung für alle angemessen bleibt und überfordert niemanden, was nicht nur ein positives Arbeitsklima fördert, sondern auch jedem erlaubt, sich auf seine Aufgaben zu konzentrieren und diese mit höchster Qualität zu erfüllen.</p>
 			<br>
 						
 		<ul>Installationshinweise</ul>
