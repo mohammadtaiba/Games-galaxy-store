@@ -123,6 +123,7 @@ class DokumentationView extends View
 				<p>[Hinweise auf besondere technische Features oder "versteckte" Zusatzfeatures]</p>
 			<h3>Known-Bugs/Missing Features: </h3>
 				<p>Kein Bilderupload implementiert</p>
+				<p>Sofort Kaufen button in der SpielView hat keine Funktion</p>
 				<p>Funktion zum Bearbeiten/Löschen von Spielen fehlt</p>
 				<p>Startseite nur statisch, keine Backend-Funktionalität oder JavaScript</p>
 				<p>Wenn man als Benutzer bereits ein Spiel in seinem Warenkorb hat, sich dann abmeldet und als Besucher das gleiche Spiel in den Warenkorb legt und sich wieder anmeldet liegt das gleiche Spiel mehrmals im Warenkorb</p>
