@@ -150,19 +150,15 @@ class DokumentationView extends View
 			
 		<h2>Zugangsdaten</h2>
 		<h3>Für den Admin-Role:</h3>
-			<li> Benutzername: AdminUser     </li>
+			<li> Benutzername: Admin User     </li>
 			<li> Email: admin@example.com    </li>
 			<li> Passwort: adminpass         </li>
 		<h3>Für den Benutzer-Role:</h3>
-			<li>Benutzername: RegularUser </li>
+			<li>Benutzername: Regular User </li>
 			<li>Email: user@example.com   </li>
 			<li>Passwort: userpass        </li>
-		<h3>Für den Besucher-Role:</h3>
-			<li>Benutzername: VisitorUser  </li>
-			<li>Email: visitor@example.com </li>
-			<li>Passwort: visitorpass      </li>
 
-	</form>
+	</form></body>
 DOKUMENTATION;
     }
 }
