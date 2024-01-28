@@ -54,11 +54,6 @@ class HinzufuegenView extends View
                         <textarea id="AddGame-description" name="addgame-description" class="AddGame-textarea" placeholder="Beschreibung hinzufügen" required></textarea>
                 </div>
 
-                <div class="form-AddGame-group">
-                    <label for="AddGame-image" class="AddGame-label">Bild des Spiels</label>
-                        <input type="file" id="AddGame-image" class="AddGame-input">
-                </div>
-
                 <button type="submit" id="AddGame-submit" name="addgame-submit">Spiel hinzufügen</button>
             </form>
 HINZUFUEGEN;
