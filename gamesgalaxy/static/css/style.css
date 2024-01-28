@@ -9,11 +9,9 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-
-
 }
 
-#Dokumentation {
+#Dokumentation,  #neuregistrieren_h2 {
     color: white;
     padding-left: 20px;
 }
