@@ -31,7 +31,7 @@ class UeberunsView extends View
            			</div>
             </div>
 UEBERUNS;
-	    if (!isset($_SESSION['user_authenticated']) && $_SESSION['user_authenticated'])
+	    if (!isset($_SESSION['user_authenticated']) || !$_SESSION['user_authenticated'])
 	    {
 		    echo '<div id="neuregistrieren">';
             echo '    <h2 id="neuregistrieren_h2">Sie besitzen noch keinen Account?</h2>';
