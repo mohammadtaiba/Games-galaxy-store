@@ -13,8 +13,6 @@ body {
 
 }
 
-
-
 #Dokumentation {
     color: white;
     padding-left: 20px;
@@ -1651,19 +1649,21 @@ footer {
     left: 30%;
     transform: translateX(-50%);
     z-index: 1;
+    background-color: black;
+    border-radius: 50px;
 }
 
 .slider-nav a {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: #fff;
-    opacity: 0.75;
+    background-color: #B1C2C7;
+    opacity: 1;
     transition: opacity ease 250ms;
 }
 
 .slider-nav a:hover {
-    opacity: 1;
+    background-color: #0096ff;
 }
 
 .ueber_uns_button{
@@ -1796,8 +1796,23 @@ footer {
         .spiel-flex {
             display: grid;
         }
-    }
 
-a,  a:focus {
-    text-decoration: none;
-}
+        .slider-informations {
+            display: none;
+        }
+
+        .slider-wrapper {
+            width: 420px;
+            height: 230px;
+        }
+
+        .slider-description {
+            width: 420px;
+            height: 230px;
+        }
+
+        .slider-nav {
+            left: 50%;
+        }
+
+    }

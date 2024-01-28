@@ -144,7 +144,7 @@ REFERENCES game (game_id);
 
 -- Admin-Nutzer erstellen --
 INSERT INTO user (user_name, user_email, user_password)
-VALUES ('Admin', 'admin@email.com', 'adminpw');
+VALUES ('Admin User', 'admin@example.com', 'adminpass');
 
 SET @last_user_id = LAST_INSERT_ID();
 
@@ -153,6 +153,19 @@ VALUES (@last_user_id, '0', '0', '0', '0');
 
 INSERT INTO  user_authority (user_id, create_user, change_user, delete_user, create_game, change_game, delete_game)
 VALUES (@last_user_id, '1', '1', '1', '1', '1', '1');
+
+-- Nutzer erstellen --
+
+INSERT INTO user (user_name, user_email, user_password)
+VALUES ('Regular User', 'user@example.com', 'userpass');
+
+SET @last_user_id = LAST_INSERT_ID();
+
+INSERT INTO user_address (user_id, address_street, address_street_number, address_city, address_postalcode)
+VALUES (@last_user_id, '0', '0', '0', '0');
+
+INSERT INTO  user_authority (user_id, create_user, change_user, delete_user, create_game, change_game, delete_game)
+VALUES (@last_user_id, '1', '1', '0', '0', '0', '0');
 
 -- Testdaten Steam
 INSERT INTO game (game_platform, game_name, game_price, game_description, game_key)
