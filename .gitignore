@@ -1,7 +1,2 @@
 # Ignoriere unnötige Dateien/Ordner
 /idea
-*.log
-*.sql
-*.sqlite
-/external libraries
-/scratches and consoles
