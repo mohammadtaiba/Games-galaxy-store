@@ -19,8 +19,7 @@ Games Galaxy ist ein PHP-basierter Online-Shop für PC-Spiele. Das Projekt bilde
 - [Tests](#tests)
 - [Projektstruktur](#projektstruktur)
 - [Roadmap](#roadmap)
-- [Autor](#autor)
-- [Lizenz](#lizenz)
+- [License](#License)
 
 ## Projektziel
 
@@ -150,10 +149,8 @@ Automatisierte Tests sind aktuell nicht eingerichtet. Die wichtigsten Funktionen
 └── README.md
 ```
 
-## Autor
+## License
 
-Dieses Projekt wurde im Rahmen eines Hochschulprojekts umgesetzt.
+Copyright (c) 2026 Mohammad Taiba. All rights reserved.
 
-## Lizenz
-
-Dieses Projekt steht unter der [Creative Commons BY-NC-ND 4.0 Lizenz](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.de). Es darf geteilt, aber nicht verändert oder kommerziell genutzt werden.
+This project is published for portfolio and review purposes only. See [LICENSE](./LICENSE).
