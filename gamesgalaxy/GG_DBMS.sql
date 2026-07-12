@@ -1,10 +1,12 @@
-DROP DATABASE IF EXISTS GG_DBMS;
-CREATE DATABASE IF NOT EXISTS GG_DBMS
+DROP DATABASE IF EXISTS `gg_dbms`;
+
+CREATE DATABASE IF NOT EXISTS `gg_dbms`
 DEFAULT CHARACTER SET utf8mb4
 COLLATE utf8mb4_general_ci;
-USE GG_DBMS;
 
-DROP TABLE IF EXISTS user;
+USE `gg_dbms`;
+
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS user
 (
 	user_id			INTEGER		NOT NULL AUTO_INCREMENT,
@@ -109,11 +111,11 @@ CREATE TABLE IF NOT EXISTS order_items
 
 ALTER TABLE user_authority
     ADD CONSTRAINT user_authority_fk1 FOREIGN KEY (user_id)
-        REFERENCES user (user_id);
+        REFERENCES `user` (user_id);
 
 ALTER TABLE user_address
 ADD CONSTRAINT user_address_fk1 FOREIGN KEY (user_id)
-REFERENCES user (user_id);
+REFERENCES `user` (user_id);
 
 ALTER TABLE category
 ADD CONSTRAINT category_fk1 FOREIGN KEY (game_id)
@@ -123,7 +125,7 @@ ALTER TABLE wishlist
 ADD CONSTRAINT wishlist_fk1 FOREIGN KEY (game_id)
 REFERENCES game (game_id),
 ADD CONSTRAINT wishlist_fk2 FOREIGN KEY (user_id)
-REFERENCES user (user_id);
+REFERENCES `user` (user_id);
 
 ALTER TABLE cart_item
 ADD CONSTRAINT cart_fk1	FOREIGN KEY	(game_id)
@@ -134,7 +136,7 @@ REFERENCES user	(user_id);
 
 ALTER TABLE order_data
 ADD CONSTRAINT order_fk1 FOREIGN KEY (user_id)
-REFERENCES user (user_id);
+REFERENCES `user` (user_id);
 
 ALTER TABLE order_items
 ADD CONSTRAINT order_items_fk1 FOREIGN KEY (order_id)
@@ -143,7 +145,7 @@ ADD CONSTRAINT order_items_fk2 FOREIGN KEY (game_id)
 REFERENCES game (game_id);
 
 -- Admin-Nutzer erstellen --
-INSERT INTO user (user_name, user_email, user_password)
+INSERT INTO `user` (user_name, user_email, user_password)
 VALUES ('Admin User', 'admin@example.com', 'adminpass');
 
 SET @last_user_id = LAST_INSERT_ID();
@@ -156,7 +158,7 @@ VALUES (@last_user_id, '1', '1', '1', '1', '1', '1');
 
 -- Nutzer erstellen --
 
-INSERT INTO user (user_name, user_email, user_password)
+INSERT INTO `user` (user_name, user_email, user_password)
 VALUES ('Regular User', 'user@example.com', 'userpass');
 
 SET @last_user_id = LAST_INSERT_ID();
