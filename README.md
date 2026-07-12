@@ -5,7 +5,7 @@
 ![Status](https://img.shields.io/badge/Status-Hochschulprojekt-blue)
 ![License](https://img.shields.io/badge/Lizenz-CC%20BY--NC--ND%204.0-lightgrey)
 
-Games Galaxy ist ein PHP-basierter Online-Shop für PC-Spiele. Das Projekt bildet typische Shop-Funktionen wie Spielekatalog, Suche, Benutzerkonto, Wunschliste, Warenkorb, Checkout und administrative Verwaltungsfunktionen ab.
+Games Galaxy ist ein PHP-basierter Online-Shop für PC-Spiele. Das Projekt bildet typische Shop-Funktionen wie Spielekatalog, Suche, Benutzerkonto, Wunschliste, Warenkorb, Checkout sowie eine Rollen- und Rechteverwaltung für administrative Bereiche ab.
 
 ## Inhaltsverzeichnis
 
@@ -16,6 +16,7 @@ Games Galaxy ist ein PHP-basierter Online-Shop für PC-Spiele. Das Projekt bilde
 - [Tech-Stack](#tech-stack)
 - [Installation und lokaler Start](#installation-und-lokaler-start)
 - [Nutzung](#nutzung)
+- [Rollen und Rechte](#rollen-und-rechte)
 - [Tests](#tests)
 - [Projektstruktur](#projektstruktur)
 - [Roadmap](#roadmap)
@@ -23,7 +24,7 @@ Games Galaxy ist ein PHP-basierter Online-Shop für PC-Spiele. Das Projekt bilde
 
 ## Projektziel
 
-Ziel des Projekts ist die Umsetzung eines strukturierten Webshops für PC-Games mit klarer Navigation, responsivem Layout und rollenbasierten Funktionen. Neben der Produktansicht stehen zentrale E-Commerce-Abläufe wie Registrierung, Login, Wunschliste, Warenkorb und Kaufabwicklung im Fokus.
+Ziel des Projekts ist die Umsetzung eines strukturierten Webshops für PC-Games mit klarer Navigation, responsivem Layout und rollen- sowie rechtebasierten Funktionen. Neben der Produktansicht stehen zentrale E-Commerce-Abläufe wie Registrierung, Login, Wunschliste, Warenkorb und Kaufabwicklung im Fokus.
 
 ## Aktueller Status
 
@@ -57,7 +58,8 @@ Das Projekt ist ein lauffähiger Prototyp aus einem Hochschulkontext. Die Anwend
 - Wunschliste
 - Warenkorb und Checkout
 - Kaufverlauf
-- Admin-Funktionen für Benutzer- und Spieleverwaltung
+- Rollen- und Rechteverwaltung über definierte Berechtigungen
+- Verwaltungsfunktionen für Benutzer und Spiele abhängig von den zugewiesenen Rechten
 - Kontakt-, FAQ-, Impressums- und Dokumentationsseiten
 - Responsives Layout mit Desktop- und Mobilnavigation
 
@@ -115,7 +117,18 @@ Das Projekt ist ein lauffähiger Prototyp aus einem Hochschulkontext. Die Anwend
 
 ## Nutzung
 
-Die Anwendung wird über die Navigation bedient. Besucher können Spiele durchsuchen und Detailseiten ansehen. Registrierte Benutzer können zusätzlich Wunschliste, Warenkorb, Checkout und Kaufverlauf nutzen. Benutzer mit erweiterten Rechten erhalten Zugriff auf Verwaltungsfunktionen für Spiele und Benutzer.
+Die Anwendung wird über die Navigation bedient. Besucher können Spiele durchsuchen und Detailseiten ansehen. Registrierte Benutzer können zusätzlich Wunschliste, Warenkorb, Checkout und Kaufverlauf nutzen. Benutzer mit erweiterten Rechten erhalten Zugriff auf geschützte Verwaltungsfunktionen für Spiele und Benutzer.
+
+## Rollen und Rechte
+
+Nach dem Import der SQL-Datei stehen zwei Beispielkonten zur Verfügung, mit denen sich die Rechteverwaltung direkt testen lässt:
+
+- `Admin User` mit `admin@example.com` / `adminpass`
+- `Regular User` mit `user@example.com` / `userpass`
+
+Die Rechte werden in der Tabelle `user_authority` verwaltet. Dort sind einzelne Berechtigungen wie `create_user`, `change_user`, `delete_user`, `create_game`, `change_game` und `delete_game` hinterlegt.
+
+Dadurch sind Verwaltungsbereiche nicht nur über den Login geschützt, sondern zusätzlich an konkrete Berechtigungen gebunden. Der Admin-Testnutzer besitzt Vollzugriff auf Benutzer- und Spieleverwaltung. Der zweite Testnutzer deckt einen eingeschränkten Rechtefall ab und kann damit vom vollständigen Administrationszugriff unterschieden werden.
 
 ## Tests
 
