@@ -65,6 +65,10 @@ CREATE TABLE IF NOT EXISTS game
 	game_platform		VARCHAR(25)		        NOT NULL,
 	game_name			VARCHAR(50)		        NOT NULL,
 	game_price			VARCHAR(10)			NOT NULL,
+	game_price_amount	DECIMAL(10,2)	        NOT NULL DEFAULT 0.00,
+	game_is_online		BOOLEAN			        NOT NULL DEFAULT FALSE,
+	game_is_offline		BOOLEAN			        NOT NULL DEFAULT TRUE,
+	game_search_indexed_at DATETIME             NULL,
 	game_description	VARCHAR(500)	        NOT NULL,
 	game_key			VARCHAR(50)		        NOT NULL,
 	CONSTRAINT 	game_pk PRIMARY KEY (game_id)
@@ -267,4 +271,27 @@ SET @last_game_id = LAST_INSERT_ID();
 
 INSERT INTO category (game_id, Strategie, Action, Shooter, RPG, Simulation)
 VALUES (@last_game_id, 0, 0, 0, 1, 1);
+
+-- Such-Metadaten für die optionale erweiterte Suche
+UPDATE game
+SET game_price_amount = CAST(REPLACE(game_price, ',', '.') AS DECIMAL(10,2));
+
+UPDATE game
+SET game_is_online = 1, game_is_offline = 1
+WHERE game_name IN ('Grim Dawn', 'Borderlands 2', 'Warcraft III: Reforged');
+
+UPDATE game
+SET game_is_online = 1, game_is_offline = 0
+WHERE game_name IN ('Call of Duty: Modern Warfare III', 'Diablo III', 'World of Warcraft');
+
+UPDATE game
+SET game_is_online = 0, game_is_offline = 1
+WHERE game_name IN (
+    'Disgaea 5 Complete',
+    'Euro Truck Simulator 2',
+    'Avatar: Frontiers of Pandora',
+    'Dungeons 4',
+    'Witchfire',
+    'Mass Effect Legendary Edition'
+);
 

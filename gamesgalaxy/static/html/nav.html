@@ -25,10 +25,22 @@
         </div>
     </div>
 
+    <?php
+    $normalSearchValue = '';
+    $requestUri = $_SERVER['REQUEST_URI'] ?? '';
+    $isNormalSearchPage = preg_match('/\/gamesgalaxy\/Search\/Show(?:\?|$)/i', $requestUri) === 1;
+
+    if ($isNormalSearchPage && isset($_GET['q']) && is_string($_GET['q'])) {
+        $normalSearchValue = htmlspecialchars(trim((string) $_GET['q']), ENT_QUOTES, 'UTF-8');
+    }
+    ?>
     <div id="searchbar">
-        <i class="fa-solid fa-magnifying-glass fa-xl"></i>
-        <form action="/dwp_ws2324_rkt/gamesgalaxy/Search/Show" method="get" >
-            <input type="text" name="q" id="searchInput" placeholder="Suchen">
+        <form action="/dwp_ws2324_rkt/gamesgalaxy/Search/Show" method="get" id="navbar-search-form">
+            <button type="submit" class="navbar-search-icon-button" aria-label="Normale Suche">
+                <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+            </button>
+            <input type="search" name="q" id="searchInput" placeholder="Spiel suchen" value="<?= $normalSearchValue ?>" autocomplete="off" aria-label="Normale Spielsuche">
+            <button type="submit" class="navbar-ai-search-button" formaction="/dwp_ws2324_rkt/gamesgalaxy/AdvancedSearch/Show">KI-Suche</button>
         </form>
     </div>
 
