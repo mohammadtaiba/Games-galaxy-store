@@ -20,6 +20,7 @@ require_once 'controller/SpielController.php';
 require_once 'controller/EinkaufswagenController.php';
 require_once 'controller/DokumentationController.php';
 require_once 'controller/SearchController.php';
+require_once 'controller/AdvancedSearchController.php';
 
 preg_match('/^\/dwp_ws2324_rkt\/gamesgalaxy\/(?<controller>[^\/]+)\/?(?<action>[^\/?]+)?/', $_SERVER['REQUEST_URI'], $matches);
 
