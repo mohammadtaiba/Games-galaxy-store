@@ -21,13 +21,9 @@ Games Galaxy ist ein PHP-basierter Online-Shop für PC-Spiele. Das Projekt bilde
 - [Rollen und Rechte](#rollen-und-rechte)
 - [Tests](#tests)
 - [Projektstruktur](#projektstruktur)
-- [Roadmap](#roadmap)
 - [License](#License)
 
 ## Projektziel
-
-![Games Galaxy Demo](docs/demo/games-galaxy-demo.mp4)
-
 
 Ziel des Projekts ist die Umsetzung eines strukturierten Webshops für PC-Games mit klarer Navigation, responsivem Layout und rollen- sowie rechtebasierten Funktionen. Neben der Produktansicht stehen zentrale E-Commerce-Abläufe wie Registrierung, Login, Wunschliste, Warenkorb und Kaufabwicklung im Fokus.
 
@@ -35,9 +31,10 @@ Ziel des Projekts ist die Umsetzung eines strukturierten Webshops für PC-Games 
 
 Das Projekt ist ein lauffähiger Prototyp aus einem Hochschulkontext. Die Anwendung nutzt PHP, MySQL und eine einfache MVC-Struktur. Die Datenbankstruktur und Beispielinhalte liegen als SQL-Datei im Repository.
 
+
 ## Demo
 
-<a href="docs/demo/games-galaxy-demo.mp4">
+<a href="https://mohammad-taiba.de/assets/projects/games-galaxy.mp4">
     <img
         src="docs/screenshots/games-galaxy-demo.gif"
         alt="Games Galaxy Demo"
